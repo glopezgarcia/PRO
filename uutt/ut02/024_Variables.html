@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#variables-en-java" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -592,6 +597,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2.4. Variables
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="024_Variables.html" class="md-nav__link md-nav__link--active">
         
@@ -602,6 +620,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visibilidad-y-vida-de-las-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visibilidad y vida de las variables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visibilidad y vida de las variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visibilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visibilidad
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scope-ambito" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scope – Ámbito
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -756,9 +826,53 @@
                   
 
 
-  <h1>2.4. Variables</h1>
-
-
+<h1 id="variables-en-java">Variables en Java<a class="headerlink" href="#variables-en-java" title="Permanent link">&para;</a></h1>
+<p>Las variables en Java es una forma de almacenar información en nuestro ordenador. Definimos variables asignándoles un nombre. De igual manera se puede acceder a la información que guardar las variable, simplemente accediendo por el nombre que le hemos dado. Es el ordenador el que se encarga de averiguar dónde se almacena internamente en la memoria RAM del ordenador.</p>
+<p>Como su nombre indica "variable", se puede modificar el contenido que ésta almacena, es decir, es variable. Lo único que tenemos que hacer es decirle al PC qué tipo de información queremos guardar en nuestra variable y darle un nombre. Existe diferentes tipos de información que podemos utilizar para definir nuestras variables. Se les conoce como tipos de datos o data types. Los tipos de datos son palabras reservas keywords en Java, es decir, no podemos utilizarlas fuera del contexto de tipo de datos. Para definir una variable, necesitamos especificar el tipo de datos, luego darle un nombre a nuestra variable, y opcionalmente, podemos agregar una expresión para inicializar la variable con un valor.</p>
+<p>Reglas para el nombrado de variables</p>
+<ul>
+<li>Tiene que comenzar con una letra o '_', nunca con números.</li>
+<li>Puede contener números. No debe contener espacios en blanco.</li>
+<li>No debe ser muy largo y debe expresar algo en el contexto.</li>
+<li>No se pueden usar palabras reservadas.</li>
+<li>Mayúsculas y minúsculas se tratan diferente.</li>
+</ul>
+<h2 id="visibilidad-y-vida-de-las-variables">Visibilidad y vida de las variables<a class="headerlink" href="#visibilidad-y-vida-de-las-variables" title="Permanent link">&para;</a></h2>
+<p>Las variables son memorias reservadas para almacenar valores en RAM. Estas posiciones de memoria se liberan tan pronto como termina la vida de la variable. Según la vida de las variables, hay tres tipos de Variables.</p>
+<ol>
+<li>Variables locales: La vida permanece dentro de un bloque donde se ha declarado.</li>
+<li>Variables de instancia: Declaradas dentro de la clase pero fuera de los métodos. No debería ser estático.</li>
+<li>Variables estáticas: es como una variable global. Declarado como estático en la clase pero fuera de los métodos.</li>
+</ol>
+<h3 id="visibilidad">Visibilidad<a class="headerlink" href="#visibilidad" title="Permanent link">&para;</a></h3>
+<p>En las variables locales, su ámbito y uso se encuentra dentro del método o bloque en el que se definió y se destruyen después de la ejecución del método. Es decir, no se puede usar una variable local fuera del método actual. A las variables de instancia se puede acceder solo a través de objetos de la clase para la que se definió.</p>
+<p>Un campo / variable estático pertenece a la clase y se cargará en la memoria junto con la clase. Se invocan sin crear un objeto. (Usando el nombre de la clase como referencia). Solo hay una copia de la variable estática disponible en toda la clase, es decir, el valor de la variable estática será el mismo en todos los objetos. Puede definir una variable estática utilizando la palabra clave static.</p>
+<h2 id="scope-ambito">Scope – Ámbito<a class="headerlink" href="#scope-ambito" title="Permanent link">&para;</a></h2>
+<p>El alcance o ámbito (scope) de una variable es la parte de un programa en la que existe. En Java, el alcance de una variable comienza donde se declara y termina cuando se alcanza la llave de cierre del bloque que la contiene.</p>
+<div class="admonition example">
+<p class="admonition-title">Ejemplo</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos="5 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="c1">// ¡x todavía está dentro del alcance aquí!</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="c1">// ¡x todavía está dentro del alcance aquí también! </span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos="8 "></span><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li>x está dentro del alcance entre su declaración en la línea 2 y la llave que la encierra en la línea 8.</li>
+<li>y está dentro del alcance entre su declaración en la línea 4 y la llave que la encierra en la línea 6.</li>
+<li>Las variables de bucle están dentro del alcance entre sus bucles for { }. Entonces, i está dentro del alcance entre las líneas 3 - 6.
+```</li>
+</ul>
+</div>
+<p>Dos variables con el mismo nombre no pueden existir dentro del mismo ámbito (scope).</p>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 

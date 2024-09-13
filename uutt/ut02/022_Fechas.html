@@ -595,18 +595,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#clase-date" class="md-nav__link">
+  <a href="#construyendo-fechas-y-horas-con-javatime" class="md-nav__link">
     <span class="md-ellipsis">
-      Clase Date
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#el-paquete-javatime" class="md-nav__link">
-    <span class="md-ellipsis">
-      El paquete `java.time``
+      Construyendo fechas y horas con java.time
     </span>
   </a>
   
@@ -812,8 +803,35 @@
 
 
 <h1 id="manejo-de-fechas-en-java">Manejo de fechas en Java<a class="headerlink" href="#manejo-de-fechas-en-java" title="Permanent link">&para;</a></h1>
-<h2 id="clase-date">Clase Date<a class="headerlink" href="#clase-date" title="Permanent link">&para;</a></h2>
-<h2 id="el-paquete-javatime">El paquete `java.time``<a class="headerlink" href="#el-paquete-javatime" title="Permanent link">&para;</a></h2>
+<p>Dado que las clases base de manejo de fechas en Java son tan problemáticas, surgieron alternativas a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><code>Date</code></a> por parte de la comunidad. La más conocida y utilizada siempre ha sido la biblioteca <strong>Joda-Time</strong>, que es gratuita y Open Source. Tan popular era que sus desarrolladores participaron junto a Oracle en la definición de las nuevas clases oficiales para manejo de fechas en Java: las incluidas en el paquete <code>java.time</code>. Este paquete <code>java.time</code> incluye muchas clases, pero las básicas son:</p>
+<ul>
+<li><code>LocalDate</code>: representa a fechas sin la hora y nos facilita su manejo para declararlas, sumar y restar fechas y compararlas.</li>
+<li><code>LocalTime</code>: es idéntica a la anterior pero para el manejo de horas, sin ninguna fecha asociada, pudiendo así compararlas, sumar o restar tiempo a las mismas...</li>
+<li><code>LocalDateTime</code>: como puedes suponer, es una combinación de las dos anteriores, que permite hacer lo mismo con fechas y horas simultáneamente.</li>
+<li><code>Instant</code>: es muy parecida a la anterior pero a la vez muy diferente. Se usa para almacenar un punto determinado en el tiempo, o sea con fecha y hora, pero guarda su valor como un timestamp de UNIX, es decir, en nanosegundos desde el epoch de UNIX (1/1/1970 a las 00:00) y usando la zona horaria UTC. Es muy útil para manejar momentos en el tiempo de manera neutra e intercambiarlo entre aplicaciones y sistemas, por lo que lo verás utilizado muy a menudo.</li>
+<li><code>ZonedDateTime</code>: esta clase es como la LocalDateTime pero teniendo en cuenta una zona horaria concreta, ya que las anteriores no la tienen en cuenta.</li>
+<li><code>Period</code>: esta clase auxiliar nos ayuda a obtener diferencias entre fechas en distintos periodos (segundos, minutos, días...) y también a añadir esas diferencias a las fechas.</li>
+<li><code>Duration</code>: esta es muy parecida a la anterior pero para manejo de horas exclusivamente.</li>
+</ul>
+<h2 id="construyendo-fechas-y-horas-con-javatime">Construyendo fechas y horas con <code>java.time</code><a class="headerlink" href="#construyendo-fechas-y-horas-con-javatime" title="Permanent link">&para;</a></h2>
+<p>Estas clases producen instancias inmutables, al contrario de lo que pasaba con las antiguas clases Date de Java, por lo que son <em>thread-safe</em>. Dado que carecen de constructores públicos, se instancian usando métodos de tipo "factoría", es decir, tienen métodos que construyen estas clases a partir de posibles parámetros que le pasemos.</p>
+<p>En concreto, todas las de manejo de fechas y horas disponen de tres métodos importantes, que son:</p>
+<ul>
+<li><code>now()</code>: crean instancias nuevas a partir de la fecha y hora actual.</li>
+<li><code>of()</code>: construyen fechas y horas a partir de sus partes.</li>
+<li><code>with()</code>: modifican la fecha u hora actual en función del parámetro que se le pase, con alguna cantidad (años, días, horas...) o alguna clase de ajuste que enseguida estudiaremos.</li>
+</ul>
+<p>Vamos a ver <code>now()</code> en acción con algunas de estas clases</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La fecha actual es: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">());</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;La hora actual es: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">LocalTime</span><span class="p">.</span><span class="na">now</span><span class="p">()</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;La fecha y hora actuales son: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">LocalDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">()</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;El instante actual es: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Instant</span><span class="p">.</span><span class="na">now</span><span class="p">()</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos="5 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;La fecha y hora actuales con zona horaria son: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ZonedDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">()</span><span class="w"> </span><span class="p">);</span>
+</span></code></pre></div>
+<p>Al convertirlas a cadena para mostrarlas se generan en el formato ISO 8601, que es un estándar ampliamente aceptado. Luego veremos cómo formatearlas de otro modo que nos interese más. Para controlar qué fechas y horas generamos podemos usar el método factoría of() que admite ciertos parámetros en función del tipo de dato utilizado.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;Fecha de mi cumpleaños: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">LocalDate</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">1984</span><span class="p">,</span><span class="w"> </span><span class="n">Month</span><span class="p">.</span><span class="na">MAY</span><span class="p">,</span><span class="w"> </span><span class="mi">23</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+</span></code></pre></div>
+<p>Fíjate en que para el mes, aunque podría haber utilizado los números del 1 al 12 para indicarlo, he usado una enumeración específica que existe para ello llamada <code>Month</code>, cuyos miembros son los nombres de los meses en inglés. Así que mayo, que sería el mes 5, se convierte en <code>Month.MAY</code>.</p>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->

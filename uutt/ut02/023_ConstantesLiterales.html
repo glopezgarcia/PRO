@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#contantes-y-literales" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -571,6 +576,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2.3. Constantes y literales
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="023_ConstantesLiterales.html" class="md-nav__link md-nav__link--active">
         
@@ -581,6 +599,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#constantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constantes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#los-literales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Los literales
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#palabras-reservadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Palabras reservadas
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -756,9 +820,38 @@
                   
 
 
-  <h1>2.3. Constantes y literales</h1>
-
-
+<h1 id="contantes-y-literales">Contantes y literales<a class="headerlink" href="#contantes-y-literales" title="Permanent link">&para;</a></h1>
+<h2 id="constantes">Constantes<a class="headerlink" href="#constantes" title="Permanent link">&para;</a></h2>
+<p>Un programa puede contener ciertos valores que no deben cambiar durante su ejecución. Estos valores se llaman constantes. Es por ello que se puede definir constante como “Una constante es una zona de memoria que se referencia con un identificador, conocido como nombre de la constante, donde se almacena un valor que no puede cambiar durante la ejecución del programa”. La nomenclatura para definir las constantes es la siguiente:</p>
+<ul>
+<li>Todas las letras de cada palabra deben estar en mayúsculas</li>
+<li>Se separa cada palabra con un _</li>
+<li>Se declaran similar a las variables, con la diferencia de que el tipo de dato va después de la palabra reservada final</li>
+</ul>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.141591</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MIN_WIDTH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">TASAS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.045</span><span class="p">;</span>
+</span></code></pre></div>
+<p>Las constantes hacen que el programa sea más fácil de leer y verificar que sea correcto. Si es necesario cambiar una constante (por ejemplo, si cambian las tasas), todo lo que tendremos que hacer es cambiar la declaración de la constante. No será necesario buscar en todo el programa cada aparición de ese número específico.</p>
+<h2 id="los-literales">Los literales<a class="headerlink" href="#los-literales" title="Permanent link">&para;</a></h2>
+<p>Un literal Java es un valor de tipo entero, real, lógico, carácter, cadena de caracteres o un valor nulo (null) que puede aparecer dentro de un programa.</p>
+<p><div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25</span><span class="p">;</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span><span class="kt">double</span><span class="w"> </span><span class="n">precio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.99</span><span class="p">;</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span><span class="n">String</span><span class="w"> </span><span class="n">mes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;enero&quot;</span>
+</span></code></pre></div>
+Los literales suelen aparecer en la asignación de valores a las variables o formando parte de expresiones aritméticas o lógicas.</p>
+<p>Cuando se utilizan literales, es muy importante tener en cuenta que Java es un lenguaje fuertemente tipado, esto quiere decir que realiza un control estricto de los tipos de datos que pueden contener las variables.</p>
+<h2 id="palabras-reservadas">Palabras reservadas<a class="headerlink" href="#palabras-reservadas" title="Permanent link">&para;</a></h2>
+<p>Las palabras reservadas son identificadores predefinidos que tienen un significado para el compilador y por tanto no pueden usarse como identificadores creados por el usuario en los programas.</p>
+<figure>
+<a class="glightbox" href="../../img/ut02/08_PalabrasReservadas.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Palabras reservadas" src="../../img/ut02/08_PalabrasReservadas.png" /></a>
+  <figcaption>Palabras reservadas</figcaption>
+</figure>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
