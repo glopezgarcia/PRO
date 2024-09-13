@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#entrada-y-salida-de-datos-por-consola" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -697,6 +702,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2.9. Entrada y salida por consola
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="029_IOConsola.html" class="md-nav__link md-nav__link--active">
         
@@ -707,6 +725,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#salida-de-la-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Salida de la información
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entrada-de-la-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrada de la información
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -756,9 +811,67 @@
                   
 
 
-  <h1>2.9. Entrada y salida por consola</h1>
-
-
+<h1 id="entrada-y-salida-de-datos-por-consola">Entrada y salida de datos por consola<a class="headerlink" href="#entrada-y-salida-de-datos-por-consola" title="Permanent link">&para;</a></h1>
+<p>Java viene con una biblioteca de clases que se puede usar para realizar tareas comunes. La biblioteca de clases de Java está organizada en un conjunto de paquetes, donde cada paquete contiene una colección de clases relacionadas. En esta sección presentamos las clases System y Scanner que se utilizan para imprimir la salida y leer la entrada de un programa.</p>
+<figure>
+<a class="glightbox" href="../../img/ut02/06_IOJava.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IO" src="../../img/ut02/06_IOJava.png" /></a>
+  <figcaption></figcaption>
+</figure>
+<p>El tipo más simple de interfaz de usuario es la interfaz de línea de comandos, en la que la entrada se toma de la línea de comandos a través del teclado y la salida se muestra en la consola. Algunas aplicaciones Java utilizan este tipo de interfaz otros usan interfaz gráfica como veremos más adelante.</p>
+<h2 id="salida-de-la-informacion">Salida de la información<a class="headerlink" href="#salida-de-la-informacion" title="Permanent link">&para;</a></h2>
+<p>En Java, cualquier origen o destino de I/O se considera un flujo de bytes o caracteres. Para realizar la salida, insertamos bytes o caracteres en la secuencia. Para realizar la entrada, extraemos bytes o caracteres del flujo (<code>stream</code>). Incluso los caracteres introducidos en un teclado, si se consideran como una secuencia de pulsaciones de teclas, se pueden representar como un stream.</p>
+<p>En Java, la I/O se maneja a través de métodos que pertenecen a clases contenidas en el paquete <code>java.io</code>. Ya hemos visto cómo se usa el método de salida <code>println()</code> para enviar una cadena a la consola.</p>
+<p>Los objetos <code>System.out</code> y <code>System.err</code> se pueden usar para escribir la salida en la consola. Como sugiere su nombre, el flujo de errores se usa principalmente para mensajes de error, mientras que el flujo de salida se usa para otras salidas impresas.</p>
+<p>La única diferencia entre los métodos <code>print()</code> y <code>println()</code> es que <code>println()</code> también imprimirá un retorno de carro y un avance de línea después de imprimir sus datos, lo que permitirá que la salida posterior se imprima en una nueva línea.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Hola&quot;</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;mundo&quot;</span><span class="p">):</span><span class="w"> </span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Texto con salto de línea&quot;</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;adiós&quot;</span><span class="p">);</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos="5 "></span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos="6 "></span><span class="nl">Salida</span><span class="p">:</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos="7 "></span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos="8 "></span><span class="n">HolamundoTexto</span><span class="w"> </span><span class="n">con</span><span class="w"> </span><span class="n">salto</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">línea</span><span class="w"> </span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos="9 "></span><span class="n">adiós</span>
+</span></code></pre></div>
+<h2 id="entrada-de-la-informacion">Entrada de la información<a class="headerlink" href="#entrada-de-la-informacion" title="Permanent link">&para;</a></h2>
+<p>Se ha agregado la clase <code>Scanner</code> al paquete <code>java.util</code> que permite la entrada de teclado sin forzar el programador para manejar las excepciones. La clase Scanner está diseñada para ser una forma muy flexible de reconocer fragmentos de datos que se ajustan a patrones específicos de cualquier flujo de entrada.</p>
+<p>Para usar la clase Scanner para la entrada de teclado, debemos crear una instancia de <code>Scanner</code> y asociarla con <code>System.in</code>. La clase tiene un constructor para este propósito, por lo que la declaración</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+</span></code></pre></div>
+<p>declara y crea una instancia de un objeto que se puede utilizar para la entrada del teclado. Después de crear un objeto <code>Scanner</code>, podemos hacer una llamada a <code>nextInt()</code>, <code>nextDouble()</code>, o <code>next()</code> para leer, respectivamente, un entero, un número real, o String del teclado.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos="3 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce un número: &quot;</span><span class="p">);</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos="4 "></span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="c1">//Read the integer </span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos="5 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El número introducido es: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num</span><span class="p">);</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Cuando se ejecuta el método <code>nextInt()</code>, no se ejecutan más declaraciones hasta que el método devuelve un valor <code>int</code>. Normalmente, esto no sucede hasta que el usuario ha escrito los dígitos de un número entero y presiona la tecla <em>Intro</em>.</p>
+<p>Para leer un String utilizamos el método <code>next()</code>.</p>
+<p><div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><span class="linenos" data-linenos="2 "></span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-3-3"><span class="linenos" data-linenos="3 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce una palabra: &quot;</span><span class="p">);</span>
+</span><span id="__span-3-4"><span class="linenos" data-linenos="4 "></span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+</span><span id="__span-3-5"><span class="linenos" data-linenos="5 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+</span><span id="__span-3-6"><span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</span></code></pre></div>
+Un objeto Scanner tiene un conjunto de cadenas de caracteres que separan o delimitan los fragmentos de datos que está buscando. De forma predeterminada, este conjunto de delimitadores consta de cualquier secuencia no vacía de caracteres en blanco, es decir, los caracteres de espacio, tabulación, retorno y nueva línea. Esto permitirá al usuario ingresar varios números enteros separados por espacios antes de presionar la tecla <em>Enter</em>. En código sería:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce dos números: &quot;</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+</span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span><span class="kt">int</span><span class="w"> </span><span class="n">num2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+</span></code></pre></div>
+<p>Los espacios en blanco como delimitadores también significan que el método <code>next()</code> no puede devolver una cadena vacía ni puede devolver una cadena que contenga espacios. Por ejemplo, considere el código:</p>
+<p><div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce un texto separado por espacio en blanco: &quot;</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-5-2"><span class="linenos" data-linenos="2 "></span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+</span></code></pre></div>
+Si se escribe "Hola mundo" y se presiona la tecla <em>enter</em>, la cadena str almacenará sólo "Hola". Para que un objeto Scanner lea cadenas que contienen espacios, debemos usar el método <code>nextLine()</code>:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+</span></code></pre></div>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 

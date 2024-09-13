@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#conversiones-de-tipos-casting-entre-tipos-nativos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -655,6 +660,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2.7. Casting
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="027_Casting.html" class="md-nav__link md-nav__link--active">
         
@@ -665,6 +683,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conversiones-por-defecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conversiones por defecto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conversiones-forzosas-casting-entre-tipos-nativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conversiones forzosas (casting entre tipos nativos)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -756,9 +811,48 @@
                   
 
 
-  <h1>2.7. Casting</h1>
-
-
+<h1 id="conversiones-de-tipos-casting-entre-tipos-nativos">Conversiones de tipos (casting entre tipos nativos)<a class="headerlink" href="#conversiones-de-tipos-casting-entre-tipos-nativos" title="Permanent link">&para;</a></h1>
+<h2 id="conversiones-por-defecto">Conversiones por defecto<a class="headerlink" href="#conversiones-por-defecto" title="Permanent link">&para;</a></h2>
+<p>Las reglas de Java para saber el tipo de datos resultante de una expresión se siguen las siguientes reglas</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Si algún operando es</th>
+<th style="text-align: center;">El otro operando se transforma a</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">double</td>
+<td style="text-align: center;">double</td>
+</tr>
+<tr>
+<td style="text-align: center;">float</td>
+<td style="text-align: center;">float</td>
+</tr>
+<tr>
+<td style="text-align: center;">long</td>
+<td style="text-align: center;">long</td>
+</tr>
+<tr>
+<td style="text-align: center;">byte or short</td>
+<td style="text-align: center;">int</td>
+</tr>
+</tbody>
+</table>
+<p>Si se aplican dos reglas, se elige la que aparece primero en la tabla.</p>
+<h2 id="conversiones-forzosas-casting-entre-tipos-nativos">Conversiones forzosas (casting entre tipos nativos)<a class="headerlink" href="#conversiones-forzosas-casting-entre-tipos-nativos" title="Permanent link">&para;</a></h2>
+<p>Es una forma de convertir un número de un tipo a otro tipo de dato. Para hacerlo ponemos en paréntesis el tipo de dato al que queremos convertirlo.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="kt">byte</span><span class="w"> </span><span class="n">miByte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">byte</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="mi">14</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c1">//convierto la operación división que devuelve un int a byte //Otra forma</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="kt">float</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">8.0f</span><span class="p">;</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="c1">//convierto el tipo float a int</span>
+</span></code></pre></div>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
