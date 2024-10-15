@@ -895,8 +895,6 @@
       
         
       
-        
-      
     
     
     
@@ -1025,6 +1023,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    4.4. Creación de métodos
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="044_CreacionMetodos.html" class="md-nav__link md-nav__link--active">
         
   
@@ -1034,6 +1043,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividades
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1052,27 +1089,6 @@
   
   <span class="md-ellipsis">
     4.5. Recursividad
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Referencias.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Referencias
   </span>
   
 
@@ -1258,6 +1274,111 @@
 </ul>
 <p>Una vez visto esto, se puede enunciar que en Java se debe hablar de métodos y no de funciones, pues en Java estamos siempre obligados a crear un objeto para usar el método. Para que sea una función esta debe ser <code>static</code>, para que no requiera de un objeto para ser llamada.</p>
 <p>Una vez que hemos aclarado esto, podemos hacer uso, en cualquier circunstancia, de nuestros métodos. Nos queda ver qué es lo que pasa si llamamos a un método a sí mismo, ¿es posible?</p>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 401</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr> / <abbr title="Se han escrito programas simples.">CE2b</abbr>, <abbr title="Se han utilizado métodos y propiedades de los objetos.">CE2d</abbr>, <abbr title="Se han escrito llamadas a métodos estáticos.">CE2e</abbr>, <abbr title="Se han utilizado parámetros en la llamada a métodos.">CE2f</abbr>, <abbr title="Se ha utilizado el entorno integrado de desarrollo en la creación y compilación de programas simples.">CE2i</abbr>  / <abbr title="Escala de valores.">IC1</abbr> / 3p). Has de generar un programa que diga si se le concede una hipoteca a una persona o no. Para ello deberás generar tres métodos:</p>
+<ul>
+<li><code>edadOptima</code>: este método recibirá como parámetro la edad, que si es mayor de 18 podrá optar a un préstamo. Si es mayor de 65 se le denegará. No ha de mostrar mensaje. Devolverá si la edad es óptima o no.</li>
+<li><code>ingresosPersona</code>: se le introducirá el total de ingresos de una persona y el coste de la hipoteca que solicita. Si la hipoteca es mayor de un tercio de los ingresos debe denegarla.</li>
+<li><code>calculoHipoteca</code>: se le pasarán por parámetros los resultados obtenidos y deberá ver si se le concede o no. Debe mostrar un mensaje afirmativo, y en caso de que se deniegue mostrar las razones.</li>
+</ul>
+<p>Es obligatorio el uso de métodos y comentarios en <code>javadoc</code> para obtener la máxima puntuación del ejercicio.</p>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 402</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr> / <abbr title="Se han escrito programas simples.">CE2b</abbr>, <abbr title="Se han utilizado métodos y propiedades de los objetos.">CE2d</abbr>, <abbr title="Se han escrito llamadas a métodos estáticos.">CE2e</abbr>, <abbr title="Se han utilizado parámetros en la llamada a métodos.">CE2f</abbr>, <abbr title="Se ha utilizado el entorno integrado de desarrollo en la creación y compilación de programas simples.">CE2i</abbr>  / <abbr title="Escala de valores.">IC1</abbr> / 3p). Has de generar un programa que calcule el coste por niño en una excursión. Para ello se deberán programar los siguientes métodos:</p>
+<ul>
+<li><code>calculoAutobus</code>: este método recibirá como parámetro el número de niños. Ha de devolver el coste por niño del autobús.</li>
+<li><code>calculoEntradas</code>: este método recibirá como parámetro el número de niños. Ha de devolver el coste por niño por entrada.</li>
+<li><code>calculoExcursion</code>: se le pasarán por parámetros los resultados obtenidos y deberá calcular el total de cada niño en la excursión. Se deberá mostrar un mensaje en el que se indique el precio desglosado y el total por niño.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Info</p>
+<p>La forma de cobrar el autobús es la siguiente: si son 100 alumnos o más, el costo por cada alumno es de 65.0 euros; de 50 a 99 alumnos, el costo es de 70.5 euros, de 30 a 49, de 95.0 euros, y si son menos de 30, el costo del alquiler del autobús es de 400.0 euros, sin importar el número de alumnos. </p>
+<p>La forma de cobrar las entradas es la siguiente: si son 100 alumnos o más, el costo por cada alumno es de la mitad del coste base de la entrada; de 50 a 99 alumnos, el costo es dos terceras partes del coste base y menos de 50 es el coste base de la entrada. Este coste ha de estar parametrizado, y ha de ser un dato global y lo más protegido posible. Para la temporada 2023/2024 su coste es de 9.99€</p>
+</div>
+<p>Es obligatorio el uso de métodos y comentarios en <code>javadoc</code> para obtener la máxima puntuación del ejercicio.</p>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 403</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr> / <abbr title="Se han escrito programas simples.">CE2b</abbr>, <abbr title="Se han utilizado métodos y propiedades de los objetos.">CE2d</abbr>, <abbr title="Se han escrito llamadas a métodos estáticos.">CE2e</abbr>, <abbr title="Se han utilizado parámetros en la llamada a métodos.">CE2f</abbr>, <abbr title="Se ha utilizado el entorno integrado de desarrollo en la creación y compilación de programas simples.">CE2i</abbr>  / <abbr title="Escala de valores.">IC1</abbr> / 3p). Este programa calculará la nota media de un estudiante basándose en tres tipos de evaluaciones (exámenes, trabajos y participación). Deberás usar varios métodos para desglosar el cálculo de cada categoría. El programa deberá contener los siguientes métodos:</p>
+<ul>
+<li><code>calculoExamenes</code>: este método recibirá como parámetros las notas de los exámenes. Devolverá el promedio de los exámenes.</li>
+<li><code>calculoTrabajos</code>: este método recibirá como parámetro las notas de los trabajos. Devolverá el promedio de los trabajos.</li>
+<li><code>calculoParticipacion</code>: este método recibirá la nota de participación del alumno. Devolverá la nota de participación.</li>
+<li><code>calculoNotaFinal</code>: este método recibirá los resultados de los métodos anteriores y calculará la nota final del alumno. La nota final será una combinación ponderada: exámenes 50%, trabajos 40%, participación 10%. Se mostrará un desglose y el promedio final del alumno.</li>
+</ul>
+<p>Es obligatorio el uso de métodos y comentarios en <code>javadoc</code> para obtener la máxima puntuación del ejercicio.</p>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 404</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr> / <abbr title="Se han escrito programas simples.">CE2b</abbr>, <abbr title="Se han utilizado métodos y propiedades de los objetos.">CE2d</abbr>, <abbr title="Se han escrito llamadas a métodos estáticos.">CE2e</abbr>, <abbr title="Se han utilizado parámetros en la llamada a métodos.">CE2f</abbr>, <abbr title="Se ha utilizado el entorno integrado de desarrollo en la creación y compilación de programas simples.">CE2i</abbr>  / <abbr title="Escala de valores.">IC1</abbr> / 3p). Este programa calculará el Índice de Masa Corporal de una persona a partir de su peso y altura. Se usará una serie de métodos para hacer los cálculos y evaluar la categoría del IMC (bajo peso, normal, sobrepeso, etc.).El programa deberá contener los siguientes métodos:</p>
+<ul>
+<li><code>calculoIMC</code>: recibirá como parámetros el peso (en kg) y la altura (en metros). Devolverá el resultado del IMC utilizando la fórmula: IMC = peso / (altura * altura).</li>
+<li><code>clasificacionIMC</code>: recibirá como parámetro el resultado del IMC calculado. Devolverá la categoría correspondiente en base a los siguientes valores:<ul>
+<li>Menos de 18.5: Bajo peso</li>
+<li>Entre 18.5 y 24.9: Peso normal</li>
+<li>Entre 25 y 29.9: Sobrepeso</li>
+<li>30 o más: Obesidad</li>
+</ul>
+</li>
+<li><code>resultadoFinalIMC</code>: se le pasarán por parámetro el peso, la altura, el IMC y la clasificación del mismo, y deberá mostrar un mensaje con toda la información desglosada.</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">El IMC</p>
+<p>El IMC es un indicativo poco exacto de la apariencia de una persona. En este ejercicio se hace uso del mismo a título educativo, en ningún caso se pretende que el alumnado tenga una concepción negativa de sí mismo.</p>
+</div>
+<p>Es obligatorio el uso de métodos y comentarios en <code>javadoc</code> para obtener la máxima puntuación del ejercicio.</p>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 405</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr> / <abbr title="Se han escrito programas simples.">CE2b</abbr>, <abbr title="Se han utilizado métodos y propiedades de los objetos.">CE2d</abbr>, <abbr title="Se han escrito llamadas a métodos estáticos.">CE2e</abbr>, <abbr title="Se han utilizado parámetros en la llamada a métodos.">CE2f</abbr>, <abbr title="Se ha utilizado el entorno integrado de desarrollo en la creación y compilación de programas simples.">CE2i</abbr>  / <abbr title="Escala de valores.">IC1</abbr> / 3p). Este programa calculará el salario neto de un trabajador tras aplicar deducciones como impuestos y seguridad social. El programa deberá contener los siguientes métodos:</p>
+<ul>
+<li><code>calculoImpuestos</code>: este método recibirá como parámetro el salario bruto y el porcentaje de impuestos aplicables. Devolverá la cantidad descontada por impuestos.</li>
+<li><code>calculoSeguridadSocial</code>: este método recibirá como parámetro el salario bruto y el porcentaje que se descuenta para la seguridad social. Devolverá el descuento correspondiente.</li>
+<li><code>calculoSalarioNeto</code>: recibirá como parámetros el salario bruto, el importe de impuestos y el importe de seguridad social. Devolverá el salario neto del trabajador. Mostrará un desglose del salario bruto, las deducciones y el salario neto final.</li>
+</ul>
+<p>Es obligatorio el uso de métodos y comentarios en <code>javadoc</code> para obtener la máxima puntuación del ejercicio.</p>
+</li>
+<li>
+<p><strong><abbr title="Actividades de refuerzo.">AR</abbr> 406</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr> / <abbr title="Se han escrito programas simples.">CE2b</abbr>, <abbr title="Se han utilizado métodos y propiedades de los objetos.">CE2d</abbr>, <abbr title="Se han escrito llamadas a métodos estáticos.">CE2e</abbr>, <abbr title="Se han utilizado parámetros en la llamada a métodos.">CE2f</abbr>, <abbr title="Se ha utilizado el entorno integrado de desarrollo en la creación y compilación de programas simples.">CE2i</abbr>  / <abbr title="Escala de valores.">IC1</abbr> / 3p). Este programa convertirá una temperatura de grados Celsius a Fahrenheit y Kelvin. Utilizará varios métodos para descomponer el cálculo y mostrar los resultados. El programa deberá contener los siguientes métodos:</p>
+<ul>
+<li><code>convertirAFahrenheit</code>: este método recibirá como parámetro una temperatura en grados Celsius y devolverá su equivalente en grados Fahrenheit. La fórmula de conversión es: F = (C * 9/5) + 32.</li>
+<li><code>convertirAKelvin</code>: este método recibirá como parámetro una temperatura en grados Celsius y devolverá su equivalente en Kelvin. La fórmula de conversión es: K = C + 273.15.</li>
+<li><code>mostrarResultados</code>: este método recibirá como parámetros la temperatura en Celsius, Fahrenheit y Kelvin, y deberá mostrar un mensaje con los valores de las tres temperaturas de forma clara.</li>
+</ul>
+<p>Es obligatorio el uso de métodos y comentarios en <code>javadoc</code> para obtener la máxima puntuación del ejercicio.</p>
+</li>
+<li>
+<p><strong><abbr title="Prácticas">PR</abbr> 407</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr> / <abbr title="Se han escrito programas simples.">CE2b</abbr>, <abbr title="Se han utilizado métodos y propiedades de los objetos.">CE2d</abbr>, <abbr title="Se han escrito llamadas a métodos estáticos.">CE2e</abbr>, <abbr title="Se han utilizado parámetros en la llamada a métodos.">CE2f</abbr>, <abbr title="Se ha utilizado el entorno integrado de desarrollo en la creación y compilación de programas simples.">CE2i</abbr>  / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p). Desarrolla un programa que contenga:</p>
+<ol>
+<li>Un método que pida al usuario introducir números por teclado, haga la suma de éstos y muestre el resultado al salir del programa. El usuario controla si desea continuar o no ingresando números, ya que si inserta un 0 sale del bucle, el mensaje que se muestra al usuario iterativamente es: “Inserta un número (0 para salir)”. Al finalizar se muestra: “La suma de los valores es X”, donde X es el total.</li>
+<li>Agrega al programa anterior un método que de cada número introducido por parámetro diga si es par o impar. Se llamará <code>esPar</code>. </li>
+<li>Gracias al uso de variables y su definición, genera dos métodos que calculen de los números introducidos cuál es el máximo y cuál es el mínimo. Se llamarán <code>maxIntroducido</code> y <code>minIntroducido</code>.</li>
+</ol>
+<p>Es obligatorio el uso de métodos y comentarios en javadoc para obtener la máxima puntuación del ejercicio.</p>
+</li>
+<li>
+<p><strong><abbr title="Prácticas">PR</abbr> 408</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr> / <abbr title="Se han escrito programas simples.">CE2b</abbr>, <abbr title="Se han utilizado métodos y propiedades de los objetos.">CE2d</abbr>, <abbr title="Se han escrito llamadas a métodos estáticos.">CE2e</abbr>, <abbr title="Se han utilizado parámetros en la llamada a métodos.">CE2f</abbr>, <abbr title="Se ha utilizado el entorno integrado de desarrollo en la creación y compilación de programas simples.">CE2i</abbr>  / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p). Desarrolla un programa que muestre el siguiente menú:</p>
+<ol>
+<li>Entrantes</li>
+<li>Primeros</li>
+<li>Segundos</li>
+<li>Postres</li>
+<li>Salir</li>
+</ol>
+<p>El menú ha de devolver la opción selecciona. En función de esta, cada uno de ellos (salvo en el 5) deberás mostrar un mínimo de 3 opciones (a tu elección) cada opción con un precio diferente. Sería interesante que generases los siguientes métodos (o puede que otros):</p>
+<ul>
+<li><code>entrantes</code>: Muestra el menú de entrantes, no devuelve nada solo mensaje del plato seleccionado.</li>
+<li><code>primerosPlatos</code>: Muestra el menú de primeros platos, no devuelve nada solo mensaje del plato seleccionado.</li>
+<li><code>segundosPlatos</code>: Muestra el menú de segundos platos, no devuelve nada solo mensaje del plato seleccionado.</li>
+<li><code>postres</code>: entrantes: Muestra el menú de postres, no devuelve nada solo mensaje del plato seleccionado.</li>
+</ul>
+<p>Al final se ha de generar otro método que muestre la cuenta total. Es obligatorio el uso de métodos y comentarios en <code>javadoc</code> para obtener la máxima puntuación del ejercicio.</p>
+<div class="admonition info">
+<p class="admonition-title">Aclaración</p>
+<p>Un menú ha de estar compuesto por al menos un primero o un segundo. Esto ha de servirte como indicador para poder salir del menú. El menú ha de mostrarse hasta que se marque Salir, pero el precio no se mostrará si no se ha rellenado un menú válido.</p>
+<p>Se considerará seleccionado cuando se entre al menú de opciones. No se contempla entrar y no elegir.</p>
+</div>
+</li>
+</ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
