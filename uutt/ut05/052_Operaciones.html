@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#operaciones-estandar-con-arrays" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1153,6 +1158,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    5.2. Operaciones estándar con arrays
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="052_Operaciones.html" class="md-nav__link md-nav__link--active">
         
@@ -1163,6 +1181,118 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#insercion-posibles-soluciones-con-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inserción. Posibles soluciones con Java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#borrado-posibles-soluciones-con-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      Borrado. Posibles soluciones con Java
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Borrado. Posibles soluciones con Java">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-partir-de-java-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      A partir de Java 8
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-por-indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eliminar por índice
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ordenacion-burbuja-e-insercion-directa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ordenación: Burbuja e inserción directa
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordenación: Burbuja e inserción directa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metodo-de-la-burbuja-bubble-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      Método de la burbuja (Bubble sort)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodo-de-insercion-insertion-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      Método de inserción (Insertion Sort)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodo-de-seleccion-selection-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      Método de selección (Selection Sort)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#busqueda-secuencial-y-binaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Búsqueda: Secuencial y binaria
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1233,9 +1363,167 @@
                   
 
 
-  <h1>5.2. Operaciones estándar con arrays</h1>
-
-
+<h1 id="operaciones-estandar-con-arrays">Operaciones estándar con arrays<a class="headerlink" href="#operaciones-estandar-con-arrays" title="Permanent link">&para;</a></h1>
+<h2 id="insercion-posibles-soluciones-con-java">Inserción. Posibles soluciones con Java<a class="headerlink" href="#insercion-posibles-soluciones-con-java" title="Permanent link">&para;</a></h2>
+<p>Para acceder a cada elemento del array se utiliza el nombre del array y un índice entre corchetes que indica la posición que ocupa el elemento dentro del array. Se puede utilizar como índice un valor entero, una variable de tipo entero o una expresión de tipo entero. Un elemento de un array se puede utilizar igual que cualquier otra variable. Se puede hacer con ellos las mismas operaciones que se pueden hacer con el resto de variables (incremento, decremento, operaciones aritméticas, comparaciones, etc).</p>
+<p>Si se intenta acceder a un elemento que está fuera de los límites del array (un elemento con índice negativo o con índice mayor que el que corresponden al último elemento del array), el compilador no avisa del error. El error se producirá durante la ejecución. En ese caso se lanza una excepción <code>java.lang.ArrayIndexOutOfBoundsException</code>. Se puede saber el número de elementos del array mediante el atributo <code>length</code>. Podemos utilizar <code>length</code> para comprobar el rango del array y evitar errores de acceso.</p>
+<p>Por ejemplo, para asignar un valor a un elemento del array que se lee por teclado:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ejemploOperaciones</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">valor</span><span class="p">;</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="o">[]=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="mi">10</span><span class="o">]</span><span class="p">;</span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Posición:&quot;</span><span class="p">);</span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w"> </span><span class="c1">// Pedimos la posición del array al que vamos a acceder</span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">){</span><span class="w"> </span><span class="c1">// Si la posición está dentro del array</span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Valor:&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Pedimos el valor</span>
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span><span class="w">            </span><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span><span class="w">            </span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="w"> </span><span class="n">valor</span><span class="p">;</span>
+</span><span id="__span-0-14"><span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span><span id="__span-0-15"><span class="linenos" data-linenos="15 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Posición no válida&quot;</span><span class="p">);</span>
+</span><span id="__span-0-16"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-17"><span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-18"><span class="linenos" data-linenos="18 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Para recorrer un array se utiliza una instrucción iterativa (normalmente una instrucción <code>for</code>, aunque también puede hacerse con <code>while</code> o <code>do…while</code>) utilizando una variable entera como índice que tomará valores desde el primer elemento al último o desde el último al primero. Por ejemplo, el siguiente fragmento de programa Java declara un array de 7 elementos de tipo <code>double</code> y le asigna valores iniciales. A continuación recorre el array, , utilizando la instrucción <code>for</code>, para mostrar por pantalla el contenido del array.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">notas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">2.3</span><span class="p">,</span><span class="w"> </span><span class="mf">8.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3.2</span><span class="p">,</span><span class="w"> </span><span class="mf">9.5</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5.5</span><span class="p">,</span><span class="w"> </span><span class="mf">7.0</span><span class="p">};</span><span class="w"> </span><span class="c1">//array de 7 elementos</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">notas</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">//se muestra cada elemento del array</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos="4 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Para evitar errores de acceso al array es recomendable utilizar length para recorrer el array completo.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">notas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">2.3</span><span class="p">,</span><span class="w"> </span><span class="mf">8.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3.2</span><span class="p">,</span><span class="w"> </span><span class="mf">9.5</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5.5</span><span class="p">,</span><span class="w"> </span><span class="mf">7.0</span><span class="p">};</span><span class="w"> </span><span class="c1">//array de 7 elementos</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">notas</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">notas</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">//se muestra cada elemento del array</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos="4 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>A partir de Java versión 5 se incorpora una instrucción <code>for</code> mejorada para recorrer arrays y contenedores en general. Permite acceder secuencialmente a cada elemento del array. La sintaxis general es:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="k">for</span><span class="p">(</span><span class="n">tipo</span><span class="w"> </span><span class="n">nombreDeVariable</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">nombreArray</span><span class="p">){</span>
+</span><span id="__span-3-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="err">…</span>
+</span><span id="__span-3-3"><span class="linenos" data-linenos="3 "></span><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li>tipo: indica el tipo de datos que contiene el array.</li>
+<li>nombreDeVariable: variable a la que cada iteración se le asigna el valor de cada elemento del array. Está definida dentro del for por lo que solo es accesible dentro de él.</li>
+<li>nombreArray: es el nombre del array que vamos a recorrer.</li>
+</ul>
+<h2 id="borrado-posibles-soluciones-con-java">Borrado. Posibles soluciones con Java<a class="headerlink" href="#borrado-posibles-soluciones-con-java" title="Permanent link">&para;</a></h2>
+<p>Las arrays en Java tienen longitudes fijas. Esto significa que tienen un número fijo de valores de un solo tipo. La longitud de una arrays se decide en el momento de su creación. Después de la creación, su duración es fija.</p>
+<p>Dado que la longitud de la array es fija, no existe una forma estándar de eliminar elementos de ella. Sin embargo, puede crear una nueva array que contenga todos los elementos originales de la array excepto el que desea eliminar. Hay varias formas de lograr eso en Java.</p>
+<h3 id="a-partir-de-java-8">A partir de Java 8<a class="headerlink" href="#a-partir-de-java-8" title="Permanent link">&para;</a></h3>
+<p>También puede aprovechar Stream API para eliminar un elemento de una array. La idea es convertir la array en una secuencia secuencial, filtrar la secuencia para eliminar el elemento dado y acumular los elementos restantes en una nueva array utilizando un colector.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span>
+</span><span id="__span-4-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="nf">removeElement</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">stream</span><span class="p">(</span><span class="n">arr</span><span class="p">).</span><span class="na">filter</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">item</span><span class="p">).</span><span class="na">toArray</span><span class="p">();</span>
+</span><span id="__span-4-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">};</span>
+</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">removeElement</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">item</span><span class="p">);</span>
+</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">arr</span><span class="p">));</span>
+</span><span id="__span-4-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-12"><span class="linenos" data-linenos="12 "></span><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="eliminar-por-indice">Eliminar por índice<a class="headerlink" href="#eliminar-por-indice" title="Permanent link">&para;</a></h3>
+<p>Si tiene el índice del elemento a eliminar, puede usar el <code>System.arraycopy()</code> método para garantizar un mejor rendimiento. La idea es asignar una nueva array de tamaño uno menos que la array original. A continuación, puede realizar dos llamadas al <code>System.arraycopy()</code> para copiar los elementos de la array en la nueva array antes y después de ese índice.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span>
+</span><span id="__span-5-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="nf">removeElement</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[</span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+</span><span id="__span-5-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">arraycopy</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="p">);</span>
+</span><span id="__span-5-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">arraycopy</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-5-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-5-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+</span><span id="__span-5-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;B&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;D&quot;</span><span class="p">};</span>
+</span><span id="__span-5-13"><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-5-14"><span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">removeElement</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="p">);</span>
+</span><span id="__span-5-15"><span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">arr</span><span class="p">));</span>
+</span><span id="__span-5-16"><span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-17"><span class="linenos" data-linenos="17 "></span><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">¿Cómo "borramos"?</p>
+<p>Como se ha visto, en Java el tamaño de los arrays es fijo y se define en memoria, por lo que <strong>si queremos borrar un elemento debemos rehacer el array</strong>. <strong>Si no se quiere instanciar un nuevo array, para eliminar el valor, se puede igualar al valor por defecto que se decida</strong>. De este modo, el valor se podría, mediante programación, no tener en cuenta y no supondría el tener que rehacer el array.</p>
+</div>
+<h2 id="ordenacion-burbuja-e-insercion-directa">Ordenación: Burbuja e inserción directa<a class="headerlink" href="#ordenacion-burbuja-e-insercion-directa" title="Permanent link">&para;</a></h2>
+<p>Uno de los procedimientos más comunes y útiles en el procesamiento de datos, es la ordenación de los mismos. Se considera <strong>ordenar el proceso de reorganizar un conjunto dado de objetos en una secuencia determinada</strong>. El objetivo de este proceso generalmente es facilitar la búsqueda de uno o más elementos pertenecientes a un conjunto. Son ejemplos de datos ordenados las listas de alumnos matriculados en una cierta asignatura, las listas del censo, los índices alfabéticos de los libros, las guías telefónicas, etc. Esto quiere decir que muchos problemas están relacionados de alguna forma con el proceso de ordenación. Es por lo que la ordenación es un problema a considerar. </p>
+<p>La ordenación, tanto numérica como alfanumérica, sigue las mismas reglas que empleamos nosotros en la vida normal. Esto es, un dato es mayor que otro cuando su valor es más grande, y una cadena es mayor que otra cuando está después por orden alfabético.</p>
+<p>En esta unidad no trataremos de analizar exhaustivamente todos los métodos de ordenación y ver sus prestaciones de eficiencia, rapidez, etc. sino que simplemente analizaremos desde el punto de vista práctico los métodos más comunes para la ordenación de arrays.</p>
+<h3 id="metodo-de-la-burbuja-bubble-sort">Método de la burbuja (Bubble sort)<a class="headerlink" href="#metodo-de-la-burbuja-bubble-sort" title="Permanent link">&para;</a></h3>
+<p>Hay muchas formas de ordenar datos, pero una de las más conocidas es la ordenación por el método de la burbuja. Consiste en comparar pares de elementos adyacentes en un array y si están desordenados intercambiarlos hasta que estén todos ordenados. Si a es el array a ordenar, se realizan <code>a.length-1</code> vueltas o pasadas. Si los elementos adyacentes están desordenados se intercambian.</p>
+<figure>
+  <a class="glightbox" href="../../img/ut05/02_Burbuja.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Método de la burbuja" src="../../img/ut05/02_Burbuja.png" width="500" /></a>
+</figure>
+<p>El código en Java correspondiente al algoritmo de ordenación por el método burbuja sería el siguiente:</p>
+<figure>
+  <a class="glightbox" href="../../img/ut05/03_Burbuja.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Método de la burbuja" src="../../img/ut05/03_Burbuja.png" width="500" /></a>
+</figure>
+<p>No es un buen algoritmo de ordenación por su elevado tiempo de ejecución, solamente es recomendable su uso para ordenar listas con un número pequeño de elementos.</p>
+<h3 id="metodo-de-insercion-insertion-sort">Método de inserción (Insertion Sort)<a class="headerlink" href="#metodo-de-insercion-insertion-sort" title="Permanent link">&para;</a></h3>
+<p>El método de ordenación por inserción consiste en recorrer todo el array comenzando desde el segundo elemento hasta el final. Para cada elemento, se trata de colocarlo en el lugar correcto entre todos los elementos anteriores a él o sea entre los elementos a su izquierda en el array. Dada una posición actual p, el algoritmo se basa en que los elementos <code>a[0], a[1]</code>, ..., <code>a[p-1]</code> ya están ordenados.</p>
+<figure>
+  <a class="glightbox" href="../../img/ut05/04_Insercion.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Método de inserción" src="../../img/ut05/04_Insercion.png" width="500" /></a>
+</figure>
+<p>Este método también puede ser optimizado: en lugar de intercambiar el elemento analizado con cada uno de los mayores hallados a su izquierda, puede modificarse el algoritmo para que el elemento analizado solo se inserte en su posición final de forma que se evitan las asignaciones intermedias innecesarias. Se trata del método de ordenación conocido como <strong>Inserción Directa</strong> (<em>Direct Insertion Sort</em>). El código es el siguiente:</p>
+<figure>
+  <a class="glightbox" href="../../img/ut05/06_CodigoInsercio.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Método de inserción" src="../../img/ut05/06_CodigoInsercio.png" width="500" /></a>
+</figure>
+<h3 id="metodo-de-seleccion-selection-sort">Método de selección (Selection Sort)<a class="headerlink" href="#metodo-de-seleccion-selection-sort" title="Permanent link">&para;</a></h3>
+<p>El método de ordenación por selección consiste en realizar los siguientes
+pasos:</p>
+<ul>
+<li>Se busca el elemento más pequeño del array y se coloca en la primera posición.</li>
+<li>Entre los restantes, se busca el elemento más pequeño y se coloca en la segunda posición.</li>
+<li>Entre los restantes, se busca el elemento más pequeño y se coloca en la tercera posición.</li>
+<li>…</li>
+<li>Este proceso se repite hasta colocar el último elemento.</li>
+</ul>
+<figure>
+  <a class="glightbox" href="../../img/ut05/07_Sort.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Método de selección" src="../../img/ut05/07_Sort.png" width="500" /></a>
+</figure>
+<p>El código en Java para este algoritmo de ordenación es el siguiente:</p>
+<figure>
+  <a class="glightbox" href="../../img/ut05/08_Sort.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Método de selección" src="../../img/ut05/08_Sort.png" width="500" /></a>
+</figure>
+<h3 id="busqueda-secuencial-y-binaria">Búsqueda: Secuencial y binaria<a class="headerlink" href="#busqueda-secuencial-y-binaria" title="Permanent link">&para;</a></h3>
+<p>Java define la clase Arrays con métodos que permiten realizar operaciones de ordenación y búsqueda en objetos de tipo array. Estos métodos se pueden utilizar con todos los tipos primitivos, <code>String</code> y con cualquier otro tipo de objeto.
+Para ordenar arrays de cualquier tipo Java dispone del método <code>sort</code> de la clase <code>Arrays</code>.</p>
+<p>Para utilizarlo es necesario incluir el <code>import</code>:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span>import java.util.Arrays;
+</span></code></pre></div>
+Por ejemplo, dado el siguiente array de Strings:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span>String [] nombres = {&quot;juan&quot;, &quot;pedro&quot;, &quot;ana&quot;, &quot;maria&quot;, &quot;felipe&quot;, &quot;luis&quot;, &quot;miguel&quot;}; 
+</span></code></pre></div>
+para ordenarlo de forma ascendente escribiremos la instrucción: <code>Arrays.sort(nombres)</code>;</p>
+<p>Otros métodos de la clase Arrays son:</p>
+<ul>
+<li><code>Arrays.binarySearch(array-de-datos, clave)</code>. Busca la clave indicada en el array de números enteros. <code>Arrays.binarySearch(numeros, 1991)</code> busca el número 1991 en el array números.</li>
+<li><code>Arrays.fill(array-de-datos, dato)</code>. Rellena el array con el valor dado. Se puede utilizar con todo los tipos primitivos, String y con cualquier otro tipo de objeto. <code>Arrays.fill(numeros, 5)</code> rellena con el valor 5 todo el array números.</li>
+<li><code>Arrays.fill(array-de-datos, dato, inicio, fin)</code>. Rellena el array con el valor dado,
+indicando la posición inicial y final. <code>Arrays.fill(numeros, 5, 0, 5)</code> rellena con el valor 5 desde la posición 0 hasta la posición 5 del array numeros.</li>
+<li><code>Arrays.copyOf(array-origen, longitud)</code>. Construye y devuelve una copia de <code>array-origen</code> con la longitud especificada. Si la longitud del nuevo array es menor que la del original, solo se copian los elementos que caben. En caso contrario, los elementos extras se inicializan por defecto.
+    <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos="1 "></span>int[] t = {1, 2, 1, 6, 23}; //array origen
+</span><span id="__span-8-2"><span class="linenos" data-linenos="2 "></span>int[] a, b; //arrays destino
+</span><span id="__span-8-3"><span class="linenos" data-linenos="3 "></span>a = Arrays.copyOf(t, 3); //a = [1, 2, 1]
+</span><span id="__span-8-4"><span class="linenos" data-linenos="4 "></span>b = Arrays.copyOf(t, 10); //b = [1, 2, 1, 6, 23, 0, 0, 0, 0, 0]
+</span></code></pre></div></li>
+<li><code>Arrays.copyOfRange(array-origen, desde, hasta)</code>. Crea y devuelve un array donde se han copiado los elementos de array-origen comprendidos entre los índices desde y hasta, sin incluir este último.
+    <div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos="1 "></span>int[] t = {7, 5, 3, 1, 0, -2};
+</span><span id="__span-9-2"><span class="linenos" data-linenos="2 "></span>int[] a = Arrays.copyOfRange(t, 1, 4); //a = [5, 3, 1]
+</span></code></pre></div></li>
+</ul>
+<p><code>Arrays.sort</code> ordena de forma ascendente (de menor a mayor). Para ordenar un array de forma descendente (de mayor a menor) hay que indicarlo utilizando el método <code>reverseOrder()</code> de la clase <code>Collections</code>. Como en este tema no se trabaja con colecciones, este método lo deberías de programar y tenerlo en vuestro fichero de métodos de utilidad.    </p>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 

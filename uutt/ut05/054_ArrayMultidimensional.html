@@ -86,6 +86,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#arrays-multidimensionales" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1193,6 +1198,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    5.4. Array multidimensional
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="054_ArrayMultidimensional.html" class="md-nav__link md-nav__link--active">
         
@@ -1203,6 +1221,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#concepto-de-matriz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepto de matriz
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inicializacion-de-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inicialización de matrices
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1231,9 +1286,35 @@
                   
 
 
-  <h1>5.4. Array multidimensional</h1>
-
-
+<h1 id="arrays-multidimensionales">Arrays multidimensionales<a class="headerlink" href="#arrays-multidimensionales" title="Permanent link">&para;</a></h1>
+<h2 id="concepto-de-matriz">Concepto de matriz<a class="headerlink" href="#concepto-de-matriz" title="Permanent link">&para;</a></h2>
+<p>Un array en Java puede tener más de una dimensión. El caso más general son los arrays bidimensionales también llamados matrices o tablas. La dimensión de un array la determina el número de índices necesarios para acceder a sus elementos. Los vectores que hemos visto hasta ahora son arrays unidimensionales porque solo utilizan un índice para acceder a cada elemento. Pero una matriz necesita dos índices para el acceso a sus elementos. </p>
+<p>Gráficamente podemos representar una matriz como una tabla de n filas y m columnas cuyos elementos son todos del mismo tipo. La siguiente figura representa un array denominado M de 3 filas y 5 columnas:</p>
+<figure>
+  <a class="glightbox" href="../../img/ut05/10_Matriz.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Método de selección" src="../../img/ut05/10_Matriz.png" width="500" /></a>
+</figure>
+<p>Pero en realidad una matriz en Java es un array de arrays. Gráficamente podemos representar la disposición real en memoria del array anterior así:</p>
+<figure>
+  <a class="glightbox" href="../../img/ut05/11_Matriz.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Método de selección" src="../../img/ut05/11_Matriz.png" width="500" /></a>
+</figure>
+<p>La longitud del array M (<code>M.lentgh</code>) es 3. La longitud de cada fila del array (<code>M[i].length</code>) es 5. Para acceder a cada elemento de la matriz se utilizan dos índices. El primero indica la fila y el segundo la columna. De esta forma vemos que el elemento <code>M[1][3]</code> tiene valor 8.
+Se crean de forma similar a los arrays unidimensionales, añadiendo un índice. Por ejemplo, para declarar una matriz de datos de tipo int llamada ventas de 4 filas y 6 columnas:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>int [][] ventas = new int[4][6];
+</span></code></pre></div>
+<h2 id="inicializacion-de-matrices">Inicialización de matrices<a class="headerlink" href="#inicializacion-de-matrices" title="Permanent link">&para;</a></h2>
+<p>Un array es un objeto, por lo tanto, cuando se crea, a sus elementos se les asigna automáticamente un valor inicial.
+También podemos dar otros valores iniciales al array cuando se crea. Los valores iniciales se escriben entre llaves separados por comas. Los valores que se le asignen a cada fila aparecerán a su vez entre llaves separados por comas. El número de valores determina el tamaño de la matriz.</p>
+<p>Por ejemplo: <code>int [][] números = {{6,7,5}, {3, 8, 4}, {1,0,2}, {9,5,2}};</code></p>
+<p>se crea la matriz números de tipo int, de 4 filas y 3 columnas, y se le asignan esos valores iniciales.</p>
+<div class="admonition note">
+<p class="admonition-title">Recorriendo Matrices</p>
+<p>Para recorrer una matriz se anidan dos bucles <code>for</code>. En general, para recorrer un array multidimensional se anidan tantas instrucciones <code>for</code> como dimensiones tenga el array.</p>
+</div>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
