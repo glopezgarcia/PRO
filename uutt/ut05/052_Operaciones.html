@@ -1290,6 +1290,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividades
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1816,6 +1825,66 @@ indicando la posición inicial y final. <code>Arrays.fill(numeros, 5, 0, 5)</cod
 </span></code></pre></div></li>
 </ul>
 <p><code>Arrays.sort</code> ordena de forma ascendente (de menor a mayor). Para ordenar un array de forma descendente (de mayor a menor) hay que indicarlo utilizando el método <code>reverseOrder()</code> de la clase <code>Collections</code>. Como en este tema no se trabaja con colecciones, este método lo deberías de programar y tenerlo en vuestro fichero de métodos de utilidad.    </p>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 503</strong> (<abbr title="Escribe programas que manipulen información seleccionando y utilizando tipos avanzados de datos.">RA6</abbr> /<abbr title="Se han escrito programas que utilicen matrices (arrays).">CE6a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Crea un programa que guarde en un array 10 números enteros leídos desde el teclado. A continuación se deberá recorrer el array y calcular cuántos números son positivos y cuántos negativos y así como sus respectivos promedios (medias).</p>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 504</strong> (<abbr title="Escribe programas que manipulen información seleccionando y utilizando tipos avanzados de datos.">RA6</abbr> /<abbr title="Se han escrito programas que utilicen matrices (arrays).">CE6a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Genera un programa que lea 5 números por entrada estándar y los muestre por pantalla en orden inverso al introducido.</p>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 505</strong> (<abbr title="Escribe programas que manipulen información seleccionando y utilizando tipos avanzados de datos.">RA6</abbr> /<abbr title="Se han escrito programas que utilicen matrices (arrays).">CE6a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Realiza un programa que lea por teclado la nota de los alumnos de una clase y calcule la nota media del grupo. También debe mostrar los alumnos con notas superiores a la media. El número de alumnos se lee por teclado. El array debe terminar ordenado de menor a mayor nota.</p>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 506</strong> (<abbr title="Escribe programas que manipulen información seleccionando y utilizando tipos avanzados de datos.">RA6</abbr> /<abbr title="Se han escrito programas que utilicen matrices (arrays).">CE6a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) En nuestro país cada persona está identificada con un DNI en el que figura un número y una letra, por ejemplo 56999545-W. Crea un programa que calcule la letra de un DNI a partir del número que introduzca el usuario. Es decir, se debe pedir el DNI sin la letra por teclado y el programa nos devolverá el DNI completo (con la letra). Para calcular la letra, se debe tomar el resto de dividir nuestro número de DNI entre 23. El resultado debe estar por tanto entre 0 y 22.</p>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 507</strong> (<abbr title="Escribe programas que manipulen información seleccionando y utilizando tipos avanzados de datos.">RA6</abbr> /<abbr title="Se han escrito programas que utilicen matrices (arrays).">CE6a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) En teoría hemos visto el método Array.equals. Imagina que la clase Arrays no existe. Implementa tú el método equals que compare si dos arrays pasados por parámetro son iguales (mismos elementos en el mismo orden).</p>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 508</strong> (<abbr title="Escribe programas que manipulen información seleccionando y utilizando tipos avanzados de datos.">RA6</abbr> /<abbr title="Se han escrito programas que utilicen matrices (arrays).">CE6a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Implementa otra versión del método equals que compare si dos arrays son iguales, pero ahora teniendo en cuenta que dos arrays son iguales si tienen los mismos elementos, sin importar el orden.</p>
+<div class="admonition info">
+<p class="admonition-title">Ayuda</p>
+<p>Puedes hacerlo ordenando primero los arrays y luego comparándolos elemento a elemento como hicimos en el ejercicio 9 o puedes hacerlo creando en el método un nuevo array que realice un seguimiento de las posiciones que ya han sido comprobadas y no las tenga en cuenta.</p>
+</div>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 509</strong> (<abbr title="Escribe programas que manipulen información seleccionando y utilizando tipos avanzados de datos.">RA6</abbr> /<abbr title="Se han escrito programas que utilicen matrices (arrays).">CE6a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Crea un método para comprobar si un array contiene otro. El método devuelve true si el array fuente está contenido en el array destino, es decir, si todos sus elementos están en el array destino.
+    <div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><span class="linenos" data-linenos="1 "></span>public static boolean isArrayOn(int[] src, int [] dst) {}
+</span></code></pre></div></p>
+</li>
+<li><strong><abbr title="Actividades de clase.">AC</abbr> 510</strong> (<abbr title="Escribe programas que manipulen información seleccionando y utilizando tipos avanzados de datos.">RA6</abbr> /<abbr title="Se han escrito programas que utilicen matrices (arrays).">CE6a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Crea un programa que dado un array insertado por el usuario, lea los valores, los inserte en un array, ordene el array en orden ascendente y muestre por pantalla el array ordenado. Para ordenar el array, deberás copiar el array que se pasa por parámetro en un nuevo array, ordenar ese nuevo array y devolverlo.
+    <div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><span class="linenos" data-linenos="1 "></span>public static int[] ordenarArray(int[] array) {}
+</span></code></pre></div></li>
+<li>
+<p><strong><abbr title="Prácticas">PR</abbr> 511</strong> (<abbr title="Escribe programas que manipulen información seleccionando y utilizando tipos avanzados de datos.">RA6</abbr> /<abbr title="Se han escrito programas que utilicen matrices (arrays).">CE6a</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p) Vamos a crear una clase últil, como las que encontramos dentro del paquete java.util relacionadas con arrays. Llama a esta clase <code>ArrayOperations.java</code>. Dentro crearemos métodos estáticos, por tanto, asegúrate que sea una clase estática y nadie pueda llamar al constructor. Al ser estáticos los métodos, se utilizarán de la forma <code>ArrayOperations.reverse(array)</code>. La clase debe incluir los siguientes métodos (algunos realizados en prácticas anteriores):</p>
+<ul>
+<li>a. Método print que imprima el array con formato [1, 2, 3]. No utilices el método <code>Arrays.toString</code>, se trata de que lo programes tú.</li>
+<li>b. El método reverse. Invierto un array.</li>
+<li>c. Un método que devuelva el máximo elemento del array, llamado max. public static int max(int[] array)</li>
+<li>d. Un método que devuelve el mínimo elemento del array, llamado min. public static int min(int[] array)</li>
+<li>e. Método que realice la suma del array. public static int sum(int[] array)</li>
+<li>f. El método equals que devuelva un booleano si dos arrays son iguales.</li>
+<li>g. El método equals, llamado equalsWithoutOrder. Que comprueba si dos arrays son iguales sin importar el orden. [1,2,4,3] es igual a [1,2,3,4]</li>
+<li>h. Método isArrayOn (<strong>AC509</strong>).</li>
+<li>i. Método sort (<strong><abbr title="Actividades de clase.">AC</abbr> 510</strong>). Este método se modifica ligeramente, ya que no hay que crear un nuevo array y devolverlo. Se ordena el array pasado por parámetro. <code>public static void sort(int[] array)</code></li>
+<li>j. Método copy, que copie el array fuente en el destino. En este método cada array apunta a una referencia distinta. <code>public static void copy(int[] src, int[] dst)</code></li>
+<li>k. Método removeOddNumbers que elimine del array los números impares. Es decir, cuando encuentre un número impar establezca un 0 en la celda. <code>public static void removeOddNumbers(int[] array)</code> Por ejemplo: [1,2,3] → [0,2,0]</li>
+</ul>
+</li>
+<li>
+<p><strong><abbr title="Prácticas">PR</abbr> 512</strong> (<abbr title="Escribe programas que manipulen información seleccionando y utilizando tipos avanzados de datos.">RA6</abbr> /<abbr title="Se han escrito programas que utilicen matrices (arrays).">CE6a</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p) Se solicita crear un programa que haga las veces de una libreta de profesor. Para ello se deberá trabajar con Arrays y métodos. El programa ha de realizar las siguientes funciones:</p>
+<ul>
+<li>Poder poner notas</li>
+<li>Sacar la nota más alta y la posición.</li>
+<li>Calcular la media de la clase quitando la nota más alta y más baja.</li>
+<li>Borrar notas pero no la posición</li>
+<li>Actualizar una nota en concreto</li>
+</ul>
+<p>Se ha de usar todo lo aprendido en Arrays y en el manejo de funciones.</p>
+</li>
+</ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
