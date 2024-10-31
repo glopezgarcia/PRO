@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#destructores" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1255,7 +1260,7 @@
             
   
   <span class="md-ellipsis">
-    UT 06. Introducción a la programación orientada a objetos.
+    UT 06. Introducción a la POO.
   </span>
   
 
@@ -1265,7 +1270,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            UT 06. Introducción a la programación orientada a objetos.
+            UT 06. Introducción a la POO.
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1450,6 +1455,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    6.8. Destructores
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="068_Destructores.html" class="md-nav__link md-nav__link--active">
         
@@ -1460,6 +1478,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#finalizadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finalizadores
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1515,6 +1561,73 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UT 07. POO avanzada. Herencia, polimorfismo, interfaces.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            UT 07. POO avanzada. Herencia, polimorfismo, interfaces.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07/ResumenUT.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Propuesta didáctica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1530,9 +1643,27 @@
                   
 
 
-  <h1>6.8. Destructores</h1>
-
-
+<h1 id="destructores">Destructores<a class="headerlink" href="#destructores" title="Permanent link">&para;</a></h1>
+<p>En C++ los objetos se crean con new y para eliminarlos de la memoria se emplea la instrucción <code>delete</code>. Es decir, es responsabilidad del programador eliminar la memoria que ocupaban los objetos que se van a dejar de usar. La instrucción <code>delete</code> de C++ llama al destructor de la clase, que es una función que se encarga de eliminar adecuadamente el objeto.</p>
+<p>La sorpresa de los programadores de C++ que empiezan a trabajar en Java es que no hay instrucción <code>delete</code> en Java. La duda está entonces en determinar cuándo se libera la memoria que ocupa un objeto.</p>
+<p>En Java hay un recolector de basura (<code>garbage collector</code>) que se encarga de gestionar los objetos que se dejan de usar y de eliminarlos de memoria. Por lo general este proceso de recolección de basura trabaja cuando detecta que un objeto hace demasiado tiempo que no se utiliza en un programa. Se trata de una destrucción por defecto.</p>
+<p>Se puede forzar la eliminación de un objeto asignándole el valor <code>null</code>, pero eso no equivale al <code>delete</code> de C++ que eliminaba el objeto a la vez que liberaba la memoria. Con <code>null</code> la memoria no queda libre inmediatamente, sino que pasa un cierto tiempo impredecible hasta su vaciado.</p>
+<h2 id="finalizadores">Finalizadores<a class="headerlink" href="#finalizadores" title="Permanent link">&para;</a></h2>
+<p><code>finalize()</code> es equivalente a los destructores en C++. Es un método que es llamado antes de eliminar definitivamente el objeto para hacer limpieza final.</p>
+<p>Este método de finalización puede generar problemas de rendimiento y no garantizan que su ejecución se produzca de forma inmediata. Su uso está totalmente desaconsejado (la versión 9 del JDK ha marcado el método <code>finalize()</code> como <code>Deprecated</code><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>).</p>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>La directiva <code>deprecated</code> permite indicar que una función, tipo o cualquier otro identificador puede que deje de admitirse en una versión futura o que no se deba seguir utilizando.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

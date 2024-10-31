@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#creacion-de-clases" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1255,7 +1260,7 @@
             
   
   <span class="md-ellipsis">
-    UT 06. Introducción a la programación orientada a objetos.
+    UT 06. Introducción a la POO.
   </span>
   
 
@@ -1265,7 +1270,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            UT 06. Introducción a la programación orientada a objetos.
+            UT 06. Introducción a la POO.
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1366,6 +1371,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    6.4. Creación de clases
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="064_CrearClases.html" class="md-nav__link md-nav__link--active">
         
@@ -1376,6 +1394,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definicion-de-metodos-de-clase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definición de métodos de clase
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1515,6 +1561,73 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UT 07. POO avanzada. Herencia, polimorfismo, interfaces.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            UT 07. POO avanzada. Herencia, polimorfismo, interfaces.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07/ResumenUT.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Propuesta didáctica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1530,9 +1643,55 @@
                   
 
 
-  <h1>6.4. Creación de clases</h1>
-
-
+<h1 id="creacion-de-clases">Creación de clases<a class="headerlink" href="#creacion-de-clases" title="Permanent link">&para;</a></h1>
+<p>Cuando se definen los datos de una determinada clase, se debe indicar el tipo de propiedad o atributo que es (<code>String</code>, <code>int</code>, <code>double</code>, <code>char</code>, ...) y el especificador de acceso (<code>public</code>, <code>private</code>, ...).</p>
+<p><div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="kd">class</span> <span class="nc">Persona</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span><span class="w"> </span><span class="c1">//Se puede acceder desde cualquier clase</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">contrasenya</span><span class="p">;</span><span class="w"> </span><span class="c1">//Solo se puede acceder desde la clase Persona</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span><span class="kd">protected</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">direccion</span><span class="p">;</span><span class="w"> </span><span class="c1">//A esta propiedad acceden tanto esta clase como sus descendientes</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos="5 "></span><span class="p">......</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+Por lo general, las propiedades de una clase suelen ser privadas o protegidas, a no ser que se trate de un valor constante, en cuyo caso se declararán como públicos.</p>
+<h2 id="definicion-de-metodos-de-clase">Definición de métodos de clase<a class="headerlink" href="#definicion-de-metodos-de-clase" title="Permanent link">&para;</a></h2>
+<p>Un método es una llamada a una operación de un determinado objeto. Al realizar esta llamada (también se le llama enviar un mensaje), el control del programa pasa a ese método y lo mantendrá hasta que el método finalice o se haga uso de <code>return</code>.</p>
+<p>Para que un método pueda trabajar, normalmente hay que pasarle unos datos en forma de argumentos o parámetros, cada uno de los cuales se separa por comas. Al definir el método hay que indicar qué argumento se necesitan y de qué tipo son.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="n">balon</span><span class="p">.</span><span class="na">botar</span><span class="p">();</span><span class="w"> </span><span class="c1">//sin argumentos</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span><span class="n">miCoche</span><span class="p">.</span><span class="na">acelerar</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span><span class="n">ficha</span><span class="p">.</span><span class="na">comer</span><span class="p">(</span><span class="n">posicion15</span><span class="p">);</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos="4 "></span><span class="n">partida</span><span class="p">.</span><span class="na">empezarPartida</span><span class="p">(</span><span class="s">&quot;18:15&quot;</span><span class="p">,</span><span class="n">colores</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Los métodos de la clase se definen dentro de ella. Hay que indicar un modificador de acceso (<code>public</code>, <code>private</code>, <code>protected</code> o ninguno, al igual que ocurre con las variables y con la propia clase) y un tipo de datos, que indica qué tipo de valores devuelve el método.</p>
+<p>Esto último se debe a que los métodos son funciones que pueden devolver un determinado valor (un entero, una cadena de texto, un valor lógico, ...) mediante el comando <code>return</code>. Si el método no devuelve ningún valor, entonces se utiliza el tipo <code>void</code> que significa que no devuelve valores (en ese caso el método no tendrá instrucción <code>return</code>).</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Coche</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ruedas</span><span class="p">;</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">velocidad</span><span class="p">;</span><span class="w"> </span><span class="c1">// por defecto vale 0</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">direccion</span><span class="p">;</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="cm">/* Aumenta la velocidad*/</span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">acelerar</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">cantidad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="n">velocidad</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">cantidad</span><span class="p">;</span><span class="w"> </span><span class="c1">// velocidad = velocidad + cantidad</span>
+</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="cm">/* Disminuye la velocidad*/</span>
+</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">frenar</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">cantidad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">velocidad</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">cantidad</span><span class="p">;</span><span class="w"> </span><span class="c1">// velocidad = velocidad - cantidad</span>
+</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="cm">/* Devuelve la velocidad*/</span>
+</span><span id="__span-2-15"><span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">obtenerVelocidad</span><span class="p">(){</span>
+</span><span id="__span-2-16"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">velocidad</span><span class="p">;</span>
+</span><span id="__span-2-17"><span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-18"><span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">){</span>
+</span><span id="__span-2-19"><span class="linenos" data-linenos="19 "></span><span class="w">        </span><span class="n">Coche</span><span class="w"> </span><span class="n">miCoche</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Coche</span><span class="p">();</span>
+</span><span id="__span-2-20"><span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="n">miCoche</span><span class="p">.</span><span class="na">acelerar</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+</span><span id="__span-2-21"><span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="n">miCoche</span><span class="p">.</span><span class="na">frenar</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</span><span id="__span-2-22"><span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">miCoche</span><span class="p">.</span><span class="na">obtenerVelocidad</span><span class="p">());</span><span class="w"> </span><span class="c1">//Da 7.0</span>
+</span><span id="__span-2-23"><span class="linenos" data-linenos="23 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-24"><span class="linenos" data-linenos="24 "></span><span class="p">}</span>
+</span></code></pre></div>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 

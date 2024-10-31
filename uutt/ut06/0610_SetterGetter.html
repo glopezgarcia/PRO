@@ -14,6 +14,8 @@
         <link rel="prev" href="069_This.html">
       
       
+        <link rel="next" href="../ut07/ResumenUT.html">
+      
       
       <link rel="icon" href="../../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
@@ -85,6 +87,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#setters-y-getters" class="md-skip">
+          Saltar a contenido
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -1253,7 +1260,7 @@
             
   
   <span class="md-ellipsis">
-    UT 06. Introducción a la programación orientada a objetos.
+    UT 06. Introducción a la POO.
   </span>
   
 
@@ -1263,7 +1270,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            UT 06. Introducción a la programación orientada a objetos.
+            UT 06. Introducción a la POO.
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1490,6 +1497,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="0610_SetterGetter.html" class="md-nav__link md-nav__link--active">
         
@@ -1501,6 +1510,73 @@
 
       </a>
       
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UT 07. POO avanzada. Herencia, polimorfismo, interfaces.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            UT 07. POO avanzada. Herencia, polimorfismo, interfaces.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07/ResumenUT.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Propuesta didáctica
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1528,9 +1604,29 @@
                   
 
 
-  <h1>6.10. Setters y Getters</h1>
-
-
+<h1 id="setters-y-getters">Setters y Getters<a class="headerlink" href="#setters-y-getters" title="Permanent link">&para;</a></h1>
+<p>Cuando queremos exponer un atributo como si fuera público deberíamos hacerlo a través de métodos <code>getter</code> (lectura) y <code>setter</code> (escritura). Existe la convención de nombrar a estos métodos utilizando los prefijos <code>get</code> y <code>set</code> seguido del atributo. En general es una buena idea seguir cada una de las convenciones adoptadas por una comunidad, en este caso utilizar los <code>getters</code> y los <code>setters</code> para acceder a atributos privados.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Automovil</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">marca</span><span class="p">;</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getMarca</span><span class="p">(){</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">marca</span><span class="p">;</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setMarca</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">marca</span><span class="p">){</span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">marca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">marca</span><span class="p">;</span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Esta es la manera correcta de trabajar con objetos y sus parámetros si no conocemos los valores exactos necesarios a la hora de instanciar un objeto o bien para trabajar con ellos de una manera más óptima.</p>
+<div class="admonition note">
+<p class="admonition-title">Pide el comodín de tu IDE</p>
+<p>Los IDE tienen un generador de estos métodos, investiga la manera de hacerlo pues te ahorrará mucho tiempo.</p>
+</div>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
@@ -1581,6 +1677,22 @@
             </div>
           </a>
         
+        
+          
+          <a href="../ut07/ResumenUT.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Propuesta didáctica">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Propuesta didáctica
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     

@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#scope" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1255,7 +1260,7 @@
             
   
   <span class="md-ellipsis">
-    UT 06. Introducción a la programación orientada a objetos.
+    UT 06. Introducción a la POO.
   </span>
   
 
@@ -1265,7 +1270,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            UT 06. Introducción a la programación orientada a objetos.
+            UT 06. Introducción a la POO.
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1386,6 +1391,8 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
+      
+        
       
       
       <a href="065_Scope.html" class="md-nav__link md-nav__link--active">
@@ -1515,6 +1522,73 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UT 07. POO avanzada. Herencia, polimorfismo, interfaces.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            UT 07. POO avanzada. Herencia, polimorfismo, interfaces.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07/ResumenUT.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Propuesta didáctica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1530,9 +1604,19 @@
                   
 
 
-  <h1>6.5. Scope</h1>
-
-
+<h1 id="scope">Scope<a class="headerlink" href="#scope" title="Permanent link">&para;</a></h1>
+<p>En todos los lenguajes este es un tema muy importante. Los argumentos son los datos que recibe un método y que necesita para funcionar. Existen dos tipos de argumentos o parámetros: por valor y por referencia. En el primero, los valores que recibe el método son copias de los valores originales pasados al mismo, por tanto, cualquier modificación que se realice sobre ellos solo será visible en el ámbito del método (dentro del método). En el segundo, se recibe la referencia de la posición en memoria donde se encuentra el dato, esto hace que dentro del método se trabaje con el dato verdadero, no con una copia y las modificaciones no se refieran únicamente al ámbito del método, sino que afecten directamente al dato.</p>
+<p>En Java, todos los tipos básicos pasan por valor y todos los objetos pasan por referencia. Si pasamos un dato primitivo como parámetro, lo estamos pasando por valor y si este parámetro es modificado dentro del método, esa modificación solo se ha producido en la copia creada en el método. La copia desaparece al salir del método.</p>
+<div class="admonition note">
+<p class="admonition-title">A tener en cuenta</p>
+<p>Los tipos básicos (<code>int</code>, <code>double</code>, <code>char</code>, <code>boolean</code>, <code>float</code>, <code>short</code> y <code>byte</code>) se pasan por valor. La inmensa mayoría de objetos se pasan por referencia, aunque los objetos pertenecientes a clases de tipo inmutable se pasan por valor. Las clases <code>String</code>, <code>Integer</code>, <code>Double</code> son ejemplos de clases inmutables. Los arrays se pasan por referencia.</p>
+<p>Los métodos pueden devolver valores de tipos primitivos (<code>int</code>, <code>short</code>, <code>double</code>, etc.), <code>String</code>, arrays e incluso objetos. En todos los casos es el comando <code>return</code> el que realiza esta labor. En el caso de arrays y objetos, devuelve una referencia a ese array u objeto. </p>
+</div>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 

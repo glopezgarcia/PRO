@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#los-constructores" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1255,7 +1260,7 @@
             
   
   <span class="md-ellipsis">
-    UT 06. Introducción a la programación orientada a objetos.
+    UT 06. Introducción a la POO.
   </span>
   
 
@@ -1265,7 +1270,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            UT 06. Introducción a la programación orientada a objetos.
+            UT 06. Introducción a la POO.
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1429,6 +1434,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    6.7. Constructores
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="067_Constructores.html" class="md-nav__link md-nav__link--active">
         
@@ -1439,6 +1457,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sobrecarga-del-constructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sobrecarga del constructor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructor-copia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constructor copia
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1515,6 +1570,73 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UT 07. POO avanzada. Herencia, polimorfismo, interfaces.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            UT 07. POO avanzada. Herencia, polimorfismo, interfaces.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07/ResumenUT.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Propuesta didáctica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1530,9 +1652,73 @@
                   
 
 
-  <h1>6.7. Constructores</h1>
-
-
+<h1 id="los-constructores">Los constructores<a class="headerlink" href="#los-constructores" title="Permanent link">&para;</a></h1>
+<p>Un constructor es un método que es llamado automáticamente al crear un objeto de una clase, es decir al usar la instrucción <code>new</code>. Son métodos especiales que sirven para inicializar las instancias de una clase. Su función es inicializar el objeto y sirve para asegurarnos que los objetos siempre contengan valores
+válidos. Sin embargo, los constructores no tienen un tipo de devolución explicito. Normalmente, se usa un constructor para dar valores iniciales a las variables de instancia definidas por la clase, o para realizar cualquier otro procedimiento de inicio requerido para crear un objeto completamente formado.</p>
+<p>Todas las clases tienen constructores, definido explícitamente en el código o no, porque Java proporciona automáticamente un constructor predeterminado o por defecto. En este caso, las variables de miembro no inicializadas tienen sus valores predeterminados, que son cero, <code>null</code> y <code>false</code>, para tipos numéricos, tipos de referencia y booleanos, respectivamente. Una vez que defines tu propio constructor, el constructor predeterminado ya no se usa.</p>
+<p>Los constructores también se pueden sobrecargar, como cualquier método, variando la cantidad de parámetros que reciben.</p>
+<p>Cuando se crea un objeto de Java se realizan las siguientes operaciones de forma automática:</p>
+<ol>
+<li>Se asigna memoria para el objeto.</li>
+<li>Se inicializan los atributos de ese objeto con los valores predeterminados por el sistema.</li>
+<li>Se llama al constructor de la clase que puede ser uno entre varios.</li>
+</ol>
+<p>El constructor de una clase tiene las siguientes características:</p>
+<ul>
+<li>Tiene el mismo nombre que la clase a la que pertenece.</li>
+<li>En una clase puede haber varios constructores con el mismo nombre y distinto número de argumentos (se puede sobrecargar).</li>
+<li>No se hereda.</li>
+<li>No puede devolver ningún valor (tampoco void).</li>
+<li>Habitualmente se declara público para que pueda ser invocado incluso desde fuera del paquete donde se desee crear un objeto de esa clase.</li>
+</ul>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MiClase</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">MiClase</span><span class="p">(){</span><span class="w"> </span><span class="c1">//constructor</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// Inicializo a 10</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span><span class="p">}</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">App</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">MiClase</span><span class="w"> </span><span class="n">obj1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MiClase</span><span class="p">();</span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">MiClase</span><span class="w"> </span><span class="n">obj2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MiClase</span><span class="p">();</span>
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">obj1</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">obj2</span><span class="p">.</span><span class="na">x</span><span class="p">);</span><span class="w"> </span><span class="c1">//Da 10, 10</span>
+</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-14"><span class="linenos" data-linenos="14 "></span><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="sobrecarga-del-constructor">Sobrecarga del constructor<a class="headerlink" href="#sobrecarga-del-constructor" title="Permanent link">&para;</a></h2>
+<p>En el ejemplo anterior, se utilizó un constructor sin parámetros. Aunque esto está bien para algunas situaciones, la mayoría de las veces necesitará un constructor que acepte uno o más parámetros. Los parámetros se agregan a un constructor de la misma manera que se agregan a un método: simplemente declararlos dentro del paréntesis después del nombre del constructor. Por ejemplo, aquí, <code>MiClase</code> tiene un constructor parametrizado:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MiClase</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">MiClase</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">){</span><span class="w"> </span><span class="c1">//constructor parametrizado</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span><span class="p">}</span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">App</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">MiClase</span><span class="w"> </span><span class="n">obj1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MiClase</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
+</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">MiClase</span><span class="w"> </span><span class="n">obj2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MiClase</span><span class="p">(</span><span class="mi">28</span><span class="p">);</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">obj1</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">obj2</span><span class="p">.</span><span class="na">x</span><span class="p">);</span><span class="w"> </span><span class="c1">//Da 15, 28</span>
+</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Hay que tener en cuenta que puede haber más de un constructor para la misma clase. Al igual que ocurría con los métodos, los constructores se pueden sobrecargar. Cuando se sobrecargan los constructores (se utilizan varias posibilidades de constructor), se pueden hacer llamadas a constructores mediante la palabra clave <a href="069_This.html"><code>this</code></a> como veremos más adelante.</p>
+<h2 id="constructor-copia">Constructor copia<a class="headerlink" href="#constructor-copia" title="Permanent link">&para;</a></h2>
+<p>Se puede crear un objeto a partir de otro de su misma clase escribiendo un constructor llamado constructor copia. Este constructor copia los atributos de un objeto existente al objeto que se está creando. Los constructores copia tienen un solo argumento, el cual es una referencia a un objeto de la misma clase que será desde el que queremos copiar. Por ejemplo, para una clase Fecha podemos escribir un constructor copia que permita crear objetos con los valores de otro ya existente:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="n">Fecha</span><span class="w"> </span><span class="n">fecha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Fecha</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2011</span><span class="p">);</span><span class="w"> </span><span class="c1">//se invoca al constructor con parámetros</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span><span class="n">Fecha</span><span class="w"> </span><span class="n">fecha1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Fecha</span><span class="p">(</span><span class="n">fecha</span><span class="p">);</span><span class="w"> </span><span class="c1">//se invoca al constructor copia</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos="3 "></span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos="4 "></span><span class="c1">//constructor copia de la clase Fecha</span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos="5 "></span><span class="kd">public</span><span class="w"> </span><span class="nf">Fecha</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">Fecha</span><span class="w"> </span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos="6 "></span><span class="n">dia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="na">dia</span><span class="p">;</span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos="7 "></span><span class="n">mes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="na">mes</span><span class="p">;</span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos="8 "></span><span class="n">anyo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="na">anyo</span><span class="p">;</span>
+</span><span id="__span-2-9"><span class="linenos" data-linenos="9 "></span><span class="p">}</span>
+</span></code></pre></div>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
