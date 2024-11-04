@@ -1419,6 +1419,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividades
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1687,6 +1696,92 @@ Por lo general, las propiedades de una clase suelen ser privadas o protegidas, a
 </span><span id="__span-2-23"><span class="linenos" data-linenos="23 "></span><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-2-24"><span class="linenos" data-linenos="24 "></span><span class="p">}</span>
 </span></code></pre></div>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 601</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr>/ <abbr title="Se han instanciado objetos a partir de clases predefinidas.">CE2c</abbr> <abbr title="Se han incorporado y utilizado librerías de objetos.">CE2g</abbr> <abbr title="Se han utilizado constructores.">CE2h</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p). Genera una clase <code>Noria</code> que tenga como atributo radio de tipo <code>double</code> y como métodos <code>parar</code> al cual no se le pasan argumentos y <code>girar</code> al que se le pasa una variable de tipo entero. Todos los miembros de la clase pueden ser accedidos desde clases que se encuentren en su mismo paquete. Si la noria está parada el método parar devolverá “La noria está parada”, de lo contrario mostrará “Iniciando frenado” hacer un delay de 1000ms y mostrar “Parada”. </p>
+<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Podéis añadir tantos atributos a la clase como consideréis. En el `main` realizar la simulación y comprobación que consideréis.
+</code></pre></div>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 602</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr>/ <abbr title="Se han instanciado objetos a partir de clases predefinidas.">CE2c</abbr> <abbr title="Se han incorporado y utilizado librerías de objetos.">CE2g</abbr> <abbr title="Se han utilizado constructores.">CE2h</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p). Genera una clase <code>Cuenta</code> que tenga como atributos nombre y número de cuenta de tipo <code>String</code>, y tipo de interés y saldo de tipo <code>double</code>. Por otro lado, tiene el método <code>ingreso</code> al que se le pasa un valor tipo <code>double</code> y devolverá un mensaje en función de una comprobación: que se ingresen mínimo 99,99 y máximo 999,99. Además deberá tener otro método que nos muestre el saldo de la cuenta. Ningún miembro de la clase puede ser accedido desde fuera de esta. </p>
+<p>Podéis añadir tantos atributos a la clase como consideréis. En el <code>main</code> realizar la simulación y comprobación que consideréis.</p>
+</li>
+<li>
+<p><strong><abbr title="Actividades de refuerzo.">AR</abbr> 603</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr>/ <abbr title="Se han instanciado objetos a partir de clases predefinidas.">CE2c</abbr> <abbr title="Se han incorporado y utilizado librerías de objetos.">CE2g</abbr> <abbr title="Se han utilizado constructores.">CE2h</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p). Genera una clase <code>Coche</code> que tenga como atributos <code>ruedas</code> (con modificador
+packageprivate), <code>velocidad</code> (de tipo double y accesible solo desde clase <code>Coche</code>), <code>nombre</code> (con acceso desde cualquier clase), y <code>dirección</code> (accesible desde cualquier clase dentro de su paquete y por cualquier subclase independientemente del paquete). </p>
+<p>Los métodos de esta clase son <code>acelerar</code> (el cual requerirá de una variable tipo <code>double</code> y no devolverá ningún valor), <code>frenar</code> (que requiere también un <code>double</code> como parámetro de entrada y tampoco devuelve nada) y <code>obtenerVelocidad</code> (sin parámetros y devolverá una variable de tipo <code>double</code>). Los tres métodos pueden ser accedidos desde cualquier clase. <code>obtenerVelocidad</code> será la que nos muestre la velocidad. No puede haber velocidades negativas. </p>
+<p>Podéis añadir tantos atributos a la clase como consideréis. En el <code>main</code> realizar la simulación y comprobación que consideréis.</p>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 604</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr>/ <abbr title="Se han instanciado objetos a partir de clases predefinidas.">CE2c</abbr> <abbr title="Se han incorporado y utilizado librerías de objetos.">CE2g</abbr> <abbr title="Se han utilizado constructores.">CE2h</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p). Desarrolla un programa que sirva para tener registrada la entrada y salida de empleados en la sede
+de una empresa.</p>
+<ul>
+<li>Constará de una clase <code>EmpleadoMain</code> que contendrá el método <code>main</code> y una clase <code>Empleado</code> con los atributos nombre (de empleado), departamento y sala accesibles desde cualquier clase, y también los atributos dni, hora_ent (hora entrada) y hora_sal (hora salida) que serán privados.</li>
+<li>La clase <code>Empleado</code> tiene además todos sus métodos públicos: el método <code>identificacion</code> que devolverá el dni, el método <code>entrada</code> que devolverá la hora de entrada y el método <code>salida</code> que devolverá la hora de salida.</li>
+<li>En la clase <code>EmpleadoMain</code> se debe construir o instanciar un objeto <code>emp1</code> con los siguientes atributos: <ul>
+<li>nombre: “Antonio López”, departamento: "Investigación", sala: ‘A’, dni: “12345678A”, hora_ent: 9 y hora_sal: 15. </li>
+</ul>
+</li>
+<li>También en la clase principal se debe instanciar un nuevo objeto <code>emp2</code> con los atributos: <ul>
+<li>nombre: “María Ruiz”, departamento: "Desarrollo", sala: ‘C’, dni: “23456781B”, hora_ent: 15 y hora_sal: 21. </li>
+</ul>
+</li>
+<li>Finalmente el programa debe imprimir los atributos de los objetos por pantalla.</li>
+</ul>
+<p>Podéis añadir tantos atributos a la clase como consideréis. En el <code>main</code> realizar la simulación y comprobación que consideréis.</p>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 605</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr>/ <abbr title="Se han instanciado objetos a partir de clases predefinidas.">CE2c</abbr> <abbr title="Se han incorporado y utilizado librerías de objetos.">CE2g</abbr> <abbr title="Se han utilizado constructores.">CE2h</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p). Genera una clase <code>Gato</code> que tenga como atributos edad (de tipo entero y sin modificador), peso (de tipo double y accesible solo desde clase Gato), nombre (con acceso desde cualquier clase), y raza (de tipo <code>String</code> y accesible desde cualquier clase dentro de su paquete y por cualquier subclase independientemente del paquete). Los métodos de esta clase son <code>correr</code> (el cual requerirá de una variable tipo <code>double</code> y no
+devolverá ningún valor) y <code>saltar</code> (sin parámetros de entrada y que devuelve un <code>double</code> con la altura alcanzada). Ningún método de la clase puede ser accedido desde fuera de esta.</p>
+<p>Podéis añadir tantos atributos a la clase como consideréis. En el main realizar la simulación y comprobación que consideréis.</p>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 606</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr>/ <abbr title="Se han instanciado objetos a partir de clases predefinidas.">CE2c</abbr> <abbr title="Se han incorporado y utilizado librerías de objetos.">CE2g</abbr> <abbr title="Se han utilizado constructores.">CE2h</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p). Escribe un programa que disponga de una clase para representar los módulos de un
+ciclo superior.</p>
+<ul>
+<li>Un módulo tiene un nombre, un código de 4 dígitos, el número del curso en el cual se imparte y el número de horas. Los valores iniciales de estos atributos han de proporcionarse en un constructor parametrizado.</li>
+<li>Se debe construir o instanciar un objeto <code>mod1</code> con los siguientes atributos: <ul>
+<li>nombre: "Bases de Datos", código: "0484", curso: 1 y horas: 160.</li>
+</ul>
+</li>
+<li>También se debe instanciar un nuevo objeto <code>mod2</code> sin indicar atributos. Estos deben ser introducidos después: <ul>
+<li>nombre: "Programación", código: "0485", curso: 1 y horas: 192. </li>
+</ul>
+</li>
+<li>Para ello la clase ha de tener métodos para escribir (set) los valores de los
+atributos.</li>
+<li>Finalmente, el programa debe imprimir los atributos de los objetos por pantalla.</li>
+</ul>
+</li>
+<li>
+<p><strong><abbr title="Prácticas">PR</abbr> 607</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr>/ <abbr title="Se han instanciado objetos a partir de clases predefinidas.">CE2c</abbr> <abbr title="Se han incorporado y utilizado librerías de objetos.">CE2g</abbr> <abbr title="Se han utilizado constructores.">CE2h</abbr>/ <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p). Escribe un programa que sirva para tener registradas las ventas de zapatos en una zapatería. Se requiere:</p>
+<ul>
+<li>Una clase <code>ZapatoMain</code> en un fichero .java que contendrá el método <code>main</code>.</li>
+<li>Una clase <code>Zapato</code> en otro fichero .java distinto, con los atributos tipo, color, número y liquidación de acceso público, y los atributos cantidad (pares de ese tipo almacenados) y precio, ambos de acceso privado.</li>
+<li>La clase <code>Zapato</code> tiene además todos sus métodos públicos: el método <code>almacenado</code> que devolverá la cantidad de pares disponibles de ese tipo y el método <code>precioVenta</code> que devolverá el precio de un par concreto.</li>
+<li>En la clase <code>ZapatoMain</code> se debe construir o instanciar un objeto <code>par1</code> con los siguientes atributos: <ul>
+<li>tipo: "Náutico", color: "Azul", número: 42, liquidación: false, cantidad: 10 y precio: 40, </li>
+</ul>
+</li>
+<li>Otro objeto <code>par2</code> con los atributos: <ul>
+<li>nombre: "De salón", color: "Rojo", número: 38, liquidación: true, cantidad: 3 y precio: 25.</li>
+</ul>
+</li>
+<li>Finalmente, el programa debe imprimir los atributos de los objetos por pantalla.</li>
+</ul>
+<p>Genera un método <code>main</code> donde pruebes todos los métodos. Recuerda que siempre que se puedan pedir datos por teclado, se han de pedir.</p>
+</li>
+<li>
+<p><strong><abbr title="Prácticas">PR</abbr> 608</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr>/ <abbr title="Se han instanciado objetos a partir de clases predefinidas.">CE2c</abbr> <abbr title="Se han incorporado y utilizado librerías de objetos.">CE2g</abbr> <abbr title="Se han utilizado constructores.">CE2h</abbr>/ <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p). Se necesita crear un programa que solicite, almacene y presente información sobre los alumnos de un Instituto. Para ello:</p>
+<ul>
+<li>Crea tanto la clase <code>AlumnoMain</code> con el método <code>main</code>, como la clase <code>Alumno</code> cuyos atributos serán privados. Ambas clases deben estar en ficheros diferentes.</li>
+<li>La información que interesa almacenar de cada estudiante es el nombre del alumno, su NIA (ej: “123”), el nombre del ciclo y su curso.</li>
+<li>El programa deberá solicitar al usuario la inserción de los datos de al menos 2 alumnos, y al finalizar deberá mostrarlos por pantalla.</li>
+</ul>
+<p>Genera un método <code>main</code> donde pruebes todos los métodos. Recuerda que siempre que se puedan pedir datos por teclado, se han de pedir.</p>
+</li>
+</ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
