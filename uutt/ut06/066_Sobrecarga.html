@@ -1416,6 +1416,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    6.6. Sobrecarga de métodos
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="066_Sobrecarga.html" class="md-nav__link md-nav__link--active">
         
   
@@ -1425,6 +1436,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#actividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividad
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1626,6 +1665,23 @@ Aunque ahora no tenga mucha utilidad, cuando se trabajen conceptos más complejo
 <p class="admonition-title">A tener en cuenta</p>
 <p>Una buena práctica es sobrecargar métodos que hagan funciones que se llamen igual pero que el número de parámetros sea diferente.</p>
 </div>
+<h2 id="actividad">Actividad<a class="headerlink" href="#actividad" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 609</strong> (<abbr title="Desarrolla programas organizados en clases analizando y aplicando los principios de la programación orientada a objetos.">RA4</abbr>/ <abbr title="Se ha reconocido la sintaxis, estructura y componentes típicos de una clase.">CE4a</abbr> <abbr title="Se han definido clases.">CE4b</abbr> <abbr title="Se han creado constructores.">CE4d</abbr> <abbr title="Se han desarrollado programas que instancien y utilicen objetos de las clases creadas anteriormente.">CE4e</abbr> <abbr title="Se han utilizado mecanismos para controlar la visibilidad de las clases y de sus miembros.">CE4f</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p). Crea una clase <code>MinutosSegundos.java</code>, crea un método llamado <code>obtenerMensajeDuracion</code>con dos parámetros enteros: minutos y segundos. El método devuelve un String. Valida que minutos sea mayor o igual a 0. Valida que segundos sea mayor o igual a 0 o menor o igual que 59.  El método debe devolver “Valor inválido” si alguna de las validaciones anteriores no se cumple.</p>
+<p>Si los parámetros son válidos entonces calcula cuantas horas, minutos y segundos es igual a los minutos y segundos pasados por parámetro y devuelve “XXh YYm ZZs”, donde XX son las horas (calculadas a partir de los minutos), YY son los minutos (restantes) y ZZ son los segundos que nos pasan.</p>
+<p>Crea un segundo método con el mismo nombre (sobrecargado) pero solo con el parámetro de segundos. Valida que los segundos sea mayor o igual a 0. Si no devuelve “Valor inválido”. Si los segundos son válidos, calcula a partir de los segundos calcula cuántos minutos hay en los segundos pasados y luego llama al método con los dos parámetros (minutos y segundos) calculados.</p>
+<p>Crea el método <code>main</code> y llama a ambos método y prueba que funciona correctamente. </p>
+<div class="admonition note">
+<p class="admonition-title">Recuerda</p>
+<ul>
+<li>1 minuto son 60 segundos. </li>
+<li>1 hora son 60 minutos o 3600 segundos.</li>
+</ul>
+<p>Por ejemplo, para la entrada de 61 minutos la salida debe ser: 1h 1m 0s.</p>
+</div>
+</li>
+</ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
