@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/glopezgarcia/PRO/uutt/ut02/027_Casting.html">
+        <link rel="canonical" href="https://github.com/glopezgarcia/PRO/uutt/ut07/072_Herencia.html">
       
       
-        <link rel="prev" href="026_Precendia.html">
+        <link rel="prev" href="071_CreacionPaquetes.html">
       
       
-        <link rel="next" href="028_Comentarios.html">
+        <link rel="next" href="073_Polimorfismo.html">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>2.7. Casting - Programación</title>
+        <title>7.2. Herencia - Programación</title>
       
     
     
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#conversiones-de-tipos-casting-entre-tipos-nativos" class="md-skip">
+        <a href="#herencia" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2.7. Casting
+              7.2. Herencia
             
           </span>
         </div>
@@ -420,10 +420,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -450,11 +448,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -468,7 +466,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             UT 02. Elementos básicos de un lenguaje de programación
@@ -482,7 +480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ResumenUT.html" class="md-nav__link">
+      <a href="../ut02/ResumenUT.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -503,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="021_TiposDatos.html" class="md-nav__link">
+      <a href="../ut02/021_TiposDatos.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -524,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="022_Fechas.html" class="md-nav__link">
+      <a href="../ut02/022_Fechas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -545,7 +543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="023_ConstantesLiterales.html" class="md-nav__link">
+      <a href="../ut02/023_ConstantesLiterales.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -566,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="024_Variables.html" class="md-nav__link">
+      <a href="../ut02/024_Variables.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -587,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="025_OperadoresExpresiones.html" class="md-nav__link">
+      <a href="../ut02/025_OperadoresExpresiones.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -608,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="026_Precendia.html" class="md-nav__link">
+      <a href="../ut02/026_Precendia.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -626,30 +624,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    2.7. Casting
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="027_Casting.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ut02/027_Casting.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -658,44 +636,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#conversiones-por-defecto" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conversiones por defecto
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conversiones-forzosas-casting-entre-tipos-nativos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conversiones forzosas (casting entre tipos nativos)
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -708,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="028_Comentarios.html" class="md-nav__link">
+      <a href="../ut02/028_Comentarios.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -729,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="029_IOConsola.html" class="md-nav__link">
+      <a href="../ut02/029_IOConsola.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1574,8 +1514,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1600,11 +1542,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -1618,7 +1560,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             UT 07. POO avanzada. Herencia, polimorfismo, interfaces.
@@ -1632,7 +1574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ut07/ResumenUT.html" class="md-nav__link">
+      <a href="ResumenUT.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1653,7 +1595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ut07/071_CreacionPaquetes.html" class="md-nav__link">
+      <a href="071_CreacionPaquetes.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1671,10 +1613,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../ut07/072_Herencia.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    7.2. Herencia
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="072_Herencia.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1683,6 +1645,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-herencia-en-los-lenguajes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de herencia en los lenguajes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#herencia-en-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      Herencia en Java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extension-de-una-clase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extensión de una clase
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1695,7 +1704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ut07/073_Polimorfismo.html" class="md-nav__link">
+      <a href="073_Polimorfismo.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1716,7 +1725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ut07/074_AccesoSuperclase.html" class="md-nav__link">
+      <a href="074_AccesoSuperclase.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1737,7 +1746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ut07/075_Visibilidad.html" class="md-nav__link">
+      <a href="075_Visibilidad.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1758,7 +1767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ut07/076_Interfaces.html" class="md-nav__link">
+      <a href="076_Interfaces.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1779,7 +1788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ut07/077_Casting.html" class="md-nav__link">
+      <a href="077_Casting.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1800,7 +1809,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ut07/078_ClasesAnidadas.html" class="md-nav__link">
+      <a href="078_ClasesAnidadas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1836,43 +1845,88 @@
                   
 
 
-<h1 id="conversiones-de-tipos-casting-entre-tipos-nativos">Conversiones de tipos (casting entre tipos nativos)<a class="headerlink" href="#conversiones-de-tipos-casting-entre-tipos-nativos" title="Permanent link">&para;</a></h1>
-<h2 id="conversiones-por-defecto">Conversiones por defecto<a class="headerlink" href="#conversiones-por-defecto" title="Permanent link">&para;</a></h2>
-<p>Las reglas de Java para saber el tipo de datos resultante de una expresión se siguen las siguientes reglas</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Si algún operando es</th>
-<th style="text-align: center;">El otro operando se transforma a</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">double</td>
-<td style="text-align: center;">double</td>
-</tr>
-<tr>
-<td style="text-align: center;">float</td>
-<td style="text-align: center;">float</td>
-</tr>
-<tr>
-<td style="text-align: center;">long</td>
-<td style="text-align: center;">long</td>
-</tr>
-<tr>
-<td style="text-align: center;">byte or short</td>
-<td style="text-align: center;">int</td>
-</tr>
-</tbody>
-</table>
-<p>Si se aplican dos reglas, se elige la que aparece primero en la tabla.</p>
-<h2 id="conversiones-forzosas-casting-entre-tipos-nativos">Conversiones forzosas (casting entre tipos nativos)<a class="headerlink" href="#conversiones-forzosas-casting-entre-tipos-nativos" title="Permanent link">&para;</a></h2>
-<p>Es una forma de convertir un número de un tipo a otro tipo de dato. Para hacerlo ponemos en paréntesis el tipo de dato al que queremos convertirlo.</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="kt">byte</span><span class="w"> </span><span class="n">miByte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">byte</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="mi">14</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c1">//convierto la operación división que devuelve un int a byte //Otra forma</span>
-</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="kt">float</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">8.0f</span><span class="p">;</span>
-</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-</span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="c1">//convierto el tipo float a int</span>
+<h1 id="herencia">Herencia<a class="headerlink" href="#herencia" title="Permanent link">&para;</a></h1>
+<p><a class="glightbox" href="../../img/ut07/01_Herencia.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Herencia" src="../../img/ut07/01_Herencia.png" width="200" /></a></p>
+<p>La herencia es una de las características fundamentales de la Programación Orientada a Objetos (<abbr title="Programación Orientada a Objetos">POO</abbr>). Mediante la herencia podemos definir una clase a partir de otra ya existente. La clase nueva se llama clase derivada o subclase y la clase existente se llama clase base o superclase. La clase derivada hereda los miembros (atributos y métodos) de la clase base.</p>
+<p>La finalidad de la herencia es:</p>
+<ul>
+<li>Extender la funcionalidad de la clase base: en la clase derivada se pueden añadir atributos y métodos nuevos.</li>
+<li>Especializar el comportamiento de la clase base: en la clase derivada se pueden modificar (sobrescribir, <code>override</code>) los métodos heredados para adaptarlos a sus necesidades.</li>
+</ul>
+<p>La herencia permite la reutilización del código, ya que evita tener que reescribir de nuevo una clase existente cuando necesitamos ampliarla en cualquier sentido. Todas las clases derivadas pueden utilizar el código de la clase base sin tener que volver a definirlo en cada una de ellas.</p>
+<h2 id="tipos-de-herencia-en-los-lenguajes">Tipos de herencia en los lenguajes<a class="headerlink" href="#tipos-de-herencia-en-los-lenguajes" title="Permanent link">&para;</a></h2>
+<p>Existen dos tipos de herencias: <strong>simples</strong> y <strong>múltiples</strong>.</p>
+<p>La herencia múltiple es básicamente que una clase puede heredar de dos clases base. Aunque la típica afirmación de que Java no soporta herencia múltiple no es del todo exacta (se simula mediante interfaces), no es recomendable su uso, ya que, a pesar de su potencia, nos puede llevar a complicaciones en la estructura como es la temida herencia con estructura diamante.</p>
+<figure>
+  <a class="glightbox" href="../../img/ut07/02_TiposHerencia.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Herencia múltiple" src="../../img/ut07/02_TiposHerencia.png" width="300" /></a>
+</figure>
+<p>Es por ello que, salvo que sea realmente estricto nos quedaremos con la herencia simple. Una clase base puede serlo de tantas derivadas como se desee: <em><strong>Un solo padre, varios hijos</strong></em>.</p>
+<h2 id="herencia-en-java">Herencia en Java<a class="headerlink" href="#herencia-en-java" title="Permanent link">&para;</a></h2>
+<p>Un objeto de una clase derivada es, a su vez, un objeto de su clase base, por lo tanto, se puede sustituir en cualquier lugar donde aparezca un objeto de la clase base. Si esto no fuese posible entonces la herencia no está bien planteada.</p>
+<div class="admonition note">
+<p class="admonition-title">Ejemplo de planteamiento de herencia</p>
+<p>A partir de la clase <code>Persona</code>, que tiene como atributos el nif y el nombre, podemos obtener una clase derivada <code>Alumno</code>. Un <code>Alumno</code> es una <code>Persona</code> que tendrá como atributos nif, nombre y curso. Su uso es correcto ya que un <code>Alumno</code> es una <code>Persona</code>.</p>
+</div>
+<p>A la hora de visualizar la herencia de nuestro programa se puede llegar a complicar con conceptos como generalizaciones o especializaciones. Siguiendo con el ejemplo de <code>Persona</code>, se podría llegar a algo como a lo de la imagen:</p>
+<figure>
+  <a class="glightbox" href="../../img/ut07/03_HerenciaJava.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Herencia" src="../../img/ut07/03_HerenciaJava.png" width="700" /></a>
+</figure>
+<p>Las clases más generales se sitúan en lo más alto de la jerarquía. Cuánto más arriba en la jerarquía, menor nivel de detalle. Cada clase derivada debe implementar únicamente lo que la distingue de su clase base. En Java todas las clases derivan directa o indirectamente de la clase <code>Object</code>. Esta es la clase base de toda la jerarquía de clases Java. Todos los objetos en un programa Java son <code>Object</code>.</p>
+<p>Las clases derivadas cumplen una serie de propiedades:</p>
+<ul>
+<li>Una clase derivada hereda de la clase base sus componentes (atributos y métodos).</li>
+<li>Los constructores no se heredan. Las clases derivadas deberán implementar sus propios constructores.</li>
+<li>Una clase derivada puede acceder a los miembros públicos y protegidos de la clase base como si fuesen miembros propios.</li>
+<li>Una clase derivada no tiene acceso a los miembros privados de la clase base. Deberá acceder a través de métodos heredados de la clase base.</li>
+<li>Si se necesita tener acceso directo a los miembros privados de la clase base se deben declarar <code>protected</code> en lugar de <code>private</code> en la clase base.</li>
+<li>Una clase derivada puede añadir a los miembros heredados, sus propios atributos y métodos (extender la funcionalidad de la clase).</li>
+<li>También puede modificar los métodos heredados (especializar el comportamiento de la clase base).</li>
+<li>Una clase derivada puede, a su vez, ser una clase base, dando lugar a una jerarquía de clases.</li>
+</ul>
+<h2 id="extension-de-una-clase">Extensión de una clase<a class="headerlink" href="#extension-de-una-clase" title="Permanent link">&para;</a></h2>
+<p>La herencia en Java se expresa mediante la palabra extends, es decir se extiende la clase base a la clase derivada. Por ejemplo, para declarar una clase B que hereda de una clase A:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>public class B extends A { … }
 </span></code></pre></div>
+<p>Si lo vemos con un ejemplo </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Clase padre</label><label for="__tabbed_1_2">Clase hija</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-java highlight"><span class="filename">Persona.java</span><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Persona</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">dni</span><span class="p">;</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getDni</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">dni</span><span class="p">;}</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setDni</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">dni</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">dni</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dni</span><span class="p">;}</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getNombre</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">nombre</span><span class="p">;}</span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setNombre</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;}</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos="8 "></span><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><span class="filename">Alumno.java</span><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Alumno</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Persona</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">curso</span><span class="p">;</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getCurso</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">curso</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setCurso</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">curso</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">curso</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curso</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos="5 "></span><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>La clase <code>Alumno</code> hereda los atributos nombre y dni de la clase <code>Persona</code>, y añade el atributo curso. Por lo tanto:</p>
+<ul>
+<li>Los atributos de la clase Alumno son dni, nombre y curso.</li>
+<li>Los métodos de la clase Alumno son: <code>getDni()</code>, <code>setDni(String dni)</code>, <code>getNombre()</code>, <code>setNombre(String nombre)</code>, <code>getCurso()</code>, <code>setCurso(String curso)</code>.</li>
+</ul>
+<p>La clase <code>Alumno</code>, aunque hereda los atributos dni y nombre, no puede acceder a ellos de forma directa ya que son privados a la clase <code>Persona</code>. Se acceden a través de los métodos heredados de la clase base. La clase <code>Alumno</code> puede utilizar los miembros public y protected de la clase <code>Persona</code> como si fueran propios.</p>
+<div class="admonition note">
+<p class="admonition-title">Jerarquía de clases</p>
+<p>En una jerarquía de clases, cuando un objeto invoca a un método:</p>
+<ol>
+<li>Se busca en su clase el método correspondiente.</li>
+<li>Si no se encuentra, se busca en su clase base.</li>
+<li>Si no se encuentra, se sigue buscando hacia arriba en la jerarquía de clases hasta que el método se encuentra.</li>
+<li>Si al llegar a la clase raíz el método no se ha encontrado se producirá un error.</li>
+</ol>
+</div>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
@@ -1913,7 +1967,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="026_Precendia.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 2.6. Precedencia">
+          <a href="071_CreacionPaquetes.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 7.1. Creación de paquetes">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1923,20 +1977,20 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                2.6. Precedencia
+                7.1. Creación de paquetes
               </div>
             </div>
           </a>
         
         
           
-          <a href="028_Comentarios.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 2.8. Comentarios">
+          <a href="073_Polimorfismo.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 7.3. Polimorfismo">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                2.8. Comentarios
+                7.3. Polimorfismo
               </div>
             </div>
             <div class="md-footer__button md-icon">
