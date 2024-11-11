@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/glopezgarcia/PRO/uutt/ut07/073_Polimorfismo.html">
+        <link rel="canonical" href="https://github.com/glopezgarcia/PRO/uutt/ut07/073_AccesoSuperclase.html">
       
       
         <link rel="prev" href="072_Herencia.html">
       
       
-        <link rel="next" href="074_AccesoSuperclase.html">
+        <link rel="next" href="074_Polimorfismo.html">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>7.3. Polimorfismo - Programación</title>
+        <title>7.3. Acceso a superclase - Programación</title>
       
     
     
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#polimorfismo" class="md-skip">
+        <a href="#acceso-a-la-superclase" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              7.3. Polimorfismo
+              7.3. Acceso a superclase
             
           </span>
         </div>
@@ -1646,11 +1646,11 @@
         
       
       
-      <a href="073_Polimorfismo.html" class="md-nav__link md-nav__link--active">
+      <a href="073_AccesoSuperclase.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    7.3. Polimorfismo
+    7.3. Acceso a superclase
   </span>
   
 
@@ -1668,11 +1668,11 @@
   
   
     <li class="md-nav__item">
-      <a href="074_AccesoSuperclase.html" class="md-nav__link">
+      <a href="074_Polimorfismo.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.4. Acceso a superclase
+    7.4. Polimorfismo
   </span>
   
 
@@ -1788,14 +1788,41 @@
                   
 
 
-<h1 id="polimorfismo">Polimorfismo<a class="headerlink" href="#polimorfismo" title="Permanent link">&para;</a></h1>
-<p>El polimorfismo es una de las características fundamentales de la Programación Orientada a Objetos y está estrechamente relacionado con la herencia. Una jerarquía de clases, los métodos y clases abstractas, la sobreescritura de métodos y las conversiones entre clases de la jerarquía sientan las bases para el <strong>polimorfismo</strong>. Este se puede definir como la cualidad que tienen los objetos para responder de distinto modo a un mismo mensaje.</p>
-<p>Para conseguir un <strong>comportamiento polimórfico</strong> en un programa Java se debe cumplir lo siguiente:</p>
-<ul>
-<li>Los métodos deben estar declarados (métodos abstractos) y a veces también pueden estar implementados (métodos no abstractos) en la clase base.</li>
-<li>Los métodos deben estar redefinidos en las clases derivadas.</li>
-<li>Los objetos deben ser manipulados utilizando referencias a la clase base.</li>
-</ul>
+<h1 id="acceso-a-la-superclase">Acceso a la superclase<a class="headerlink" href="#acceso-a-la-superclase" title="Permanent link">&para;</a></h1>
+<p><a class="glightbox" href="../../img/ut07/05_super.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Herencia" src="../../img/ut07/05_super.png" width="200" /></a></p>
+<p>Las dudas con los constructores aparecen ligadas a las jerarquías de clases y a la palabra <code>super()</code>. Supongamos que tenemos la jerarquía de la derecha. </p>
+<p>Como podemos ver todos los constructores llaman por defecto al constructor de la clase superior a través de una llamada a <code>super()</code> (en este caso al constructor por defecto). Esto es debido a que los constructores no se heredan entre jerarquías de clases. Por lo tanto la palabra <code>super()</code> siempre es la primera línea de un constructor e invoca al constructor de la clase superior que comparta el mismo tipo de parametrización.</p>
+<p>Aunque nosotros no pongamos la palabra <code>super()</code> esta siempre será añadida salvo que nosotros la añadamos. Por ejemplo si nuestros constructores tienen parámetros las clausulas <code>super</code> que deberemos construir serán las siguientes entre <code>Persona</code> y <code>Deportista</code> para que el código compile:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Persona</label><label for="__tabbed_1_2">Deportista</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Persona</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Persona</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="kd">super</span><span class="p">();</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getNombre</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setNombre</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-14"><span class="linenos" data-linenos="14 "></span><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Deportista</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Persona</span><span class="p">{</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Deportista</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos="5 "></span><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>Ya que sino el compilador añadirá <code>super()</code> por defecto y el código no compilará al carecer la clase <code>Persona</code> de un constructor por defecto( ya que tiene el constructror parametrizado).</p>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
@@ -1853,13 +1880,13 @@
         
         
           
-          <a href="074_AccesoSuperclase.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 7.4. Acceso a superclase">
+          <a href="074_Polimorfismo.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 7.4. Polimorfismo">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                7.4. Acceso a superclase
+                7.4. Polimorfismo
               </div>
             </div>
             <div class="md-footer__button md-icon">

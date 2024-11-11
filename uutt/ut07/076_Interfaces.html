@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#interfaces" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1632,11 +1637,11 @@
   
   
     <li class="md-nav__item">
-      <a href="073_Polimorfismo.html" class="md-nav__link">
+      <a href="073_AccesoSuperclase.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.3. Polimorfismo
+    7.3. Acceso a superclase
   </span>
   
 
@@ -1653,11 +1658,11 @@
   
   
     <li class="md-nav__item">
-      <a href="074_AccesoSuperclase.html" class="md-nav__link">
+      <a href="074_Polimorfismo.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.4. Acceso a superclase
+    7.4. Polimorfismo
   </span>
   
 
@@ -1700,6 +1705,8 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
+      
+        
       
       
       <a href="076_Interfaces.html" class="md-nav__link md-nav__link--active">
@@ -1781,9 +1788,85 @@
                   
 
 
-  <h1>7.6. Interfaces</h1>
-
-
+<h1 id="interfaces">Interfaces<a class="headerlink" href="#interfaces" title="Permanent link">&para;</a></h1>
+<p>Una <strong>interfaz</strong> es un archivo <code>.java</code> formado por un conjunto de métodos abstractos. Además, puede contener un conjunto de constantes públicas. Podemos considerar una interfaz como una clase abstracta pura: todos sus métodos son abstractos y, si tiene atributos, son todos constantes. En Java una interfaz se crea de forma similar a como se crea una clase utilizando la palabra clave interface en lugar de <code>class</code>.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="o">[</span><span class="kd">public</span><span class="o">]</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">NombreInterface</span><span class="p">{</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">declaraciones</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">métodos</span><span class="w"> </span><span class="n">abstractos</span><span class="p">;</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="o">[</span><span class="n">atributos</span><span class="w"> </span><span class="n">constantes</span><span class="p">;</span><span class="o">]</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Lo que aparece entre corchetes es opcional. La interfaz puede definirse <code>public</code> o sin modificador de acceso, y tiene el mismo significado que para las clases. Si tiene el modificador <code>public</code> el archivo .java que la contiene debe tener el mismo nombre que la interfaz. Igual que las clases, al compilar el archivo .java de la interfaz se genera un archivo .class. Todos los métodos de una interface son públicos y abstractos, aunque no se indique explícitamente. Por lo tanto, no es necesario escribir en cada momento <code>public abstract</code>. Una interfaz puede contener atributos constantes. Las constantes declaradas son públicas y estáticas, aunque no se indique explícitamente. Por lo tanto, se pueden omitir los modificadores public static final cuando se declara el atributo. Las constantes se deben inicializar en la misma instrucción de declaración.</p>
+<div class="admonition note">
+<p class="admonition-title">clase abstracta vs interfaz</p>
+<ul>
+<li>En la interfaz todo método es abstracto y público sin necesidad de declararlo, mientras que una clase abstracta puede tener métodos abstractos y no abstractos.</li>
+<li>Los atributos declarados en una interfaz son <code>public static final</code>. Por el contrario, una clase abstracta puede contener también atributos de otro tipo (de instancia, no constantes, private, etc).</li>
+<li>Las interfaces juegan un papel fundamental en la creación de aplicaciones Java ya que permiten interactuar a objetos no relacionados entre sí. Utilizando interfaces es posible que clases no relacionadas, situadas en distintas jerarquías de clases sin relaciones de herencia, tengan comportamientos comunes.</li>
+</ul>
+</div>
+<p>Las interfaces definen un protocolo de comportamiento y proporcionan un formato común para implementarlo en las clases. Los nombres de las interfaces suelen acabar en <em>able</em> aunque no es necesario: configurable, arrancable, dibujable, etc.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">EjemploInterface.java</label><label for="__tabbed_1_2">Jugador.java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EjemploInterface</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">Jugador</span><span class="w"> </span><span class="o">[]</span><span class="w"> </span><span class="n">jugadores</span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="o">[</span><span class="mi">7</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="c1">//array de objetos Jugador</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="n">jugadores</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="s">&quot;Gasol&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pivot&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">37</span><span class="p">);</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">jugadores</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="s">&quot;Rubio&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;base&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">);</span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">jugadores</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="s">&quot;Rodriguez&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;base&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">36</span><span class="p">);</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="n">jugadores</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="s">&quot;Hernangomez&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pivot&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">28</span><span class="p">);</span>
+</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">jugadores</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="s">&quot;Abrines&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;escolta/alero&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">29</span><span class="p">);</span>
+</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">jugadores</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="s">&quot;Aguilar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ala-pivot&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">);</span>
+</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">jugadores</span><span class="o">[</span><span class="mi">6</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="s">&quot;Oriola&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ala-pivot&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">29</span><span class="p">);</span>
+</span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">jugadores</span><span class="p">);</span>
+</span><span id="__span-1-13"><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="n">Jugador</span><span class="w"> </span><span class="n">j</span><span class="p">:</span><span class="w"> </span><span class="n">jugadores</span><span class="p">){</span>
+</span><span id="__span-1-14"><span class="linenos" data-linenos="14 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">j</span><span class="p">);</span>
+</span><span id="__span-1-15"><span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-16"><span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-17"><span class="linenos" data-linenos="17 "></span><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Jugador</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Comparable</span><span class="p">{</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">apellido</span><span class="p">;</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">puesto</span><span class="p">;</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="p">;</span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Jugador</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">apellido</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">puesto</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="p">){</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">apellido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">apellido</span><span class="p">;</span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">puesto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">puesto</span><span class="p">;</span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">edad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edad</span><span class="p">;</span>
+</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getApellido</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">apellido</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getPuesto</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">puesto</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getEdad</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">edad</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setApellido</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">apellido</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">apellido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">apellido</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setPuesto</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">puesto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">puesto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">puesto</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-15"><span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setEdad</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">edad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edad</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-16"><span class="linenos" data-linenos="16 "></span>
+</span><span id="__span-2-17"><span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="nd">@Override</span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">(){</span>
+</span><span id="__span-2-18"><span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Apellido: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">apellido</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; Puesto: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">puesto</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; Edad: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">edad</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; años.&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-19"><span class="linenos" data-linenos="19 "></span>
+</span><span id="__span-2-20"><span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compareTo</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="p">){</span>
+</span><span id="__span-2-21"><span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="n">Jugador</span><span class="w"> </span><span class="n">auxJugador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Jugador</span><span class="p">)</span><span class="w"> </span><span class="n">o</span><span class="p">;</span><span class="w"> </span><span class="c1">//se realiza downcasting</span>
+</span><span id="__span-2-22"><span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">edadauxJugador</span><span class="p">.</span><span class="na">edad</span><span class="p">){</span><span class="w"> </span>
+</span><span id="__span-2-23"><span class="linenos" data-linenos="23 "></span><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-2-24"><span class="linenos" data-linenos="24 "></span><span class="w">        </span><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span><span id="__span-2-25"><span class="linenos" data-linenos="25 "></span><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-2-26"><span class="linenos" data-linenos="26 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-27"><span class="linenos" data-linenos="27 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-28"><span class="linenos" data-linenos="28 "></span><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>El método <code>sort()</code> (según se expresa en la Documentación API) requiere que todos los elementos del array implementen la interfaz <code>Comparable</code>. Esta interfaz tiene el método abstracto <code>compareTo(Object o)</code> que deberá ser implementado en la clase a la que pertenecen los objetos a comparar.</p>
+<p>El método <code>compareTo(Object o)</code> deberá devolver -1, 0 ó 1 en función de si la edad del primer jugador es menor, igual o mayor que la del segundo, respectivamente</p>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
