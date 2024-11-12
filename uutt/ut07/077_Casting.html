@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#conversiones-entre-objetos-casting" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1722,6 +1727,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    7.7. Casting
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="077_Casting.html" class="md-nav__link md-nav__link--active">
         
@@ -1732,6 +1750,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#upcasting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upcasting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downcasting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downcasting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#casting-en-horizontal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Casting en horizontal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementacion-de-casting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementación de casting
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1766,6 +1839,73 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UT 08.Control de excepciones. Funciones Lambda. Expresiones regulares.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            UT 08.Control de excepciones. Funciones Lambda. Expresiones regulares.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut08/ResumenUT.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Propuesta didáctica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1781,9 +1921,42 @@
                   
 
 
-  <h1>7.7. Casting</h1>
-
-
+<h1 id="conversiones-entre-objetos-casting">Conversiones entre objetos (casting)<a class="headerlink" href="#conversiones-entre-objetos-casting" title="Permanent link">&para;</a></h1>
+<p>Java admite la conversión de tipos con ciertas limitaciones. Consideremos una jerarquía de herencia como la que vemos en el siguiente diagrama de clases, sobre el que vamos a analizar las posibilidades de conversión de tipos de distintas formas.</p>
+<figure>
+  <a class="glightbox" href="../../img/ut07/08_casting.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Casting" src="../../img/ut07/08_casting.png" width="500" /></a>
+</figure>
+<h2 id="upcasting">Upcasting<a class="headerlink" href="#upcasting" title="Permanent link">&para;</a></h2>
+<p>El <strong>upcasting</strong> es el proceso de convertir un objeto de una subclase en un objeto de su superclase. Este tipo de conversión es implícito y seguro en Java porque cualquier instancia de una subclase es también una instancia de su superclase. Esto permite tratar a un objeto como una instancia de su clase padre</p>
+<h2 id="downcasting">Downcasting<a class="headerlink" href="#downcasting" title="Permanent link">&para;</a></h2>
+<p>El <strong>downcasting</strong> es el proceso inverso: convertir una referencia de superclase a una referencia de subclase. Este tipo de conversión debe ser explícito en Java, y solo es seguro si el objeto que se está convirtiendo es realmente una instancia de la subclase. Si no lo es, se generará una excepción <code>ClassCastException</code>.</p>
+<h2 id="casting-en-horizontal">Casting en horizontal<a class="headerlink" href="#casting-en-horizontal" title="Permanent link">&para;</a></h2>
+<p>Se trataría de poner lo que está a un lado al otro lado, esto no es posible de ningún modo.</p>
+<h2 id="implementacion-de-casting">Implementación de casting<a class="headerlink" href="#implementacion-de-casting" title="Permanent link">&para;</a></h2>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="n">Profesor</span><span class="w"> </span><span class="n">p1</span><span class="p">;</span><span class="w"> </span><span class="c1">//p1 es tipo Profesor. Admite ser Profesor, ProfesorTitular o ProfesorInterino</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="n">ProfesorInterino</span><span class="w"> </span><span class="n">p44</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ProfesorInterino</span><span class="p">();</span><span class="w"> </span><span class="c1">//p44 es ProfesorInterino.</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p44</span><span class="p">;</span><span class="w"> </span><span class="c1">// Conversión hacia arriba: sin problema. Ahora p1 que es tipo profesor, almacena un profesor interino</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span><span class="n">p44</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="c1">// ERROR en la conversión hacia abajo.</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Determinación del tipo de variables</p>
+<p>La palabra clave <code>instanceof</code>, todo en minúsculas, sirve para verificar el tipo de una variable. La sintaxis que emplearemos para <code>instanceof</code> y sus normas de uso serán las siguientes:</p>
+<ul>
+<li>a. Sólo se pueden comparar instancias que relacionen dentro de la jerarquía de tipos (en cualquier dirección) pero no objetos que no relacionen en una jerarquía. Es decir, no podemos comparar profesores con taxis por ejemplo, porque no relacionarán dentro de una jerarquía.</li>
+<li>b. Solo se puede usar <code>instanceof</code> asociado a un condicional. </li>
+</ul>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">profesor43</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">ProfesorInterino</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="err">…</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="err">…</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos="5 "></span><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 

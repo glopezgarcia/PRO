@@ -1709,6 +1709,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    7.6. Interfaces
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="076_Interfaces.html" class="md-nav__link md-nav__link--active">
         
   
@@ -1718,6 +1729,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementando-una-interfaz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementando una interfaz
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1757,6 +1796,73 @@
   
   <span class="md-ellipsis">
     7.8. Clases anidadas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UT 08.Control de excepciones. Funciones Lambda. Expresiones regulares.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            UT 08.Control de excepciones. Funciones Lambda. Expresiones regulares.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut08/ResumenUT.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Propuesta didáctica
   </span>
   
 
@@ -1862,7 +1968,53 @@
 </div>
 </div>
 <p>El método <code>sort()</code> (según se expresa en la Documentación API) requiere que todos los elementos del array implementen la interfaz <code>Comparable</code>. Esta interfaz tiene el método abstracto <code>compareTo(Object o)</code> que deberá ser implementado en la clase a la que pertenecen los objetos a comparar.</p>
-<p>El método <code>compareTo(Object o)</code> deberá devolver -1, 0 ó 1 en función de si la edad del primer jugador es menor, igual o mayor que la del segundo, respectivamente</p>
+<p>El método <code>compareTo(Object o)</code> deberá devolver -1, 0 ó 1 en función de si la edad del primer jugador es menor, igual o mayor que la del segundo, respectivamente.</p>
+<h2 id="implementando-una-interfaz">Implementando una interfaz<a class="headerlink" href="#implementando-una-interfaz" title="Permanent link">&para;</a></h2>
+<p>Para indicar que una clase implementa los métodos de una interfaz se utiliza la palabra clave <code>implements</code>. Las clases que implementan una interfaz deben <strong>implementar todos los métodos abstractos contenidos en la interfaz</strong>. De lo contrario, serán clases abstractas y deberán declararse como tal. </p>
+<div class="admonition info">
+<p class="admonition-title">A tener en cuenta</p>
+<p>Si una clase implementa una interfaz, todas sus clases derivadas heredan los métodos implementados en la clase base y las constantes definidas en la interfaz.</p>
+</div>
+<p>Una clase puede implementar más de una interfaz. En este caso, los nombres de las interfaces se escriben a continuación de implements y separadas por comas:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UnaClase</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">NombreInterface1</span><span class="p">,</span><span class="w"> </span><span class="n">NombreInterface2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span>
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Java y herencia múltiple</p>
+<p>El lenguaje Java no permite herencia múltiple, pero las interfaces proporcionan una alternativa para implementar algo parecido a la herencia múltiple de otros lenguajes. En Java una clase solo puede tener una clase base pero puede implementar múltiples interfaces.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ClaseDerivada</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ClaseBase</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Interface1</span><span class="p">,</span><span class="w"> </span><span class="n">Interface2</span><span class="p">,</span><span class="w"> </span><span class="n">Interface3</span><span class="p">,</span><span class="w"> </span><span class="err">…</span>
+</span></code></pre></div>
+</div>
+<p>Cuando hay una implementación múltiple, es posible que dos interfaces tengan atributos o métodos con el mismo nombre. La clase que implementa las interfaces recibirá métodos o atributos con el mismo nombre. A esto se le llama colisión. Java establece una serie de reglas para solucionar las colisiones. Para las colisiones de nombres de atributos se obliga a especificar el nombre de la interfaz base a la que pertenecen al utilizarlos:</p>
+<p><div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span><span class="n">NombreInterfaz</span><span class="p">.</span><span class="na">atributo</span><span class="p">;</span>
+</span></code></pre></div>
+Para las colisiones de los nombres de métodos:</p>
+<ul>
+<li>Si tiene el mismo nombre y diferentes parámetros se produce sobrecarga de métodos, permitiéndose que existan varias maneras de llamar al método.</li>
+<li>Si solo cambia el valor devuelto, da un error de compilación indicando que no se pueden implementar los dos.</li>
+<li>Si coinciden en sus declaraciones, se debe eliminar uno de los dos.</li>
+</ul>
+<p>Se puede establecer una jerarquía de herencia entre interfaces, igual que con las clases.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Interface2</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Interface1</span><span class="p">{</span><span class="w"> </span><span class="err">…</span><span class="p">}</span>
+</span><span id="__span-6-2"><span class="linenos" data-linenos="2 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Interface3</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Interface1</span><span class="p">{</span><span class="w"> </span><span class="err">…</span><span class="p">}</span>
+</span></code></pre></div>
+<p>La definición de una interfaz implica una definición de un nuevo tipo de referencia y por ello se puede usar el nombre de la interfaz como nombre de tipo. El nombre de una interfaz se puede utilizar en cualquier lugar donde pueda aparecer el nombre de un tipo de datos. Si se define una variable cuyo tipo es una interfaz, se le puede asignar un objeto que sea una instancia de una clase que implementa la interfaz.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos=" 1 "></span><span class="n">Relacionable</span><span class="w"> </span><span class="n">r1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Linea</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-7-2"><span class="linenos" data-linenos=" 2 "></span><span class="n">Relacionable</span><span class="w"> </span><span class="n">r2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Fraccion</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">);</span>
+</span><span id="__span-7-3"><span class="linenos" data-linenos=" 3 "></span>
+</span><span id="__span-7-4"><span class="linenos" data-linenos=" 4 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">r1</span><span class="p">);</span><span class="w"> </span><span class="c1">//ejecuta toString de Línea</span>
+</span><span id="__span-7-5"><span class="linenos" data-linenos=" 5 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">r2</span><span class="p">);</span><span class="w"> </span><span class="c1">//ejecuta toString de Fracción</span>
+</span><span id="__span-7-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-7-7"><span class="linenos" data-linenos=" 7 "></span><span class="n">Relacionable</span><span class="w"> </span><span class="o">[]</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Relacionable</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span><span class="p">;</span>
+</span><span id="__span-7-8"><span class="linenos" data-linenos=" 8 "></span><span class="n">array</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Línea</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-7-9"><span class="linenos" data-linenos=" 9 "></span><span class="n">array</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Fracción</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">);</span>
+</span><span id="__span-7-10"><span class="linenos" data-linenos="10 "></span><span class="n">array</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Línea</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-7-11"><span class="linenos" data-linenos="11 "></span><span class="k">for</span><span class="p">(</span><span class="n">Relacionable</span><span class="w"> </span><span class="n">r</span><span class="p">:</span><span class="w"> </span><span class="n">array</span><span class="p">)</span>
+</span><span id="__span-7-12"><span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">r</span><span class="p">);</span>
+</span></code></pre></div>
+<p>En este caso dos clases no relacionadas, <code>Linea</code> y <code>Fraccion</code>, por implementar la misma interfaz <code>Relacionable</code> podemos manejarlas a través de referencias a la interfaz y aplicar polimorfismo. Las interfaces proporcionan más polimorfismo que el que se puede obtener de una simple jerarquía de clases.</p>
+<figure>
+  <a class="glightbox" href="../../img/ut07/07_interfaz.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Interfaz" src="../../img/ut07/07_interfaz.png" width="300" /></a>
+</figure>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
