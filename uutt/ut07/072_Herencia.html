@@ -1688,6 +1688,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividades
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2155,6 +2164,46 @@
 <li>Si al llegar a la clase raíz el método no se ha encontrado se producirá un error.</li>
 </ol>
 </div>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 701</strong> (). Realiza la implementación de la siguiente imagen:</p>
+<p><figure markdown="span">
+    <a class="glightbox" href="../../img/ut07/03_HerenciaJava.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Herencia" src="../../img/ut07/03_HerenciaJava.png" width="700" /></a>
+</figure></p>
+<ul>
+<li><code>Persona</code> tiene como atributos: <code>dni</code>, <code>sexo</code> y <code>anyoNacimiento</code>. Además de los métodos que accedan y modifiquen las propiedades, se ha de programar un método que calcule la edad (solo el año).</li>
+<li><code>Alumno</code> tiene como atributo <code>etapaEducativa</code> y <code>provinciaVive</code>.</li>
+<li><code>Ingeniero</code> tiene como atributo <code>colegioAdscrito</code>. Y un método que es <code>calculoCuota</code> que si es industrial es gratuito, si es otro son 50€.</li>
+<li><code>Tecnico</code> tiene como atributo <code>gradoProfesional</code> y <code>anyoComienzo</code>. Además tiene un método que es <code>anyoExperiencia</code> que nos calcula cuantos años lleva trabajados desde su comienzo.</li>
+<li><code>Administrativo</code> tiene el atributo <code>administración</code>.</li>
+<li><code>Profesor</code> tiene el atributo <code>especialidad</code> y <code>anyoInicioTrabajo</code>. Tiene un método que es <code>anyosComoDocente</code> que calcula los años que lleva en el cuerpo.</li>
+<li><code>Interino</code> tiene como atributo bolsa, que indica el número de bolsas en las que está. En el constructor por defecto deberá marcar 1, pero en el sobrecargado sólo si se introduce 0.</li>
+<li><code>Plantilla</code> tiene <code>anyoOposicion</code> y el método <code>anyosFuncionarioCarrera</code>.</li>
+<li><code>Catedrático</code> un boolean que sea <code>esCatedratico</code>.</li>
+</ul>
+<p>Además hay que generar un main en el que se comprueben todos los objetos y métodos que se programen.</p>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 702</strong> (). Implementa una clase base llamada <code>Vehiculo</code>, luego desarrolla una clase <code>Coche</code> que herede de la clase base. Por último, crea una nueva clase que tú quieras y sea específica de <code>Coche</code>, es decir, que herede de la clase <code>Coche</code>. Habrá que almacenar información sobre su estado y comportamiento (atributos y métodos) como, por ejemplo, nombre, velocidad, marcha, mover, ruedas, etc. </p>
+<p>Incluye los métodos cambiar de marchas, acelerar/desacelerar velocidad. Tendrás que decidir en qué clase se almacena qué información. Para el tipo más concreto de coche que has definido tendrás que añadir algo específico para ese tipo de coche. No olvides los constructores con todos los parámetros.</p>
+<p>Crea un método main de prueba</p>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 703</strong> (). Escribe una clase con el nombre <code>Circulo</code>. La clase necesita un campo (variable de instancia) con radio de nombre de tipo doble. La clase debe tener un constructor con un parámetro de radio de tipo doble y debe inicializar los campos. En caso de que el parámetro de radio sea menor que 0, debe establecer el valor del campo de radio en 0.</p>
+<p>Escribe los siguientes métodos (métodos de instancia):</p>
+<ul>
+<li><code>getRadio</code> sin ningún parámetro, debe devolver el valor del campo de radio.</li>
+<li><code>getArea</code> sin ningún parámetro, debe devolver el área calculada (radio * radio * PI). Para PI use la constante Math.PI.</li>
+</ul>
+<p>Escriba una clase con el nombre <code>Cilindro</code> que extienda la clase <code>Circulo</code>. La clase necesita un campo (variable de instancia) de nombre altura de tipo doble. La clase necesita tener un constructor con dos parámetros radio y altura, ambos de tipo doble. En caso de que el parámetro de altura sea inferior a 0, debe establecer el valor del campo de altura en 0. Crea los siguientes métodos (métodos de instancia):</p>
+<ul>
+<li><code>getAltura</code> sin ningún parámetro, debe devolver el valor del campo de altura.</li>
+<li><code>getVolume</code> sin ningún parámetro, debe devolver el volumen calculado. Para calcular el volumen multiplica el área por la altura.</li>
+</ul>
+<p>Crea un método main con código de prueba</p>
+</li>
+</ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->

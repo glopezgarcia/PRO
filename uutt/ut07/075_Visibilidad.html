@@ -1688,6 +1688,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    7.5. Visibilidad
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="075_Visibilidad.html" class="md-nav__link md-nav__link--active">
         
   
@@ -1697,6 +1708,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividades
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2021,6 +2060,61 @@
 <figure>
   <a class="glightbox" href="../../img/ut07/06_Scope.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Herencia" src="../../img/ut07/06_Scope.png" /></a>
 </figure>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 704</strong> (). Usando composición has de crear un total de 5 clases de la siguiente forma:</p>
+<ul>
+<li>
+<p>a. Crea una clase llamada <code>Lampara</code> con tres variables de instancia: <code>estilo</code> de tipo <code>String</code>, <code>batería</code> de tipo <code>booleano</code> y <code>calificación</code> de tipo entero. Todas las variables deben ser privadas. La clase se debe construir con los tres parámetros. Añade 4 métodos:</p>
+</li>
+<li>
+<p><code>encender</code> sin tipo de retorno y debe imprimir el mensaje de que la lámpara se ha encendido, </p>
+</li>
+<li><code>getEstilo</code> devuelve el estilo de la lámpara, </li>
+<li><code>hayBateria</code> devuelve el booleano de batería y </li>
+<li>
+<p><code>getCalificacion</code> que devuelve la calificación de la lámpara.</p>
+</li>
+<li>
+<p>b. Crea una clase llamada <code>Cama</code> con 5 atributos privados: <code>estilo</code> <code>String</code>, <code>almohadas</code>, <code>altura</code>, <code>sabanas</code> y <code>colcha</code> de tipo entero. El constructor debe ser implementado con esos 5 atributos. Agrega los métodos: </p>
+</li>
+<li>
+<p><code>hacer</code> no devuelve nada e imprime que se ha hecho la cama, </p>
+</li>
+<li>
+<p>los <code>getters</code> de estilo, almohadas, altura, sábanas y colcha.</p>
+</li>
+<li>
+<p>c. Añade una clase llamada <code>Techo</code> con dos variables: <code>altura</code> y <code>color</code> de tipo entero. Constructor con todos los parámetros. Y los dos métodos <code>getter</code>.</p>
+</li>
+<li>d. Crea una clase llamada <code>Pared</code> con una variable <code>dirección</code> de tipo <code>String</code>, su constructor con una variable y el método <code>getter</code>.</li>
+<li>
+<p>e. La última clase será <code>Habitación</code> y contendrá 8 variables de instancia: <code>nombre</code> de tipo <code>String</code>, <code>pared1</code>, <code>pared2</code>, <code>pared3</code> y <code>pared4</code> de tipo Pared, <code>techo</code> de tipo <code>Techo</code>, <code>cama</code> de tipo <code>Cama</code> y <code>lampara</code> de tipo <code>Lampara</code>. El constructor debe contener las 8 variables. La clase debe tener dos métodos: </p>
+</li>
+<li>
+<p><code>getLampara</code> que devuelve el objeto lampara </p>
+</li>
+<li>
+<p><code>hacerLaCama</code> que imprime el mensaje se está haciendo la cama y llama al método <code>hacer</code> en la clase <code>Cama</code>.</p>
+</li>
+<li>
+<p>f. Crea una clase <code>Main</code> con un método <code>main</code> que pruebe el código.</p>
+</li>
+<li>g. Añade código y métodos para probar el método encender de la clase <code>lampara</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 705</strong> (). Teniendo en cuenta el principio de encapsulación usado en <abbr title="Programación Orientada a Objetos">POO</abbr> crea una clase llamada <code>Impresora</code>, que simulará una impresora real. Debe tener los campos de nivel de tóner, número de páginas impresas y si es una impresora con impresión a doble cara. Añade:</p>
+<ul>
+<li>a. Un método para añadir una cantidad de tóner al nivel actual, este método actualizará el nivel de tóner (hasta un máximo 100%), la cantidad de tóner que se va a añadir debe estar entre 0-100. Comprobar también que al añadir la cantidad de tóner no se supere el nivel de tóner. Si cualquier condición falla debe devolver -1 en caso contrario se devuelve el nuevo nivel de tóner.</li>
+<li>b. Otro método que simule la impresión de páginas (el cuál debe actualizar el número de páginas impresas). Se le pasarán las páginas a imprimir. También se tendrá en cuenta si la impresora es a doble cara, ya que entonces se habrá de calcular cuántas páginas se imprimen. El método debe devolver las páginas a imprimir y actualizará el valor del número de páginas impresas.</li>
+<li>c. Método getter que devuelve el número de páginas impresas.</li>
+<li>d. Decide que visibilidad van a tener los campos, si es necesario un constructor o no y cualquier cosa que creas necesaria.</li>
+<li>e. Crea una clase <code>MainEncapsulacion</code> con un <code>main</code> con código de prueba.</li>
+</ul>
+</li>
+</ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
