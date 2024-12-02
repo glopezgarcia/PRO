@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#expresiones-lambda" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1973,6 +1978,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    8.6. Expresiones Lambda
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="086_ExpresionesLambda.html" class="md-nav__link md-nav__link--active">
         
@@ -1983,6 +2001,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sintaxis
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2032,9 +2078,22 @@
                   
 
 
-  <h1>8.6. Expresiones Lambda</h1>
-
-
+<h1 id="expresiones-lambda">Expresiones lambda<a class="headerlink" href="#expresiones-lambda" title="Permanent link">&para;</a></h1>
+<p>Las <strong>expresiones lambda</strong> es una característica importante que fue añadida en Java 8. Es muy útil, ayuda a iterar, filtrar y extraer datos de la colección. Una expresión lambda es un bloque corto de código que toma parámetros y devuelve un valor. Las expresiones lambda son similares a los métodos, pero no necesitan un nombre y se pueden implementar directamente en el cuerpo de un método. La expresiones lambda de Java son tratadas como una función, por lo que el compilador no crea un archivo <code>.class</code>.</p>
+<p>La expresión lambda proporciona la implementación de una interfaz funcional. Una interfaz funcional es aquella que tiene un solo método abstracto. Las interfaces funcionales en Java incluyen la anotación <code>@FunctionalInterface</code>.</p>
+<h2 id="sintaxis">Sintaxis<a class="headerlink" href="#sintaxis" title="Permanent link">&para;</a></h2>
+<p>Dado que las expresiones lambda son efectivamente solo métodos, las expresiones lambda pueden tomar parámetros como los métodos. La expresión lambda de Java consta de tres componentes.</p>
+<ol>
+<li>Parámetros - lista de argumentos: una expresión lambda puede tener cero o cualquier número de argumentos.</li>
+<li>Token de flecha: se utiliza para vincular la lista de argumentos y el cuerpo de la expresión.</li>
+<li>Cuerpo: Contiene expresiones y declaraciones para la expresión lambda.</li>
+</ol>
+<p>Las expresiones lambda se pueden almacenar en variables si el tipo de variable es una interfaz que tiene un solo método. La expresión lambda debe tener la misma cantidad de parámetros y el mismo tipo de retorno que ese método.</p>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
