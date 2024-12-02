@@ -2190,7 +2190,7 @@
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><strong><abbr title="Actividades de clase.">AC</abbr> 701</strong> (). Realiza la implementación de la siguiente imagen:</p>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 701</strong> (<abbr title="Desarrolla programas organizados en clases analizando y aplicando los principios de la programación orientada a objetos.">RA4</abbr>/ <abbr title="Se han definido y utilizado clases heredadas.">CE4g</abbr> <abbr title="Se han creado y utilizado métodos estáticos.">CE4h</abbr> <abbr title="Se han creado y utilizado conjuntos y librerías de clases.">CE4i</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p). Realiza la implementación de la siguiente imagen:</p>
 <p><figure markdown="span">
     <a class="glightbox" href="../../img/ut07/03_HerenciaJava.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Herencia" src="../../img/ut07/03_HerenciaJava.png" width="700" /></a>
 </figure></p>
@@ -2208,12 +2208,12 @@
 <p>Además hay que generar un main en el que se comprueben todos los objetos y métodos que se programen.</p>
 </li>
 <li>
-<p><strong><abbr title="Actividades de clase.">AC</abbr> 702</strong> (). Implementa una clase base llamada <code>Vehiculo</code>, luego desarrolla una clase <code>Coche</code> que herede de la clase base. Por último, crea una nueva clase que tú quieras y sea específica de <code>Coche</code>, es decir, que herede de la clase <code>Coche</code>. Habrá que almacenar información sobre su estado y comportamiento (atributos y métodos) como, por ejemplo, nombre, velocidad, marcha, mover, ruedas, etc. </p>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 702</strong> (<abbr title="Desarrolla programas organizados en clases analizando y aplicando los principios de la programación orientada a objetos.">RA4</abbr>/ <abbr title="Se han definido y utilizado clases heredadas.">CE4g</abbr> <abbr title="Se han creado y utilizado métodos estáticos.">CE4h</abbr> <abbr title="Se han creado y utilizado conjuntos y librerías de clases.">CE4i</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p). Implementa una clase base llamada <code>Vehiculo</code>, luego desarrolla una clase <code>Coche</code> que herede de la clase base. Por último, crea una nueva clase que tú quieras y sea específica de <code>Coche</code>, es decir, que herede de la clase <code>Coche</code>. Habrá que almacenar información sobre su estado y comportamiento (atributos y métodos) como, por ejemplo, nombre, velocidad, marcha, mover, ruedas, etc. </p>
 <p>Incluye los métodos cambiar de marchas, acelerar/desacelerar velocidad. Tendrás que decidir en qué clase se almacena qué información. Para el tipo más concreto de coche que has definido tendrás que añadir algo específico para ese tipo de coche. No olvides los constructores con todos los parámetros.</p>
 <p>Crea un método main de prueba</p>
 </li>
 <li>
-<p><strong><abbr title="Actividades de clase.">AC</abbr> 703</strong> (). Escribe una clase con el nombre <code>Circulo</code>. La clase necesita un campo (variable de instancia) con radio de nombre de tipo doble. La clase debe tener un constructor con un parámetro de radio de tipo doble y debe inicializar los campos. En caso de que el parámetro de radio sea menor que 0, debe establecer el valor del campo de radio en 0.</p>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 703</strong> (<abbr title="Desarrolla programas organizados en clases analizando y aplicando los principios de la programación orientada a objetos.">RA4</abbr>/ <abbr title="Se han definido y utilizado clases heredadas.">CE4g</abbr> <abbr title="Se han creado y utilizado métodos estáticos.">CE4h</abbr> <abbr title="Se han creado y utilizado conjuntos y librerías de clases.">CE4i</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p). Escribe una clase con el nombre <code>Circulo</code>. La clase necesita un campo (variable de instancia) con radio de nombre de tipo doble. La clase debe tener un constructor con un parámetro de radio de tipo doble y debe inicializar los campos. En caso de que el parámetro de radio sea menor que 0, debe establecer el valor del campo de radio en 0.</p>
 <p>Escribe los siguientes métodos (métodos de instancia):</p>
 <ul>
 <li><code>getRadio</code> sin ningún parámetro, debe devolver el valor del campo de radio.</li>
@@ -2225,6 +2225,65 @@
 <li><code>getVolume</code> sin ningún parámetro, debe devolver el volumen calculado. Para calcular el volumen multiplica el área por la altura.</li>
 </ul>
 <p>Crea un método main con código de prueba</p>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 704</strong> (<abbr title="Desarrolla programas organizados en clases analizando y aplicando los principios de la programación orientada a objetos.">RA4</abbr>/ <abbr title="Se han definido y utilizado clases heredadas.">CE4g</abbr> <abbr title="Se han creado y utilizado métodos estáticos.">CE4h</abbr> <abbr title="Se han creado y utilizado conjuntos y librerías de clases.">CE4i</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p).Escribe una clase <code>Herencia1</code> que contendrá el <code>main()</code> y una clase <code>Multimedia</code> para almacenar información de objetos de tipo multimedia (películas, discos, …). La clase <code>Multimedia</code>: </p>
+<ul>
+<li>Contendrá título, autor, formato y duración como atributos privados.</li>
+<li>El formato puede ser uno de los siguientes: wav, mp3, midi, avi, mov, mpg, cdaudio y dvd.</li>
+<li>El valor de todos esos atributos se pasa como parámetros al constructor al crear el objeto.</li>
+<li>Esta clase tiene, además, un método para devolver cada uno de los atributos y un método <code>toString</code> que devuelve la información del objeto.</li>
+</ul>
+<p>En la clase <code>Herencia1</code> se generarán los siguientes objetos:</p>
+<ul>
+<li>obj1 Blade Runner Ridley Scott DVD 117</li>
+<li>obj2 León, el profesional Luc Besson AVI 110</li>
+</ul>
+<p>La información de estos objetos se mostrará por pantalla mediante el método <code>toString</code></p>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 705</strong> (<abbr title="Desarrolla programas organizados en clases analizando y aplicando los principios de la programación orientada a objetos.">RA4</abbr>/ <abbr title="Se han definido y utilizado clases heredadas.">CE4g</abbr> <abbr title="Se han creado y utilizado métodos estáticos.">CE4h</abbr> <abbr title="Se han creado y utilizado conjuntos y librerías de clases.">CE4i</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p). Escribe una clase <code>Película</code> que herede de la clase <code>Multimedia</code> anterior (<abbr title="Actividades de clase.">AC</abbr> 704):</p>
+<ul>
+<li>Esta clase tiene, además de los atributos heredados, los atributos privados actor principal y actriz principal.</li>
+<li>Se permite que uno de los dos sea nulo (no exista o se desconozca), pero no los dos.</li>
+<li>La clase debe tener dos métodos para obtener los nuevos atributos y debe sobrescribir el método toString para que devuelva, además de la información que hereda, la nueva información.</li>
+<li>Modifica la clase principal <code>Herencia1</code> para que los objetos instanciados tengan la siguiente información:<ul>
+<li>Objeto Título Autor Formato Duración Actor princ. Actriz princ.</li>
+<li>obj1 Blade Runner Ridley Scott DVD 117 Harrison Ford</li>
+<li>obj2 León, el profesional Luc Besson AVI 110 Jean Reno Natalie Portman</li>
+</ul>
+</li>
+<li>La información de estos objetos se mostrará por pantalla mediante el método <code>toString()</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong><abbr title="Actividades de refuerzo.">AR</abbr> 706</strong> (<abbr title="Desarrolla programas organizados en clases analizando y aplicando los principios de la programación orientada a objetos.">RA4</abbr>/ <abbr title="Se han definido y utilizado clases heredadas.">CE4g</abbr> <abbr title="Se han creado y utilizado métodos estáticos.">CE4h</abbr> <abbr title="Se han creado y utilizado conjuntos y librerías de clases.">CE4i</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p). Escribe una clase <code>Disco</code> que herede de la clase <code>Multimedia</code>:</p>
+<ul>
+<li>Esta clase tiene, además de los atributos heredados, un atributo privado para almacenar el género al que pertenece (rock, pop, funk, etc).</li>
+<li>La clase debe tener un método para obtener el nuevo atributo y debe sobrescribir el método <code>toString</code> para que devuelva, además de la información que hereda, la nueva información.</li>
+<li>Modifica la clase principal <code>Herencia1</code> para que los objetos instanciados tengan la siguiente información:<ul>
+<li>Objeto Título Autor Formato Duración Género</li>
+<li>obj1 Live at Wembley Queen MP3 40 Rock</li>
+<li>obj2 Aidalai Mecano CDAUDIO 50 Pop</li>
+</ul>
+</li>
+<li>La información de estos objetos se mostrará por pantalla mediante el método <code>toString()</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong><abbr title="Prácticas">PR</abbr> 707</strong> (<abbr title="Desarrolla programas aplicando características avanzadas de los lenguajes orientados a objetos y del entorno de programación.">RA7</abbr>/ <abbr title="Se han identificado los conceptos de herencia, superclase y subclase.">CE7a</abbr> <abbr title="Se han utilizado modificadores para bloquear y forzar la herencia de clases y métodos.">CE7b</abbr> <abbr title="Se ha reconocido la incidencia de los constructores en la herencia.">CE7c</abbr> <abbr title="Se han creado clases heredadas que sobrescriben la implementación de métodos de la superclase.">CE7d</abbr> <abbr title="Se han diseñado y aplicado jerarquías de clases.">CE7e</abbr> <abbr title="Se han probado y depurado las jerarquías de clases.">CE7f</abbr> <abbr title="Se han realizado programas que implementen y utilicen jerarquías de clases.">CE7g</abbr> <abbr title="Se ha comentado y documentado el código.">CE7h</abbr> <abbr title="Se han identificado y evaluado los escenarios de utilización de la herencia y la composición.">CE7j</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p). Diseña y programa las clases necesarias para implementar los pedidos de un restaurante de comida rápida. El restaurante tiene una carta
+dividida en distintas categorías: entradas, bocadillos, hamburguesas y postres.</p>
+<p>Todos los productos pertenecen a una sola categoría y tienen un nombre, descripción y precio.
+Cuando un cliente quiere hacer un pedido, navega por la carta y selecciona los productos que desea. Al elegir un producto, podrá elegir la cantidad y opcionalmente hacer un comentario sobre el producto. Se pueden hacer dos tipos de pedidos, para recoger y para llevar. </p>
+<p>Si el pedido es para recoger, solo se requiere el nombre del cliente. Si es para llevar, además se requiere la dirección y el teléfono. Cuando se finaliza el pedido, el restaurante lo almacena para procesarlo, e informa al cliente del coste total de su pedido, añadiendo 2€ de coste si el pedido es para llevar, y le informará aproximadamente del tiempo que tardará, siendo 10 minutos por producto distinto que incluya el pedido más 15 minutos de llevarlo en caso de servicio a domicilio.</p>
+</li>
+<li>
+<p><strong><abbr title="Prácticas">PR</abbr> 708</strong> (<abbr title="Desarrolla programas aplicando características avanzadas de los lenguajes orientados a objetos y del entorno de programación.">RA7</abbr>/ <abbr title="Se han identificado los conceptos de herencia, superclase y subclase.">CE7a</abbr> <abbr title="Se han utilizado modificadores para bloquear y forzar la herencia de clases y métodos.">CE7b</abbr> <abbr title="Se ha reconocido la incidencia de los constructores en la herencia.">CE7c</abbr> <abbr title="Se han creado clases heredadas que sobrescriben la implementación de métodos de la superclase.">CE7d</abbr> <abbr title="Se han diseñado y aplicado jerarquías de clases.">CE7e</abbr> <abbr title="Se han probado y depurado las jerarquías de clases.">CE7f</abbr> <abbr title="Se han realizado programas que implementen y utilicen jerarquías de clases.">CE7g</abbr> <abbr title="Se ha comentado y documentado el código.">CE7h</abbr> <abbr title="Se han identificado y evaluado los escenarios de utilización de la herencia y la composición.">CE7j</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p). Diseña y programa las clases necesarias para implementar el sistema de reservas de un restaurante.</p>
+<p>El restaurante está formado por gran salón con una capacidad máxima de 50 personas que no se puede superar en ningún caso. </p>
+<p>El salón lo podemos configurar con distintos tipos de mesas, cuadradas para 4 comensales, mesas redondas pequeñas para 8 y mesas redondas grandes para 12 comensales. Tenemos un n.º limitado de cada tipo de mesa, a definir por el programador.</p>
+<p>Cuando se hace una reserva, hay que asignarle el número adecuado de mesas, teniendo en cuenta que las mesas redondas no se pueden juntar, y que cuando juntamos las cuadradas perdemos capacidad, las de las esquinas solo admitirán 3 comensales y las del centro 2. Además del salón, el restaurante dispone de 2 reservados con un capacidad máxima de 8 y de 15 comensales.</p>
+<p>Los reservados solo admiten una única reserva, mientras que en el salón puede haber un número indefinido siempre que no se supere su capacidad máxima.</p>
+<p>Cuando se realiza una reserva, el cliente indicará su nombre, teléfono, número de comensales y si desea reservado. El restaurante, procesará la reserva y la almacenará si es posible indicando el n.º y tipo de mesas que requiere e informará al cliente de que su reserva ha sido guardada. En caso de que la reserva no sea posible, también informará al cliente.</p>
 </li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->

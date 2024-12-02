@@ -1825,6 +1825,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#actividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividad
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2136,6 +2145,37 @@
 </span><span id="__span-1-5"><span class="linenos" data-linenos="5 "></span><span class="p">}</span>
 </span></code></pre></div>
 </div>
+<h2 id="actividad">Actividad<a class="headerlink" href="#actividad" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong><abbr title="Prácticas">PR</abbr> 716</strong> (<abbr title="Desarrolla programas aplicando características avanzadas de los lenguajes orientados a objetos y del entorno de programación.">RA7</abbr>/ <abbr title="Se han identificado los conceptos de herencia, superclase y subclase.">CE7a</abbr> <abbr title="Se han utilizado modificadores para bloquear y forzar la herencia de clases y métodos.">CE7b</abbr> <abbr title="Se ha reconocido la incidencia de los constructores en la herencia.">CE7c</abbr> <abbr title="Se han creado clases heredadas que sobrescriben la implementación de métodos de la superclase.">CE7d</abbr> <abbr title="Se han diseñado y aplicado jerarquías de clases.">CE7e</abbr> <abbr title="Se han probado y depurado las jerarquías de clases.">CE7f</abbr> <abbr title="Se han realizado programas que implementen y utilicen jerarquías de clases.">CE7g</abbr> <abbr title="Se ha comentado y documentado el código.">CE7h</abbr> <abbr title="Se han identificado y evaluado los escenarios de uso de interfaces.">CE7i</abbr> <abbr title="Se han identificado y evaluado los escenarios de utilización de la herencia y la composición.">CE7j</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p) Realiza un programa de nombre <code>AppCompra</code> formado por las siguientes clases:</p>
+<ul>
+<li>Clase abstracta llamada <code>Producto</code> con el atributo <code>protected</code> <code>gasto</code> de tipo <code>double</code> y el método abstracto <code>gastoConIva()</code> que no recibirá parámetros pero devolverá un tipo <code>double</code>.</li>
+<li>Clase <code>Leche</code>, que hereda de <code>Producto</code>, con el atributo privado <code>litros_leche</code> de tipo entero, que implementa el método <code>gastoConIva()</code>, el cual devolverá <code>gasto</code> de tipo <code>double</code>.</li>
+<li>Clase <code>Salmón</code>, que hereda de <code>Producto</code>, con el atributo privado <code>kilos_salmon</code> de tipo <code>double</code>, que implementa el método <code>gastoConIva()</code>, el cual devolverá <code>gasto</code> de tipo <code>double</code>.</li>
+<li>Clase <code>Whisky</code>, que hereda de <code>Producto</code>, con el atributo privado <code>litros_whisky</code> de tipo entero, que implementa el método <code>gastoConIva()</code>, el cual devolverá <code>gasto</code> de tipo <code>double</code>.</li>
+<li>
+<p>Existe polimorfismo en el método <code>gastoConIva()</code>, pues realizará las siguientes operaciones en función del producto:</p>
+<ul>
+<li>Producto Precio unidad IVA Operación realizada en el método gastoConIva()</li>
+<li>Leche 1.95/litro Superreducido (4%) gasto = (double) litros_leche<em>1.95</em>1.04</li>
+<li>Salmón 11.85/kilo Reducido (8%) gasto = kilos_salmon<em>11.85 </em>1.08</li>
+<li>Whisky 11.90/litro Normal (21%) gasto = (doublé) litros_whisky<em>11.90</em>1.21</li>
+</ul>
+</li>
+<li>
+<p>En el <code>main</code> de la clase <code>AppCompra</code>:</p>
+<ul>
+<li>Crea, mediante <em>upcasting</em>, un objeto <code>p1</code> de <code>Producto</code> instanciando al constructor <code>Leche</code>,
+otro objeto <code>p2</code> de <code>Producto</code> instanciando al constructor <code>Salmón</code> y un tercero <code>p3</code> de <code>Producto</code> instanciando al constructor <code>Whisky</code>.</li>
+<li>A continuación, debe invocarse el método <code>gastoConIva</code> aplicado a <code>p1</code> y mostrar por pantalla su gasto.</li>
+<li>Seguidamente debe invocarse el método <code>gastoConIva</code> aplicado a <code>p2</code> y mostrar su gasto.</li>
+<li>Finalmente debe invocarse el método <code>gastoConIva</code> aplicado a <code>p3</code> y mostrar su gasto</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->

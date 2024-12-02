@@ -2211,8 +2211,109 @@ Para las colisiones de los nombres de métodos:</p>
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><strong><abbr title="Actividades de clase.">AC</abbr> 706</strong> (). Crea tres clases: <code>Circulo</code>, <code>Cuadrado</code> y <code>TrianguloEquilatero</code>, tendrán un atributo cada clase que permite calcular el perímetro o área (ya sea lado o radio). Crea una interfaz llamada <code>ShapeOperable</code> que cada clase deberá implementar para seguir una estandarización con métodos de cálculo de perímetro y área y la constante PI.</p>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 712</strong> (<abbr title="Desarrolla programas aplicando características avanzadas de los lenguajes orientados a objetos y del entorno de programación.">RA7</abbr>/ <abbr title="Se han identificado los conceptos de herencia, superclase y subclase.">CE7a</abbr> <abbr title="Se han utilizado modificadores para bloquear y forzar la herencia de clases y métodos.">CE7b</abbr> <abbr title="Se ha reconocido la incidencia de los constructores en la herencia.">CE7c</abbr> <abbr title="Se han creado clases heredadas que sobrescriben la implementación de métodos de la superclase.">CE7d</abbr> <abbr title="Se han diseñado y aplicado jerarquías de clases.">CE7e</abbr> <abbr title="Se han probado y depurado las jerarquías de clases.">CE7f</abbr> <abbr title="Se han realizado programas que implementen y utilicen jerarquías de clases.">CE7g</abbr> <abbr title="Se ha comentado y documentado el código.">CE7h</abbr> <abbr title="Se han identificado y evaluado los escenarios de uso de interfaces.">CE7i</abbr> <abbr title="Se han identificado y evaluado los escenarios de utilización de la herencia y la composición.">CE7j</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Crea tres clases: <code>Circulo</code>, <code>Cuadrado</code> y <code>TrianguloEquilatero</code>, tendrán un atributo cada clase que permite calcular el perímetro o área (ya sea lado o radio). Crea una interfaz llamada <code>ShapeOperable</code> que cada clase deberá implementar para seguir una estandarización con métodos de cálculo de perímetro y área y la constante PI.</p>
 <p>Desarrolla un <code>main</code> que pida al usuario seleccionar la forma y luego una dimensión (lado o radio). Utilizando el polimorfismo, el programa usará la instancia correcta de la forma seleccionada e imprimirá la forma seleccionada por el usuario y luego le preguntará que cálculo desea realizar si perímetro o área e imprimirá el resultado.</p>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 713</strong> (<abbr title="Desarrolla programas aplicando características avanzadas de los lenguajes orientados a objetos y del entorno de programación.">RA7</abbr>/ <abbr title="Se han identificado los conceptos de herencia, superclase y subclase.">CE7a</abbr> <abbr title="Se han utilizado modificadores para bloquear y forzar la herencia de clases y métodos.">CE7b</abbr> <abbr title="Se ha reconocido la incidencia de los constructores en la herencia.">CE7c</abbr> <abbr title="Se han creado clases heredadas que sobrescriben la implementación de métodos de la superclase.">CE7d</abbr> <abbr title="Se han diseñado y aplicado jerarquías de clases.">CE7e</abbr> <abbr title="Se han probado y depurado las jerarquías de clases.">CE7f</abbr> <abbr title="Se han realizado programas que implementen y utilicen jerarquías de clases.">CE7g</abbr> <abbr title="Se ha comentado y documentado el código.">CE7h</abbr> <abbr title="Se han identificado y evaluado los escenarios de uso de interfaces.">CE7i</abbr> <abbr title="Se han identificado y evaluado los escenarios de utilización de la herencia y la composición.">CE7j</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p). Escribe un programa llamado <code>Herencia3</code> para una biblioteca que contenga libros y
+revistas. En primer lugar, para prevenir posibles cambios en el programa se tiene que implementar una interfaz <code>Prestable</code> con los métodos <code>prestar</code> y <code>devolver</code>, sin valor de retorno, y prestado quien retorna un <code>booleano</code>. La clase <code>Libro</code> implementará esta interfaz.</p>
+<p>Será necesario crear la clase base <code>Publicación</code>, de la que heredarán las clases <code>Libro</code> y <code>Revista</code>. Las características comunes que se almacenan tanto para las revistas como para los libros son el código, el titulo y el año de publicación. Estas tres características se pasan por parámetro en el momento de crear los objetos.</p>
+<p>Los libros tienen además un atributo <code>prestado</code>. Los libros cuando se crean no están prestados.</p>
+<p>Las revistas tienen un número. En el momento de crearlas se pasa el número por parámetro.</p>
+<p>Tanto las revistas como los libros deben de tener (aparte de los constructores) un método <code>toString</code> que devuelve el valor de todos los atributos en una cadena de caracteres. También tienen un método que devuelve el año de publicación y otro para el código.</p>
+</li>
+<li>
+<p><strong><abbr title="Prácticas">PR</abbr> 714</strong> (<abbr title="Desarrolla programas aplicando características avanzadas de los lenguajes orientados a objetos y del entorno de programación.">RA7</abbr>/ <abbr title="Se han identificado los conceptos de herencia, superclase y subclase.">CE7a</abbr> <abbr title="Se han utilizado modificadores para bloquear y forzar la herencia de clases y métodos.">CE7b</abbr> <abbr title="Se ha reconocido la incidencia de los constructores en la herencia.">CE7c</abbr> <abbr title="Se han creado clases heredadas que sobrescriben la implementación de métodos de la superclase.">CE7d</abbr> <abbr title="Se han diseñado y aplicado jerarquías de clases.">CE7e</abbr> <abbr title="Se han probado y depurado las jerarquías de clases.">CE7f</abbr> <abbr title="Se han realizado programas que implementen y utilicen jerarquías de clases.">CE7g</abbr> <abbr title="Se ha comentado y documentado el código.">CE7h</abbr> <abbr title="Se han identificado y evaluado los escenarios de uso de interfaces.">CE7i</abbr> <abbr title="Se han identificado y evaluado los escenarios de utilización de la herencia y la composición.">CE7j</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 10p). Se pretende realizar una aplicación para una facultad que gestione la información sobre las personas vinculadas con la misma, que se pueden clasificar en tres tipos: estudiantes, profesores y personal de servicio. </p>
+<ul>
+<li>
+<p>1) A continuación, se detalla qué tipo de información debe gestionar esta aplicación:</p>
+<ul>
+<li>Por cada persona, se debe conocer, al menos, su nombre y apellidos, su número de identificación y su estado civil.</li>
+<li>Con respecto a los empleados, sean del tipo que sean, hay que saber su año de incorporación a la facultad y qué número de despacho tienen asignado.</li>
+<li>En cuanto a los estudiantes, se requiere almacenar el curso en el que están matriculados.</li>
+<li>Por lo que se refiere a los profesores, es necesario gestionar a qué departamento pertenecen (lenguajes, matemáticas, arquitectura, ...).</li>
+<li>Sobre el personal de servicio, hay que conocer a qué sección están  asignados (biblioteca, decanato, secretaría, ...).</li>
+</ul>
+</li>
+<li>
+<p>2) Seguidamente se debe programar las clases definidas en las que, además de los constructores, hay que desarrollar los métodos correspondientes a las siguientes
+acciones:</p>
+<ul>
+<li>Cambio del estado civil de una persona.</li>
+<li>Reasignación de despacho a un empleado.</li>
+<li>Matriculación de un estudiante en un nuevo curso.</li>
+<li>Cambio de departamento de un profesor.</li>
+<li>Traslado de sección de un empleado del personal de servicio.</li>
+<li>Imprimir toda la información de cada tipo de individuo.</li>
+</ul>
+<p>Llegados a este punto, incluye un programa de prueba que instancie objetos de los distintos tipos y pruebe los métodos desarrollados.</p>
+</li>
+<li>
+<p>3) Una vez comprobado lo anterior, se plantea extender el punto anterior incluyendo una clase que represente al centro docente. Esa clase incluirá 3 contenedores, uno por cada tipo de persona vinculada con el centro. En una primera fase deben incluirse los siguiente métodos:</p>
+<ul>
+<li>Uno para dar de alta una persona, que incoporará a la persona en la lista correspondiente.</li>
+<li>Otro para dar de baja una persona, dado su DNI. Añada un método a la clase persona para poder obtener el DNI de un objeto de esa clase.</li>
+<li>Uno último para imprimir toda la información de las personas vinculadas con el centro.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Piensa primero</p>
+<p>Dado que hay múltiples altenativas a la hora de afrontar este problema, a continuación, se explican las características de la solución implementada, aunque el alumno podrá realizar el diseño que considere oportuno:</p>
+<ul>
+<li>El método de alta recibe como parámetro un objeto del tipo persona correspondiente, existiendo, por tanto, tres versiones sobrecargadas del mismo.</li>
+<li>Se ha de usar array de objetos.</li>
+</ul>
+</div>
+<p>El método de baja busca, en primer lugar, un objeto en las listas que tenga el DNI recibido como parámetro. Una vez encontrado, lo inicializa a 0.</p>
+<div class="admonition danger">
+<p class="admonition-title">Ten en cuenta</p>
+<p>Guarda la versión anterior y realiza este ejercicio sobre una copia de la misma, puesto que dicha versión previa será utilizada en ejercicios posteriores.</p>
+</div>
+</li>
+<li>
+<p>4) En la aplicación anterior, se detecta que en el futuro se va a necesitar crear nuevos tipos de empleados (por ejemplo, investigadores) y distinguir entre distintos tipos de estudiantes. Por tanto, para que el diseño se pueda adaptar a estas necesidades futuras, se plantea unificar todos los contenedores del tipo centro, de manera que sólo haya un único contenedor de personas, y usar polimorfismo para gestionar los distintos tipos de personas.</p>
+<p>Modifica el programa anterior para adaptarlo a este nuevo diseño. Ten en cuenta que debe desaparecer cualquier referencia a profesores, personal de servicio y estudiantes en el código de la clase que representa al centro. Asimismo, haz que las clases que corresponden a personas y empleados sean abstractas.</p>
+<div class="admonition danger">
+<p class="admonition-title">Entrega</p>
+<p>Esta parte se diferenceciará del anterior con la nomenclatura <code>XXXXXXXAlt.java</code>, haciendo referencia a una versión alternativa.</p>
+</div>
+</li>
+<li>
+<p>5) En la versión correspondiente al tercer punto, se va a añadir un nuevo método a las clases profesor y personal de servicio para calcular su salario. Se va a suponer que la forma de calcular el salario para estos dos tipos de empleados es totalmente distinta y que no se puede sacar ningún código común para incluirlo en la clase empleado. Haga la suposición que considere oportuna sobre cómo calcular el sueldo de cada tipo de empleado, dado que no es importante para el ejemplo. </p>
+<div class="admonition info">
+<p class="admonition-title">Una propuesta</p>
+<p>Aquí va una propuesta bastante ridícula: el personal de servicio cobra una cantidad fija más un 5% si están casados; el personal docente gana un fijo más un 8% si su fecha de incorporación es anterior al 2000. Habilite los métodos en la clase base que necesite para obtener los datos que requiera para el cálculo del sueldo.</p>
+</div>
+<p>Una vez añadidos los métodos para calcular el salario en cada una de las dos clases, debe añadir un método en la clase que representa el centro que imprima el salario de todos los empleados del centro (nombre y apellidos más el sueldo).</p>
+</li>
+<li>
+<p>6) Se plantea mejorar las clases diseñadas hasta ahora en los siguientes aspectos:</p>
+<ul>
+<li>Añadir una operación leer en cada clase persona para leer los datos de la clase.</li>
+<li>Sobrecargar el operador constructor para que lea los datos de cada clase persona.</li>
+<li>Polimorfismo en el operador toString para que imprima los datos del centro.</li>
+</ul>
+</li>
+<li>
+<p>7) Hagamos algunas mejoras adicionales en la aplicación desarrollada. Haz que el programa principal dialoge con el usuario pidiéndolo qué tipo de operación quiere llevar a cabo (alta, baja, imprimir listado o imprimir nóminas) y vaya pidiendo los datos que necesite para llevar a cabo la operación.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><abbr title="Prácticas">PR</abbr> 715</strong> (<abbr title="Desarrolla programas aplicando características avanzadas de los lenguajes orientados a objetos y del entorno de programación.">RA7</abbr>/ <abbr title="Se han identificado los conceptos de herencia, superclase y subclase.">CE7a</abbr> <abbr title="Se han utilizado modificadores para bloquear y forzar la herencia de clases y métodos.">CE7b</abbr> <abbr title="Se ha reconocido la incidencia de los constructores en la herencia.">CE7c</abbr> <abbr title="Se han creado clases heredadas que sobrescriben la implementación de métodos de la superclase.">CE7d</abbr> <abbr title="Se han diseñado y aplicado jerarquías de clases.">CE7e</abbr> <abbr title="Se han probado y depurado las jerarquías de clases.">CE7f</abbr> <abbr title="Se han realizado programas que implementen y utilicen jerarquías de clases.">CE7g</abbr> <abbr title="Se ha comentado y documentado el código.">CE7h</abbr> <abbr title="Se han identificado y evaluado los escenarios de uso de interfaces.">CE7i</abbr> <abbr title="Se han identificado y evaluado los escenarios de utilización de la herencia y la composición.">CE7j</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p). Realiza un programa de nombre <code>AppAnimal</code> formado por los siguientes elementos:</p>
+<ul>
+<li>Clase <code>Animal</code>, con el atributo <code>protected</code> <code>nombre</code> de tipo <code>String</code>, y los métodos abstractos <code>comer</code> sin valor de retorno y al que se le pasa como parámetro el <code>String</code> alimento mostrando la siguiente línea “El [nombre_animal] come alimento.”, y <code>nacer</code> que devuelve un <code>String</code> (vivíparos u ovíparos).</li>
+<li>Interfaz <code>Alimentable</code>, con un método <code>segunAlimento</code> al que se le pasa el <code>String</code> alimento y devuelve un <code>String</code> indicando si el animal es carnívoro, omnívoro u herbívoro.</li>
+<li>Clase <code>Mamifero</code> que hereda de <code>Animal</code>, e implementa los métodos <code>comer</code> y <code>nacer</code>, y la interfaz <code>Alimentable</code>.</li>
+<li>En el <code>main</code> de la clase <code>AppAnimal</code>:<ul>
+<li>Crea un objeto <code>Mamifero</code> m.</li>
+<li>Solicita al usuario el nombre del mamífero.</li>
+<li>Pide al usuario que indique la alimentación del mamífero.</li>
+<li>Invoca al método comer.</li>
+<li>Invoca al método segunAlimento.</li>
+<li>Invoca al método nacer.</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->

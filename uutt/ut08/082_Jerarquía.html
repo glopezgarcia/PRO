@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#jerarquia-de-excepciones" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1889,6 +1894,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    8.2. Jerarquía de excepciones
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="082_Jerarqu%C3%ADa.html" class="md-nav__link md-nav__link--active">
         
@@ -1899,6 +1917,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#metodos-de-la-clase-throwable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métodos de la clase Throwable
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2032,9 +2078,45 @@
                   
 
 
-  <h1>8.2. Jerarquía de excepciones</h1>
-
-
+<h1 id="jerarquia-de-excepciones">Jerarquía de excepciones<a class="headerlink" href="#jerarquia-de-excepciones" title="Permanent link">&para;</a></h1>
+<p>Todas las excepciones lanzadas automáticamente en un programa Java son objetos de la clase <code>Throwable</code> (Lanzable) o de alguna de sus clases derivadas. La clase <code>Throwable</code> deriva directamente de Object y tiene dos clases derivadas directas: <code>Error</code> y <code>Exception</code>.</p>
+<p>La <code>API</code><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> Java es una interfaz de programación de aplicaciones provista por los creadores del lenguaje de programación Java, que da a los programadores los medios para desarrollar aplicaciones Java. Como el lenguaje Java es un lenguaje orientado a objetos, la <code>API</code> provee de un conjunto de clases utilitarias para efectuar toda clase de tareas necesarias dentro de un programa. La <code>API</code> Java está organizada en paquetes lógicos, donde cada paquete contiene un
+conjunto de clases relacionadas semánticamente.</p>
+<figure>
+  <a class="glightbox" href="../../img/ut08/04.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Jerarquía de clases derivadas de Throwable" src="../../img/ut08/04.png" width="700" /></a>
+</figure>
+<p>La clase <code>Error</code> está relacionada con errores de la máquina virtual de Java. Generalmente estos errores no dependen del programador, por lo que no nos debemos preocupar por tratarlos, por ejemplo, <code>OutOfMemoryError</code>, <code>StackOverflowError</code>, errores de hardware, etc.</p>
+<p>En la clase <code>Exception</code> se encuentran las excepciones que se pueden lanzar en una aplicación. Tiene varias subclases, entre ellas:</p>
+<ul>
+<li><code>RuntimeException</code>: son excepciones lanzadas durante la ejecución del programa. Por ejemplo: <code>ArithmeticException</code>, <code>NullPointerException</code>, <code>ArrayIndexOutOfBoundsException</code>, etc. y pertenecen al paquete <code>java.lang</code>.</li>
+<li><code>IOException</code>: son excepciones lanzadas al ejecutar una operación de entrada-salida. Pertenecen al paquete <code>java.io</code>.</li>
+<li><code>ClassNotFoundException</code>: excepción lanzada cuando una aplicación intenta cargar una clase, pero no se encuentra el fichero <code>.class</code> correspondiente.</li>
+</ul>
+<h2 id="metodos-de-la-clase-throwable">Métodos de la clase <code>Throwable</code><a class="headerlink" href="#metodos-de-la-clase-throwable" title="Permanent link">&para;</a></h2>
+<p><code>Throwable</code> es la clase de la que derivan todos los demás tipos de excepciones. Tiene los siguientes constructores:</p>
+<ul>
+<li><code>Throwable()</code> genera un objeto de la clase con un mensaje de error nulo.</li>
+<li><code>Throwable(String mensaje)</code> genera un objeto de la clase con un mensaje.</li>
+</ul>
+<p>Los métodos de <code>Throwable</code> están disponibles en todas las clases que derivan de ella. Algunos de estos métodos son:</p>
+<ul>
+<li>String <code>getMessage()</code>: Devuelve el mensaje que se asoció al objeto cuando se creó.</li>
+<li>String <code>toString()</code>: Devuelve una descripción del objeto. Suele indicar el nombre de la clase y el text de <code>getMessage()</code>.</li>
+<li>void <code>printStackTrace()</code>. Es el método invocado por la máquina virtual cuando se produce una excepción. Aparece un listado con toda la pila de llamadas a métodos hasta que se llega al que provocó la excepción.</li>
+</ul>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>API, por sus siglas del inglés: Application Programming Interface&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

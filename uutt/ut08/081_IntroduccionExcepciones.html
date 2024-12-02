@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#introduccion" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1868,6 +1873,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    8.1. Introducción a excepciones
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="081_IntroduccionExcepciones.html" class="md-nav__link md-nav__link--active">
         
@@ -1878,6 +1896,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cuando-y-como-se-provoca-una-excepcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Cuándo y cómo se provoca una excepción?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Cuándo y cómo se provoca una excepción?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pila-de-llamadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pila de llamadas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-ocurre-cuando-se-produce-una-excepcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué ocurre cuando se produce una excepción?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2032,9 +2102,85 @@
                   
 
 
-  <h1>8.1. Introducción a excepciones</h1>
-
-
+<h1 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h1>
+<p>Tanto en el proceso de la creación de un programa en cualquier lenguaje como posteriormente al hacerlo funcionar se pueden cometer diversos errores que es conveniente detectar y clasificar para manejarlos y que los programas no se queden “colgados” y sigan su funcionamiento a pesar de haber ocurrido un error.</p>
+<p>El lenguaje Java incorpora soporte para manejar situaciones anómalas, conocidas como “excepciones”, para atender a los errores que pueden ocurrir durante la ejecución de un programa. Con el sistema de manipulación de excepciones de Java, un programa puede comunicar eventos inesperados a un contexto de ejecución más capacitado para responder a tales eventos anormales. Estas excepciones son manejadas por código fuera del flujo normal de control del programa.</p>
+<h2 id="cuando-y-como-se-provoca-una-excepcion">¿Cuándo y cómo se provoca una excepción?<a class="headerlink" href="#cuando-y-como-se-provoca-una-excepcion" title="Permanent link">&para;</a></h2>
+<p>Una excepción se puede provocar al acontecer, por ejemplo, alguna de las
+siguientes situaciones:</p>
+<ul>
+<li>No hay memoria disponible para asignar.</li>
+<li>Acceso a un elemento de un array fuera de rango.</li>
+<li>Leer por teclado un dato de un tipo distinto al esperado.</li>
+<li>Error al abrir un fichero que no se encuentra.</li>
+<li>División por cero.</li>
+<li>Problemas de Hardware.</li>
+</ul>
+<p>Si la excepción no se trata, el manejador de excepciones realiza lo siguiente:</p>
+<ul>
+<li>Muestra la descripción de la excepción.</li>
+<li>Muestra la traza de la pila de llamadas.</li>
+<li>Provoca el final del programa.</li>
+</ul>
+<h3 id="pila-de-llamadas">Pila de llamadas<a class="headerlink" href="#pila-de-llamadas" title="Permanent link">&para;</a></h3>
+<div class="language-java highlight"><span class="filename">Pila de llamadas.</span><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="kn">package</span><span class="w"> </span><span class="nn">exceppiladellamadas</span><span class="p">;</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ExcepPiladellamadas</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">incluirNumerador</span><span class="p">(){</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Indica el numerador: &quot;</span><span class="p">);</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="n">incluirDenominador</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">incluirDenominador</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">){</span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Indica el denominador: &quot;</span><span class="p">);</span>
+</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">den</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w"> </span><span class="n">realizarDivisión</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">den</span><span class="p">);</span>
+</span><span id="__span-0-14"><span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-15"><span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">realizarDivisión</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="p">){</span>
+</span><span id="__span-0-16"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La división es: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="o">/</span><span class="n">d</span><span class="p">);</span>
+</span><span id="__span-0-17"><span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-18"><span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-19"><span class="linenos" data-linenos="19 "></span><span class="w">        </span><span class="n">incluirNumerador</span><span class="p">();</span>
+</span><span id="__span-0-20"><span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-21"><span class="linenos" data-linenos="21 "></span><span class="p">}</span>
+</span></code></pre></div>
+<figure>
+  <a class="glightbox" href="../../img/ut08/01.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pila de llamadas" src="../../img/ut08/01.png" width="700" /></a>
+</figure>
+<p>Salida </p>
+<figure>
+  <a class="glightbox" href="../../img/ut08/02.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Salida" src="../../img/ut08/02.png" width="700" /></a>
+</figure>
+<p>Ejemplos de código Java que provocan una excepción:</p>
+<figure>
+  <a class="glightbox" href="../../img/ut08/03.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Salida" src="../../img/ut08/03.png" width="700" /></a>
+</figure>
+<p>El manejo de excepciones proporciona una separación entre el código básico y el código que maneja los errores, haciéndolo más legible. Utilizando excepciones se consigue:</p>
+<ul>
+<li>Separar las instrucciones del programa de las del tratamiento de errores.</li>
+<li>Evitar llenar el código del programa de instrucciones de comprobación (<code>if</code>, <code>switch</code>, etc).</li>
+<li>El código es más simple de escribir ya que no se fuerza al programador a comprobar los errores constantemente.</li>
+</ul>
+<h2 id="que-ocurre-cuando-se-produce-una-excepcion">¿Qué ocurre cuando se produce una excepción?<a class="headerlink" href="#que-ocurre-cuando-se-produce-una-excepcion" title="Permanent link">&para;</a></h2>
+<p>Cuando ocurre una excepción:</p>
+<ul>
+<li>La Máquina Virtual Java crea un objeto excepción y lo lanza. El objeto excepción creado contiene información sobre el error. La ejecución normal del programa se detiene.</li>
+<li>El sistema busca en el método donde se ha producido la excepción un manejador de excepciones que capture(catch) ese objeto y trate la excepción.</li>
+<li>Si el método no contiene un manejador para la excepción se busca en el método que llamó a este y así sucesivamente en toda la pila de llamadas. </li>
+</ul>
+<figure>
+  <a class="glightbox" href="../../img/ut08/01.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pila de llamadas" src="../../img/ut08/01.png" width="700" /></a>
+</figure>
+<ul>
+<li>Cuando se encuentra un manejador apropiado se le pasa la excepción. Un manejador de excepciones es considerado apropiado si el tipo de objeto excepción lanzado es compatible al tipo que puede manejar.</li>
+<li>Si no se encuentra un manejador adecuado la Máquina Virtual Java muestra el error y acaba el programa.</li>
+</ul>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 

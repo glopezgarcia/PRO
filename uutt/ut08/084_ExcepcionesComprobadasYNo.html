@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#excepciones-comprobadas-y-no-comprobadas" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1931,6 +1936,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    8.4. Excepciones comprobadas y no comprobadas
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="084_ExcepcionesComprobadasYNo.html" class="md-nav__link md-nav__link--active">
         
@@ -1941,6 +1959,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#declarar-excepciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Declarar excepciones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lanzar-excepciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lanzar excepciones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relanzar-excepciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relanzar excepciones
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2032,9 +2096,49 @@
                   
 
 
-  <h1>8.4. Excepciones comprobadas y no comprobadas</h1>
-
-
+<h1 id="excepciones-comprobadas-y-no-comprobadas">Excepciones comprobadas y no comprobadas<a class="headerlink" href="#excepciones-comprobadas-y-no-comprobadas" title="Permanent link">&para;</a></h1>
+<p>Hay dos tipos de excepciones:</p>
+<ul>
+<li><strong>Excepciones comprobadas</strong> o capturadas (<em>checked</em>) son aquellas que estamos <strong>obligados a tratar</strong>. Son todas las clases derivadas de la clase <code>Exception</code> excepto las derivadas de <code>RuntimeException</code>. No son culpa del programador de Java. Por ejemplo, un programa que debe acceder a una imagen en una carpeta. Si esa imagen no se encuentra en la ubicación esperada porque alguien la ha movido, borrado o cambiado el nombre, dará error, no siendo responsabilidad del programador.</li>
+<li><strong>Excepciones no comprobadas</strong> o no capturadas (<em>unchecked</em>) son aquellas que <strong>no estamos obligados a tratar</strong>. Pertenecen a la clase <code>Error</code> y a sus clases derivadas, y a la clase <code>RuntimeException</code> y sus derivadas. Son responsabilidad del programador. Está en nuestra mano solventarlas mejorando el código. Por ejemplo, serían excepciones no comprobadas: recorrer un array con más posiciones de las declaradas, o intentar almacenar en una variable de tipo String un dato de tipo entero, etc.</li>
+</ul>
+<p>El compilador Java <strong>obliga a declarar o capturar las excepciones comprobadas</strong>. El compilador muestra un mensaje de error si no se tratan o no se declara que son lanzadas de forma explícita.</p>
+<figure>
+  <a class="glightbox" href="../../img/ut08/05.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Excepciones comprobadas y no comprobadas" src="../../img/ut08/05.png" width="600" /></a>
+</figure>
+<h2 id="declarar-excepciones">Declarar excepciones<a class="headerlink" href="#declarar-excepciones" title="Permanent link">&para;</a></h2>
+<p>La declaración de las excepciones que puede lanzar un método se realiza escribiendo la palabra <code>throws</code> seguida del nombre de las excepciones separadas por comas. Por ejemplo, la instrucción <code>System.in.read()</code> para leer un carácter lanza una excepción de tipo <code>IOException</code> que debemos capturar o declarar.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="cm">/*En este ejemplo no se captura la excepción por lo que </span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="cm">estamos obligados a declararla*/</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="p">{</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">car</span><span class="p">;</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Introduce un carácter&quot;</span><span class="p">);</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="n">car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">.</span><span class="na">read</span><span class="p">();</span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos="8 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>La declaración de excepciones permite escribir métodos que no capturan las excepciones marcadas que se puedan producir. Una excepción no capturada se lanza para que la trate algún método de la pila de llamadas.</p>
+<h2 id="lanzar-excepciones">Lanzar excepciones<a class="headerlink" href="#lanzar-excepciones" title="Permanent link">&para;</a></h2>
+<p>Java permite al programador lanzar excepciones mediante la palabra reservada <code>throw</code>:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="k">throw</span><span class="w"> </span><span class="n">objetoExcepcion</span><span class="p">;</span>
+</span></code></pre></div>
+<p>La excepción que se lanza es un objeto, por lo que hay que crearlo como cualquier otro objeto mediante <code>new</code>.</p>
+<p><div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArithmeticException</span><span class="p">(</span><span class="err">“</span><span class="n">División</span><span class="w"> </span><span class="n">por</span><span class="w"> </span><span class="n">cero</span><span class="err">”</span><span class="p">);</span>
+</span></code></pre></div>
+Si se usa en un método la cláusula <code>throw</code> para lanzar un tipo de excepción comprobada o marcada, debe indicarse en su declaración con la cláusula <code>throws</code>.</p>
+<figure>
+  <a class="glightbox" href="../../img/ut08/06.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Lanzar excepciones" src="../../img/ut08/06.png" width="600" /></a>
+</figure>
+<h2 id="relanzar-excepciones">Relanzar excepciones<a class="headerlink" href="#relanzar-excepciones" title="Permanent link">&para;</a></h2>
+<p>Si se ha capturado una excepción es posible relanzar desde el bloque <code>catch</code> la excepción (el mismo objeto recibido en el bloque catch) utilizando la instrucción <code>throw objetoExcepcion</code>.</p>
+<figure>
+  <a class="glightbox" href="../../img/ut08/07.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Relanzar excepciones" src="../../img/ut08/07.png" width="600" /></a>
+</figure>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
