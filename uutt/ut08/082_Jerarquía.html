@@ -1942,6 +1942,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#actividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividad
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2371,6 +2380,39 @@ conjunto de clases relacionadas semánticamente.</p>
 <li>String <code>getMessage()</code>: Devuelve el mensaje que se asoció al objeto cuando se creó.</li>
 <li>String <code>toString()</code>: Devuelve una descripción del objeto. Suele indicar el nombre de la clase y el text de <code>getMessage()</code>.</li>
 <li>void <code>printStackTrace()</code>. Es el método invocado por la máquina virtual cuando se produce una excepción. Aparece un listado con toda la pila de llamadas a métodos hasta que se llega al que provocó la excepción.</li>
+</ul>
+<h2 id="actividad">Actividad<a class="headerlink" href="#actividad" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>AC801</strong> (<abbr title="Escribe y depura código, analizando y utilizando las estructuras de control del lenguaje.">RA3</abbr> / <abbr title="Se ha escrito código utilizando control de excepciones.">CE3d</abbr> <abbr title="Se han probado y depurado los programas.">CE3f</abbr> <abbr title="Se han utilizado aserciones para la detección y corrección de errores durante la fase de desarrollo">CE3i</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p). Dado el siguiente programa en Java indica cada uno de los errores que aparecerán como resultado de su compilación y su ejecución.
+    <div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Ejerc1</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">buscado</span><span class="p">;</span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">array</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">array</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">array</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">array</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="n">array</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+</span><span id="__span-0-14"><span class="linenos" data-linenos="14 "></span>
+</span><span id="__span-0-15"><span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Introduce el número a buscar en el array: &quot;</span><span class="p">);</span>
+</span><span id="__span-0-16"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="n">buscado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+</span><span id="__span-0-17"><span class="linenos" data-linenos="17 "></span>
+</span><span id="__span-0-18"><span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-19"><span class="linenos" data-linenos="19 "></span><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">buscado</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-20"><span class="linenos" data-linenos="20 "></span><span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El número buscado está en la posición: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+</span><span id="__span-0-21"><span class="linenos" data-linenos="21 "></span><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-0-22"><span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-23"><span class="linenos" data-linenos="23 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-24"><span class="linenos" data-linenos="24 "></span><span class="p">}</span>
+</span></code></pre></div><ul>
+<li>Introduce el número a buscar en el array: 5.4</li>
+<li>Corrige la excepción</li>
+</ul>
+</li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->

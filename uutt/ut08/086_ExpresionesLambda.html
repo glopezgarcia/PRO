@@ -2059,6 +2059,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividades
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2530,6 +2539,38 @@
 </div>
 </div>
 </div>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 809</strong> (<abbr title="Escribe y depura código, analizando y utilizando las estructuras de control del lenguaje.">RA3</abbr> / <abbr title="Se han probado y depurado los programas.">CE3f</abbr> <abbr title="Se ha comentado y documentado el código.">CE3g</abbr> <abbr title="Se han utilizado aserciones para la detección y corrección de errores durante la fase de desarrollo">CE3i</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p). Transforma la siguiente clase anónima en una expresión lambda y crea código de prueba para usarla.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos=" 1 "></span><span class="n">Runnable</span><span class="w"> </span><span class="n">runnable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Runnable</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-2"><span class="linenos" data-linenos=" 2 "></span><span class="nd">@Override</span>
+</span><span id="__span-9-3"><span class="linenos" data-linenos=" 3 "></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-4"><span class="linenos" data-linenos=" 4 "></span><span class="n">String</span><span class="w"> </span><span class="n">texto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Vamos a crear un array&quot;</span><span class="p">;</span>
+</span><span id="__span-9-5"><span class="linenos" data-linenos=" 5 "></span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">partes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">texto</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+</span><span id="__span-9-6"><span class="linenos" data-linenos=" 6 "></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">parte</span><span class="p">:</span><span class="w"> </span><span class="n">partes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-7"><span class="linenos" data-linenos=" 7 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">part</span><span class="p">);</span>
+</span><span id="__span-9-8"><span class="linenos" data-linenos=" 8 "></span><span class="p">}</span>
+</span><span id="__span-9-9"><span class="linenos" data-linenos=" 9 "></span><span class="p">}</span>
+</span><span id="__span-9-10"><span class="linenos" data-linenos="10 "></span><span class="p">};</span>
+</span></code></pre></div>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 810</strong> (<abbr title="Escribe y depura código, analizando y utilizando las estructuras de control del lenguaje.">RA3</abbr> / <abbr title="Se han probado y depurado los programas.">CE3f</abbr> <abbr title="Se ha comentado y documentado el código.">CE3g</abbr> <abbr title="Se han utilizado aserciones para la detección y corrección de errores durante la fase de desarrollo">CE3i</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p).Transforma el siguiente método en una expresión lambda:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-10-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">caracteresPares</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">texto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">StringBuilder</span><span class="w"> </span><span class="n">sb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuilder</span><span class="p">();</span>
+</span><span id="__span-10-3"><span class="linenos" data-linenos=" 3 "></span>
+</span><span id="__span-10-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">texto</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">            </span><span class="n">sb</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">texto</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+</span><span id="__span-10-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-10-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sb</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span>
+</span><span id="__span-10-10"><span class="linenos" data-linenos="10 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Escribe código para ejecutar la función del ejercicio anterior si se le pasa el siguiente texto:”1234567890”.</p>
+</li>
+</ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
