@@ -86,6 +86,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#aplicando-mvc" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2835,6 +2840,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="1206_AplicandoMVC.html" class="md-nav__link md-nav__link--active">
         
@@ -2873,9 +2880,94 @@
                   
 
 
-  <h1>12.6. Aplicando MVC</h1>
-
-
+<h1 id="aplicando-mvc">Aplicando <abbr title="Modelo - Vista - Controlador">MVC</abbr><a class="headerlink" href="#aplicando-mvc" title="Permanent link">&para;</a></h1>
+<p>Para trabajar con el modelo vista cont rolador, vamos a crear los siguientes elementos:</p>
+<ul>
+<li>
+<p>Para la clase controlador creamos un atributo que sea del tipo clase vista.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CartasController</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Clase controlador</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">CartasApplication</span><span class="w"> </span><span class="n">app</span><span class="p">;</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">CartasController</span><span class="p">(</span><span class="n">CartasApplication</span><span class="w"> </span><span class="n">app</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">app</span><span class="p">;</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Para la clase vista, cread un objeto de clase controlador y le pasáis un <code>this</code> al constructor.</p>
+<p><div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CartasApplication</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Application</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Clase vista</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">CartasController</span><span class="w"> </span><span class="n">cont</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CartasController</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">TextArea</span><span class="w"> </span><span class="n">areaTexto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TextArea</span><span class="p">();</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">Button</span><span class="w"> </span><span class="n">boton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">();</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos="5 "></span><span class="p">}</span>
+</span></code></pre></div>
+De esta forma, estáis pasándole la vista al controlador. Es una forma de relacionarlos de forma cruzada. Ahora, si yo invoco al objeto app en la clase controlador, puedo acceder a todos los métodos y atributos de la clase vista.</p>
+</li>
+</ul>
+<p>Si se quiere una visión global del proyecto, se podría iniciar con los siguientes ficheros:</p>
+<p><div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CartasController</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Clase controlador</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">CartasApplication</span><span class="w"> </span><span class="n">app</span><span class="p">;</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">CartasController</span><span class="p">(</span><span class="n">CartasApplication</span><span class="w"> </span><span class="n">app</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">app</span><span class="p">;</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="n">EventHandler</span><span class="o">&lt;</span><span class="n">MouseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="n">eventoPrueba</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="n">app</span><span class="p">.</span><span class="na">areaTexto</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;Pongo texto desde controlador&quot;</span><span class="p">);</span>
+</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="p">};</span>
+</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CartasApplication</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Application</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Clase vista</span>
+</span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">CartasController</span><span class="w"> </span><span class="n">cont</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CartasController</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+</span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">TextArea</span><span class="w"> </span><span class="n">areaTexto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TextArea</span><span class="p">();</span>
+</span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">Button</span><span class="w"> </span><span class="n">boton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">();</span>
+</span><span id="__span-3-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-3-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">launch</span><span class="p">();</span>
+</span><span id="__span-3-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-3-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-3-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="n">Stage</span><span class="w"> </span><span class="n">stage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-12"><span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-13"><span class="linenos" data-linenos="13 "></span><span class="p">}</span>
+</span></code></pre></div>
+Si yo quiero ahora, desde la clase vista, asignar un evento (definido en controlador) a un botón, implementaría:</p>
+<p><div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CartasController</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Clase controlador</span>
+</span><span id="__span-4-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">CartasApplication</span><span class="w"> </span><span class="n">app</span><span class="p">;</span>
+</span><span id="__span-4-3"><span class="linenos" data-linenos=" 3 "></span>
+</span><span id="__span-4-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">CartasController</span><span class="p">(</span><span class="n">CartasApplication</span><span class="w"> </span><span class="n">app</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">app</span><span class="p">;</span>
+</span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-7"><span class="linenos" data-linenos=" 7 "></span>
+</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">ponerTexto</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">app</span><span class="p">.</span><span class="na">areaTexto</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;Pongo texto desde controlador&quot;</span><span class="p">);</span>
+</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="n">EventHandler</span><span class="o">&lt;</span><span class="n">MouseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="n">eventoPrueba</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="c1">// Eventos para el botón</span>
+</span><span id="__span-4-13"><span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="p">};</span>
+</span><span id="__span-4-14"><span class="linenos" data-linenos="14 "></span><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CartasApplication</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Application</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Clase vista</span>
+</span><span id="__span-5-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">CartasController</span><span class="w"> </span><span class="n">cont</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CartasController</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+</span><span id="__span-5-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">TextArea</span><span class="w"> </span><span class="n">areaTexto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TextArea</span><span class="p">();</span>
+</span><span id="__span-5-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">Button</span><span class="w"> </span><span class="n">boton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">();</span>
+</span><span id="__span-5-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-5-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">launch</span><span class="p">();</span>
+</span><span id="__span-5-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-5-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="n">Stage</span><span class="w"> </span><span class="n">stage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">cont</span><span class="p">.</span><span class="na">ponerTexto</span><span class="p">();</span><span class="w"> </span><span class="c1">// Ponemos texto a un text area desde el controlador</span>
+</span><span id="__span-5-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="c1">// Ahora asignamos un evento</span>
+</span><span id="__span-5-13"><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="n">boton</span><span class="p">.</span><span class="na">addEventHandler</span><span class="p">(</span><span class="n">MouseEvent</span><span class="p">.</span><span class="na">MOUSE_CLICKED</span><span class="p">,</span><span class="w"> </span><span class="n">cont</span><span class="p">.</span><span class="na">eventoPrueba</span><span class="p">);</span>
+</span><span id="__span-5-14"><span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-15"><span class="linenos" data-linenos="15 "></span><span class="p">}</span>
+</span></code></pre></div>
+Esto es una forma de trabajar de forma  que se respete los principios del <abbr title="Modelo - Vista - Controlador">MVC</abbr> sin mezclar clases.</p>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
