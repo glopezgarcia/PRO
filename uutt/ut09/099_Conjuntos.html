@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/glopezgarcia/PRO/uutt/ut09/098_Conjuntos.html">
+        <link rel="canonical" href="https://github.com/glopezgarcia/PRO/uutt/ut09/099_Conjuntos.html">
       
       
-        <link rel="prev" href="097_IteratorHashcode.html">
+        <link rel="prev" href="098_Mapas.html">
       
       
-        <link rel="next" href="099_Mapas.html">
+        <link rel="next" href="../ut10/ResumenUT.html">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>9.8. Conjuntos - Programación</title>
+        <title>9.9. Conjuntos - Programación</title>
       
     
     
@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#conjuntos-set" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -119,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              9.8. Conjuntos
+              9.9. Conjuntos
             
           </span>
         </div>
@@ -2238,26 +2243,18 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="098_Conjuntos.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="098_Mapas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    9.8. Conjuntos
+    9.8. Mapas
   </span>
   
 
       </a>
-      
     </li>
   
 
@@ -2267,18 +2264,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="099_Mapas.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="099_Conjuntos.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    9.9. Mapas
+    9.9. Conjuntos
   </span>
   
 
       </a>
+      
     </li>
   
 
@@ -2875,9 +2882,73 @@
                   
 
 
-  <h1>9.8. Conjuntos</h1>
-
-
+<h1 id="conjuntos-set">Conjuntos (<code>Set</code>)<a class="headerlink" href="#conjuntos-set" title="Permanent link">&para;</a></h1>
+<p>La interfaz <code>Set</code> está contenida en el paquete <code>java.util</code> y extiende de la interfaz <code>Collection</code>, es una colección desordenada de objetos en los que no se pueden almacenar valores duplicados. Esta interfaz contiene los métodos heredados de la interfaz <code>Collection</code> y agrega una función que restringe la inserción de elementos duplicados.</p>
+<p>La interfaz <code>Set</code> define los métodos básicos de añadir, eliminar, comprobar tamaño, si está vacío, también podemos verificar si un elemento existe en el conjunto. Pero no hay forma de obtener un elemento del conjunto. Es decir, podemos comprobar que algo existe y podemos iterar sobre los elementos del conjunto, pero no es posible obtener, por ejemplo, el elemento 3 del conjunto.</p>
+<p>Dado que <code>Set</code> es una interfaz, debe instanciar una implementación concreta de la interfaz para poder usarla. Puedes elegir entre las siguientes implementaciones
+de <code>Set</code> en la API de colecciones de Java: <code>java.util.HashSet</code>, <code>java.util.TreeSet</code> y <code>java.util.LinkedHashSet</code>.</p>
+<p>Una de las mejores implementaciones (con mejor rendimiento) de la interfaz <code>Set</code> es la clase <code>HashSet</code>, que utiliza tablas hashes para almacenar los elementos. Es muy parecido a la clase <code>HashMap</code> que hemos utilizado anteriormente.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Crear un Set</label><label for="__tabbed_1_2">Recorrer los elementos de un Set</label><label for="__tabbed_1_3">Convertir en List</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="c1">//Sets genéricos sin especificar el tipo</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span><span class="n">Set</span><span class="w"> </span><span class="n">setA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="p">();</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span><span class="n">Set</span><span class="w"> </span><span class="n">setB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedHashSet</span><span class="p">();</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span><span class="n">Set</span><span class="w"> </span><span class="n">setC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TreeSet</span><span class="p">();</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span><span class="c1">//Set de tipo Integer</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="p">();</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span><span class="c1">//Añadir elementos en un Set</span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">setA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span><span class="n">setA</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;element 1&quot;</span><span class="p">);</span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span><span class="n">setA</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;element 2&quot;</span><span class="p">);</span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span><span class="n">setA</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;element 3&quot;</span><span class="p">);</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Hay dos formas de iterar los elementos de un Java <code>Set</code>:</p>
+<ul>
+<li>Utilizando un Iterator obtenido de la interfaz <code>Set</code>.</li>
+<li>Usando un bucle for-each.</li>
+</ul>
+<p>Al iterar los elementos en el Set, el orden de los elementos depende de la implementación que utilicemos para crear el Set.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="c1">//Con Iterator</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">setA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span><span class="n">setA</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;element 1&quot;</span><span class="p">);</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span><span class="n">setA</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;element 2&quot;</span><span class="p">);</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span><span class="n">setA</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;element 3&quot;</span><span class="p">);</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span><span class="n">Iterator</span><span class="w"> </span><span class="n">iterator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">set</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span><span class="k">while</span><span class="p">(</span><span class="n">iterator</span><span class="p">.</span><span class="na">hasNext</span><span class="p">(){</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iterator</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span><span class="p">}</span>
+</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span><span class="c1">//Con bucle for-each</span>
+</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">set</span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="p">();</span>
+</span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span><span class="k">for</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">num</span><span class="p">:</span><span class="w"> </span><span class="n">set</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-13"><span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+</span><span id="__span-1-14"><span class="linenos" data-linenos="14 "></span><span class="p">}</span>
+</span><span id="__span-1-15"><span class="linenos" data-linenos="15 "></span><span class="c1">//Si me he creado un set genérico, tengo que hacer un cast del objeto:</span>
+</span><span id="__span-1-16"><span class="linenos" data-linenos="16 "></span><span class="n">Set</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="p">();</span>
+</span><span id="__span-1-17"><span class="linenos" data-linenos="17 "></span><span class="k">for</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">set</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-18"><span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">object</span><span class="p">;</span>
+</span><span id="__span-1-19"><span class="linenos" data-linenos="19 "></span><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Se puede convertir los elementos de un Set en una List. Para ello, llamamos al método <code>addAll()</code>, pasando el conjunto como parámetro.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span><span class="n">set</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;123&quot;</span><span class="p">);</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos="3 "></span><span class="n">set</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;456&quot;</span><span class="p">);</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos="4 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos="5 "></span><span class="n">list</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">set</span><span class="p">);</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>Además de estos ejemplos, hay más funciones en la <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html">documentación oficial</a>.</p>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
@@ -2913,7 +2984,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="097_IteratorHashcode.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 9.7. Iterator y hashCode">
+          <a href="098_Mapas.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 9.8. Mapas">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2923,20 +2994,20 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                9.7. Iterator y hashCode
+                9.8. Mapas
               </div>
             </div>
           </a>
         
         
           
-          <a href="099_Mapas.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 9.9. Mapas">
+          <a href="../ut10/ResumenUT.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Propuesta didáctica UT 10">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                9.9. Mapas
+                Propuesta didáctica UT 10
               </div>
             </div>
             <div class="md-footer__button md-icon">

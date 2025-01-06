@@ -2213,6 +2213,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    9.6. Colas
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="096_Colas.html" class="md-nav__link md-nav__link--active">
         
   
@@ -2222,6 +2233,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#en-java-clase-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      En Java, clase Queue
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2256,11 +2295,11 @@
   
   
     <li class="md-nav__item">
-      <a href="098_Conjuntos.html" class="md-nav__link">
+      <a href="098_Mapas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    9.8. Conjuntos
+    9.8. Mapas
   </span>
   
 
@@ -2277,11 +2316,11 @@
   
   
     <li class="md-nav__item">
-      <a href="099_Mapas.html" class="md-nav__link">
+      <a href="099_Conjuntos.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    9.9. Mapas
+    9.9. Conjuntos
   </span>
   
 
@@ -2887,6 +2926,48 @@
 <figure>
   <a class="glightbox" href="../../img/ut09/09_7.svg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Cola" src="../../img/ut09/09_7.svg" width="500" /></a>
 </figure>
+<h2 id="en-java-clase-queue">En Java, clase Queue<a class="headerlink" href="#en-java-clase-queue" title="Permanent link">&para;</a></h2>
+<p>En Java, podemos implementar colas utilizando la clase <code>Queue</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>add()/offer()</td>
+<td>Inserta un elemento en la cola</td>
+</tr>
+<tr>
+<td>remove/poll()</td>
+<td>Elimina el elemento superior de la cola.</td>
+</tr>
+<tr>
+<td>peek()/element()</td>
+<td>Devuelve el elemento superior de la cola sin eliminarlo.</td>
+</tr>
+<tr>
+<td>isEmpty()</td>
+<td>Verifica si la cola está vacía.</td>
+</tr>
+</tbody>
+</table>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ApplicationMain</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="c1">//Colas con la clase Dequeue</span>
+</span><span id="__span-0-4"><span class="hll"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">colas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayDeque</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span></span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="n">colas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Amador&quot;</span><span class="p">);</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="n">colas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Alex&quot;</span><span class="p">);</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="n">colas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Pedro&quot;</span><span class="p">);</span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">colas</span><span class="p">);</span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="c1">//Eliminar el primer elimento</span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">colas</span><span class="p">.</span><span class="na">poll</span><span class="p">());</span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">colas</span><span class="p">);</span>
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span><span class="p">}</span>
+</span></code></pre></div>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->

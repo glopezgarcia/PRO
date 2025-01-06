@@ -2295,11 +2295,11 @@
   
   
     <li class="md-nav__item">
-      <a href="098_Conjuntos.html" class="md-nav__link">
+      <a href="098_Mapas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    9.8. Conjuntos
+    9.8. Mapas
   </span>
   
 
@@ -2316,11 +2316,11 @@
   
   
     <li class="md-nav__item">
-      <a href="099_Mapas.html" class="md-nav__link">
+      <a href="099_Conjuntos.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    9.9. Mapas
+    9.9. Conjuntos
   </span>
   
 
@@ -2935,7 +2935,7 @@ reduce.</p>
 </span><span id="__span-1-4"><span class="linenos" data-linenos="4 "></span><span class="n">a</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">);</span>
 </span><span id="__span-1-5"><span class="linenos" data-linenos="5 "></span><span class="n">a</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mf">23.5</span><span class="p">);</span>
 </span></code></pre></div>
-<p>Los elementos del ArrayList a son: “Lenguaje”, 3, ‘a’, 23.5. Es decir, <strong>un ArrayList puede contener objetos de tipos distintos</strong>. En este ejemplo, el primer objeto que se añade es el String “Lenguaje”. El resto no son objetos. Son datos de tipos primitivos pero el compilador los convierte automáticamente en objetos de su clase envolvente (clase contenedora o <a href="092_WrappersJava.html"><code>Wrapper</code></a>) antes de añadirlos al <code>ArrayList</code>.</p>
+<p>Los elementos del ArrayList a son: <code>“Lenguaje”, 3, ‘a’, 23.5</code>. Es decir, <strong>un ArrayList puede contener objetos de tipos distintos</strong>. En este ejemplo, el primer objeto que se añade es el String “Lenguaje”. El resto no son objetos. Son datos de tipos primitivos pero el compilador los convierte automáticamente en objetos de su clase envolvente (clase contenedora o <a href="092_WrappersJava.html"><code>Wrapper</code></a>) antes de añadirlos al <code>ArrayList</code>.</p>
 <p>Un array al que se le pueden asignar elementos de distinto tipo puede tener alguna complicación a la hora de trabajar con él. Por eso, una alternativa a esta declaración es indicar el tipo de objetos que contiene. En este caso, el array redimensionable solo podrá contener objetos de ese tipo. De forma general:</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">tipo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nombreArrayList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">();</span>
 </span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">tipo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nombreArrayList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">();</span>
@@ -3028,6 +3028,18 @@ Si el array contiene objetos de tipos distintos o desconocemos el tipo:
 Es decir, ArrayList como parámetro de un método, haciendo uso del constructor copia.</p>
 </div>
 <h2 id="linkedlist">LinkedList<a class="headerlink" href="#linkedlist" title="Permanent link">&para;</a></h2>
+<p>La clase <code>LinkedList</code> pertenece también a la biblioteca de Java se encuentra en el paquete <code>java.util</code>. Esta clase maneja listas doblemente enlazadas y es apropiado para el diseño de colas y pilas.</p>
+<p>De forma general un ArrayList en Java se puede crear de la siguiente forma:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-11-1"><span class="linenos" data-linenos="1 "></span><span class="n">List</span><span class="w"> </span><span class="n">nombreLinkedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="p">();</span><span class="w"> </span><span class="c1">//downcasting desde interface</span>
+</span><span id="__span-11-2"><span class="linenos" data-linenos="2 "></span><span class="n">LinkedList</span><span class="w"> </span><span class="n">nombreLinkedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="p">();</span>
+</span></code></pre></div>
+<p>Esta instrucción crea el <code>LinkedList</code> nombreLinkedList vacío. Un <code>LinkedList</code> declarado así puede contener objetos de cualquier tipo:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-12-1"><span class="linenos" data-linenos="1 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">tipo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nombreLinkedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">tipo</span><span class="o">&gt;</span><span class="w"> </span><span class="p">();</span><span class="w"> </span><span class="c1">//downcasting</span>
+</span><span id="__span-12-2"><span class="linenos" data-linenos="2 "></span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">tipo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nombreLinkedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">tipo</span><span class="o">&gt;</span><span class="w"> </span><span class="p">();</span>
+</span></code></pre></div>
+<p>Donde <code>tipo</code> debe ser una clase que indica el tipo de objetos que contendrá la lista doblemente enlazada. Debe importarse el paquete <code>java.util.LinkedList;</code>.</p>
+<p>Al igual que ocurría con <code>ArrayList</code>, no se pueden usar tipos primitivos, para usar un tipo primitivo se debe utilizar su clase envolvente. Además, se puede hacer uso del operador <em>diamond</em>(<code>&lt;&gt;</code>).</p>
+<p>Hay una gran cantidad de métodos que proporciona <code>LinkedList</code>, es recomendable acudir a la <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/LinkedList.html">documentación oficial</a>.</p>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->

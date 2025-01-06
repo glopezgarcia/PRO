@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/glopezgarcia/PRO/uutt/ut09/099_Mapas.html">
+        <link rel="canonical" href="https://github.com/glopezgarcia/PRO/uutt/ut09/098_Mapas.html">
       
       
-        <link rel="prev" href="098_Conjuntos.html">
+        <link rel="prev" href="097_IteratorHashcode.html">
       
       
-        <link rel="next" href="../ut10/ResumenUT.html">
+        <link rel="next" href="099_Conjuntos.html">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>9.9. Mapas - Programación</title>
+        <title>9.8. Mapas - Programación</title>
       
     
     
@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#mapas-map" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -119,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              9.9. Mapas
+              9.8. Mapas
             
           </span>
         </div>
@@ -2238,27 +2243,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="098_Conjuntos.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    9.8. Conjuntos
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -2268,17 +2252,115 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-      <a href="099_Mapas.html" class="md-nav__link md-nav__link--active">
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    9.8. Mapas
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="098_Mapas.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    9.9. Mapas
+    9.8. Mapas
   </span>
   
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#crear-un-mapa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear un Mapa
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obtener-el-valor-asociado-a-una-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtener el valor asociado a una clave
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imprimir" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imprimir
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eliminar-una-entrada-clave-valor-de-un-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eliminar una entrada clave-valor de un Map
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reemplazar-el-valor-de-una-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reemplazar el valor de una clave
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="099_Conjuntos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.9. Conjuntos
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2875,9 +2957,103 @@
                   
 
 
-  <h1>9.9. Mapas</h1>
-
-
+<h1 id="mapas-map">Mapas (<code>Map</code>)<a class="headerlink" href="#mapas-map" title="Permanent link">&para;</a></h1>
+<p>Aunque la estructura de datos <code>Map</code> no forma parte dentro de la jerarquía de la interfaz <code>Collection</code>, se considera una interfaz de colección principal de <em>Java Collections Framework</em>. Un <code>Map</code> es un objeto que asigna claves a valores, un mapa no puede contener claves duplicadas: cada clave puede asignarse a un valor como máximo. Sin embargo, los valores asignados a la clave pueden tener valores duplicados. La interfaz <code>Map</code> incluye métodos para operaciones básicas (como <code>put</code>, <code>get</code>, <code>remove</code>, <code>containsKey</code>, <code>containsValue</code>, <code>size</code>, y <code>empty</code>) entre <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html">muchos otros</a>.</p>
+<p>La plataforma Java contiene distintas implementaciones de <code>Map</code>: <code>HashMap</code>, <code>TreeMap</code> y <code>LinkedHashMap</code>. Como se puede observar en la siguiente imagen <code>TreeMap</code> es un <code>Map</code> cuyos elementos se almacenan ordenados. Esto es así ya que <code>TreeMap</code> implementa la interfaz <code>SortedMap</code> (que a su vez hereda de <code>Map</code>).</p>
+<figure>
+  <a class="glightbox" href="../../img/ut09/09_9.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Implementaciones de Map" src="../../img/ut09/09_9.webp" width="500" /></a>
+</figure>
+<h2 id="crear-un-mapa">Crear un Mapa<a class="headerlink" href="#crear-un-mapa" title="Permanent link">&para;</a></h2>
+<p>Para crear un objeto Map podemos usar cualquiera de las implementaciones para esta interfaz (<code>HashMap</code>, <code>TreeMap</code>, <code>LinkedHashMap…</code>), por ejemplo:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">idiomas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span></code></pre></div>
+<p>Antes de seguir con ejemplos, os habréis dado cuenta que hemos empezado la entrada diciendo que <code>Map</code> es una <a href="../ut07/076_Interfaces.html">Interface</a> y por tanto se deben de implementar los métodos de la interface. Java ya tiene implementadas varias clases <code>Map</code>. No vamos a explicar todas, pero si las tres que consideramos más importantes y útiles para que veáis la diferencia como son la clase <code>HashMap</code>, <code>TreeMap</code> y <code>LinkedHashMap</code>. La diferencia principal de estas 3 clases es la forma o el orden en las que guardan los valores en el <code>Map</code>, pero es necesario que veamos estas tres clases para que en función de vuestro problema elijáis la mejor clase:</p>
+<ul>
+<li><strong>HashMap</strong>: los elementos que inserta en el map no tendrán un orden específico. No aceptan claves duplicadas ni valores nulos.</li>
+<li><strong>TreeMap</strong>: el Mapa lo ordena de forma "natural". Por ejemplo, si la clave son valores enteros (como luego veremos), los ordena de menos a mayor.</li>
+<li><strong>LinkedHashMap</strong>: inserta en el <code>Map</code> los elementos en el orden en el que se van insertando; es decir, que no tiene una ordenación de los elementos como tal, por lo que esta clase realiza las búsquedas de los elementos de forma más lenta que las demás clases.</li>
+</ul>
+<p>Para añadir un par de clave-valor al mapa usamos el método <code>put</code>:
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MainMap</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">idiomas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">idiomas</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;es&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Español&quot;</span><span class="p">);</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="n">idiomas</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;en&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;English EEUU&quot;</span><span class="p">);</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">idiomas</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;ca&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;English Canadá&quot;</span><span class="p">);</span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">idiomas</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;de&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Aleman&quot;</span><span class="p">);</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="n">idiomas</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;fr&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Francés&quot;</span><span class="p">);</span>
+</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">idiomas</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;it&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Italian&quot;</span><span class="p">);</span>
+</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span><span class="p">}</span>
+</span></code></pre></div>
+Las claves de los mapas son únicas, si intentamos añadir un nuevo valor para una clave que ya existe, el valor es sobreescrito.</p>
+<p>Para saber si estamos agregando una nueva clave o solo modificando el valor, el método <code>put</code> nos ayuda, ya que devuelve el valor anterior asociado con la clave,
+o <code>null</code> si no hubo asignación para la clave antes. Ejemplo:
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MainMap</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">idiomas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">idiomas</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;es&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Español&quot;</span><span class="p">);</span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="n">idiomas</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;en&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;English EEUU&quot;</span><span class="p">);</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">idiomas</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;ca&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;English Canadá&quot;</span><span class="p">);</span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">idiomas</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;de&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Aleman&quot;</span><span class="p">);</span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="n">idiomas</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;fr&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Francés&quot;</span><span class="p">);</span>
+</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">idiomas</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;it&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Italian&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">//devuelve null</span>
+</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="cm">/* devuelve el valor previo &quot;Italian&quot;, lo que significa que se ha</span>
+</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span><span class="cm">        sobreescrito: */</span><span class="w"> </span>
+</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">idiomas</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;it&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Italiano&quot;</span><span class="p">));</span>
+</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span><span class="p">}</span>
+</span></code></pre></div></p>
+<h2 id="obtener-el-valor-asociado-a-una-clave">Obtener el valor asociado a una clave<a class="headerlink" href="#obtener-el-valor-asociado-a-una-clave" title="Permanent link">&para;</a></h2>
+<p>Para esta tarea, usamos el método <code>get</code>:
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="n">String</span><span class="w"> </span><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idiomas</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;it&quot;</span><span class="p">);</span>
+</span></code></pre></div></p>
+<p>Comprobar si una clave o valor existe:
+<div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">idiomas</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="s">&quot;es&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La clave es ya existe&quot;</span><span class="p">);</span>
+</span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span><span class="p">}</span><span class="w"> </span>
+</span><span id="__span-4-4"><span class="linenos" data-linenos="4 "></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">idiomas</span><span class="p">.</span><span class="na">containsValue</span><span class="p">(</span><span class="s">&quot;Español&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-5"><span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El idioma español ya existe&quot;</span><span class="p">);</span>
+</span><span id="__span-4-6"><span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</span></code></pre></div></p>
+<h2 id="imprimir">Imprimir<a class="headerlink" href="#imprimir" title="Permanent link">&para;</a></h2>
+<p>Imprimir todos los valores del Map Lo haremos de la siguiente forma:
+<div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">key</span><span class="p">:</span><span class="w"> </span><span class="n">idiomas</span><span class="p">.</span><span class="na">keySet</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">idiomas</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">key</span><span class="p">));</span>
+</span><span id="__span-5-3"><span class="linenos" data-linenos="3 "></span><span class="p">}</span>
+</span></code></pre></div>
+Al imprimir vemos que las claves no aparecen en ningún orden, ni en el que las hemos introducido ni en orden alfabético. Los elementos del <code>HashMap</code> no están ordenados.</p>
+<p>Imprimir cada una de las entradas del mapa:
+<div class="language-java highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Map</span><span class="p">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">entradaMapa</span><span class="p">:</span><span class="w"> </span><span class="n">idiomas</span><span class="p">.</span><span class="na">entrySet</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">entradaMapa</span><span class="p">.</span><span class="na">getKey</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="n">entradaMapa</span><span class="p">.</span><span class="na">getValue</span><span class="p">());</span>
+</span><span id="__span-6-3"><span class="linenos" data-linenos="3 "></span><span class="p">}</span>
+</span></code></pre></div></p>
+<h2 id="eliminar-una-entrada-clave-valor-de-un-map">Eliminar una entrada clave-valor de un Map<a class="headerlink" href="#eliminar-una-entrada-clave-valor-de-un-map" title="Permanent link">&para;</a></h2>
+<p>Tenemos dos formas de eliminar:</p>
+<ul>
+<li>Eliminar desde una clave existente.</li>
+<li>Eliminar un par clave-valor existente.
+<div class="language-java highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span><span class="c1">//Forma 1</span>
+</span><span id="__span-7-2"><span class="linenos" data-linenos="2 "></span><span class="kt">boolean</span><span class="w"> </span><span class="n">eliminado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idiomas</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">&quot;fr&quot;</span><span class="p">);</span>
+</span><span id="__span-7-3"><span class="linenos" data-linenos="3 "></span><span class="c1">//Forma 2</span>
+</span><span id="__span-7-4"><span class="linenos" data-linenos="4 "></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">idiomas</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">&quot;de&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ingles&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-5"><span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;de ha sido eliminado&quot;</span><span class="p">);</span>
+</span><span id="__span-7-6"><span class="linenos" data-linenos="6 "></span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-7"><span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;No existe un par clave-valor con de-Ingles&quot;</span><span class="p">);</span>
+</span><span id="__span-7-8"><span class="linenos" data-linenos="8 "></span><span class="p">}</span>
+</span></code></pre></div></li>
+</ul>
+<h2 id="reemplazar-el-valor-de-una-clave">Reemplazar el valor de una clave<a class="headerlink" href="#reemplazar-el-valor-de-una-clave" title="Permanent link">&para;</a></h2>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos="1 "></span><span class="n">idiomas</span><span class="p">.</span><span class="na">replace</span><span class="p">(</span><span class="s">&quot;es&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Spain&quot;</span><span class="p">);</span>
+</span><span id="__span-8-2"><span class="linenos" data-linenos="2 "></span><span class="cm">/* Reemplazo el antiguo valor por el nuevo, pero antes me aseguro de que el</span>
+</span><span id="__span-8-3"><span class="linenos" data-linenos="3 "></span><span class="cm">antiguo valor sea ese dato antes de cambiarlo */</span>
+</span><span id="__span-8-4"><span class="linenos" data-linenos="4 "></span><span class="n">idiomas</span><span class="p">.</span><span class="na">replace</span><span class="p">(</span><span class="s">&quot;en&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;English&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;English EEUU&quot;</span><span class="p">);</span>
+</span></code></pre></div>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
@@ -2913,7 +3089,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="098_Conjuntos.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 9.8. Conjuntos">
+          <a href="097_IteratorHashcode.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 9.7. Iterator y hashCode">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2923,20 +3099,20 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                9.8. Conjuntos
+                9.7. Iterator y hashCode
               </div>
             </div>
           </a>
         
         
           
-          <a href="../ut10/ResumenUT.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Propuesta didáctica UT 10">
+          <a href="099_Conjuntos.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 9.9. Conjuntos">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                Propuesta didáctica UT 10
+                9.9. Conjuntos
               </div>
             </div>
             <div class="md-footer__button md-icon">
