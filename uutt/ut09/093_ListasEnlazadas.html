@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#listas-enlazadas-y-listas-circulares" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2142,6 +2147,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    9.3. Listas enlazadas
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="093_ListasEnlazadas.html" class="md-nav__link md-nav__link--active">
         
@@ -2152,6 +2170,91 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#listas-enlazadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listas enlazadas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Listas enlazadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listas-lineales-simplemente-enlazadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listas lineales simplemente enlazadas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listas-lineales-doblemente-enlazadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listas lineales doblemente enlazadas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listas-circulares" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listas circulares
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Listas circulares">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listas-circulares-simplemente-enlazadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listas circulares simplemente enlazadas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listas-circulares-doblemente-enlazadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listas circulares doblemente enlazadas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2875,9 +2978,89 @@
                   
 
 
-  <h1>9.3. Listas enlazadas</h1>
-
-
+<h1 id="listas-enlazadas-y-listas-circulares">Listas enlazadas y listas circulares<a class="headerlink" href="#listas-enlazadas-y-listas-circulares" title="Permanent link">&para;</a></h1>
+<p>Una lista es una colección, originalmente vacía, de elementos u objetos de cualquier tipo no necesariamente consecutivos en memoria, que durante la ejecución del programa pueden crecer o decrecer elemento a elemento según las necesidades previstas en el mismo.</p>
+<p>Una lista está formada por un número variable de datos (elementos) de un mismo tipo, ordenados según una secuencia lineal. Cada elemento, salvo el primero, tiene un predecesor en la lista. Todos los elementos, salvo el último, tienen un sucesor.</p>
+<h2 id="listas-enlazadas">Listas enlazadas<a class="headerlink" href="#listas-enlazadas" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Piensa</p>
+<p>Si los elementos no están consecutivos en memoria <strong>¿cómo pasamos desde un elemento al siguiente cuando recorremos la lista?</strong> La respuesta es que cada elemento debe almacenar información de dónde está el siguiente elemento o el anterior, o bien ambos.</p>
+</div>
+<p>Podemos definir una lista como una estructura de datos formada por registros de, al menos, dos campos, en que uno de ellos contiene información que permite localizar al siguiente registro en la lista según una secuencia dada.</p>
+<p>En función de la información que cada elemento de la lista almacene respecto a la localización de sus antecesores y/o predecesores, las listas pueden clasificarse en: listas lineales simplemente enlazadas, listas lineales doblemente enlazadas, listas circulares simplemente enlazadas, y listas circulares doblemente enlazadas.</p>
+<h3 id="listas-lineales-simplemente-enlazadas">Listas lineales simplemente enlazadas<a class="headerlink" href="#listas-lineales-simplemente-enlazadas" title="Permanent link">&para;</a></h3>
+<p>Una lista lineal simplemente enlazada es una colección de objetos (elementos de la lista), cada uno de los cuales contiene datos o una referencia a los datos, y una referencia al siguiente objeto en la colección (elemento de la lista).</p>
+<p><a class="glightbox" href="../../img/ut09/09_3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Listas lineales simplemente enlazadas" src="../../img/ut09/09_3.png" width="250" /></a></p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="kd">class</span> <span class="nc">Persona</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="c1">//atributos</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">apellido</span><span class="p">;</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="n">Persona</span><span class="w"> </span><span class="n">siguiente</span><span class="p">;</span><span class="w"> </span><span class="c1">//referencia al siguiente elemento</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Persona</span><span class="p">(){</span><span class="w"> </span><span class="c1">// constructor por defecto</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos="7 "></span><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="listas-lineales-doblemente-enlazadas">Listas lineales doblemente enlazadas<a class="headerlink" href="#listas-lineales-doblemente-enlazadas" title="Permanent link">&para;</a></h3>
+<p>En algunas aplicaciones puede ser deseable recorrer eficientemente una lista, tanto hacia adelante como hacia atrás. O, dado un elemento, podría desearse determinar con rapidez el siguiente y el anterior. En tales situaciones, quizá se quisiera poner en cada nodo de una lista un puntero al siguiente nodo y otro al anterior.</p>
+<p><a class="glightbox" href="../../img/ut09/09_4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Listas lineales doblemente enlazadas" src="../../img/ut09/09_4.png" width="250" /></a></p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="kd">class</span> <span class="nc">Persona</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="c1">//atributos</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">apellido</span><span class="p">;</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="n">Persona</span><span class="w"> </span><span class="n">siguiente</span><span class="p">;</span><span class="w"> </span><span class="c1">//referencia al siguiente elemento</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="n">Persona</span><span class="w"> </span><span class="n">anterior</span><span class="p">;</span><span class="w"> </span><span class="c1">//referencia al anterior elemento</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Persona</span><span class="p">(){</span><span class="w"> </span><span class="c1">// constructor por defecto</span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos="8 "></span><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="listas-circulares">Listas circulares<a class="headerlink" href="#listas-circulares" title="Permanent link">&para;</a></h2>
+<p>Una lista circular enlazada es una lista en la que el último elemento apunta al primero en lugar de apuntar al vacío o <code>NULL</code>.</p>
+<h3 id="listas-circulares-simplemente-enlazadas">Listas circulares simplemente enlazadas<a class="headerlink" href="#listas-circulares-simplemente-enlazadas" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="../../img/ut09/09_5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Listas circulares simplemente enlazadas" src="../../img/ut09/09_5.png" width="250" /></a></p>
+<p>En este tipo de listas es posible acceder a cualquier elemento de la lista desde cualquier punto dado desplazándonos en un único sentido. Una representación gráfica sería la siguiente</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">ListaCircular</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Persona</span><span class="w"> </span><span class="n">cabeza</span><span class="p">;</span><span class="w"> </span><span class="c1">// Referencia al primer nodo</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Persona</span><span class="w"> </span><span class="n">cola</span><span class="p">;</span><span class="w">   </span><span class="c1">// Referencia al último nodo</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="c1">// Constructor por defecto</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ListaCircular</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">cabeza</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">cola</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="c1">// Método para agregar un nodo al final de la lista</span>
+</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">agregar</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">apellido</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span>
+</span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="c1">// Método para recorrer e imprimir la lista</span>
+</span><span id="__span-2-15"><span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mostrar</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-2-16"><span class="linenos" data-linenos="16 "></span><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="listas-circulares-doblemente-enlazadas">Listas circulares doblemente enlazadas<a class="headerlink" href="#listas-circulares-doblemente-enlazadas" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="../../img/ut09/09_6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Listas circulares doblemente enlazadas" src="../../img/ut09/09_6.png" width="250" /></a></p>
+<p>Una lista circular doblemente enlazada es una combinación de las listas circulares y de las listas doblemente enlazadas. Su principal ventaja es que se permite el desplazamiento en cualquier sentido a través de la misma.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">ListaCircularDoble</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Persona</span><span class="w"> </span><span class="n">cabeza</span><span class="p">;</span><span class="w"> </span><span class="c1">// Referencia al primer nodo</span>
+</span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Persona</span><span class="w"> </span><span class="n">cola</span><span class="p">;</span><span class="w">   </span><span class="c1">// Referencia al último nodo</span>
+</span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-3-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="c1">// Constructor por defecto</span>
+</span><span id="__span-3-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ListaCircularDoble</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">cabeza</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+</span><span id="__span-3-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">cola</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+</span><span id="__span-3-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-3-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="c1">// Método para agregar un nodo al final de la lista</span>
+</span><span id="__span-3-12"><span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">agregar</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">apellido</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-3-13"><span class="linenos" data-linenos="13 "></span>
+</span><span id="__span-3-14"><span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="c1">// Método para recorrer e imprimir la lista hacia adelante</span>
+</span><span id="__span-3-15"><span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mostrarAdelante</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-3-16"><span class="linenos" data-linenos="16 "></span>
+</span><span id="__span-3-17"><span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="c1">// Método para recorrer e imprimir la lista hacia atrás</span>
+</span><span id="__span-3-18"><span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mostrarAtras</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-3-19"><span class="linenos" data-linenos="19 "></span><span class="p">}</span>
+</span></code></pre></div>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 

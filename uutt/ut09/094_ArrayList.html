@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#arraylist" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2163,6 +2168,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    9.4. ArrayList
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="094_ArrayList.html" class="md-nav__link md-nav__link--active">
         
@@ -2173,6 +2191,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linkedlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      LinkedList
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2875,9 +2921,118 @@
                   
 
 
-  <h1>9.4. ArrayList</h1>
-
-
+<h1 id="arraylist">ArrayList<a class="headerlink" href="#arraylist" title="Permanent link">&para;</a></h1>
+<p>La clase <code>ArrayList</code> pertenece a la biblioteca de Java, está incluida en el paquete <code>java.util</code>. Esta clase permite trabajar con arrays redimensionables cuyo número de elementos puede crecer o decrecer en tiempo de ejecución según las necesidades del programa. <code>ArrayList</code> contiene internamente una matriz de valores y una variable de contador para conocer el tamaño actual en cualquier punto. Si se agrega un elemento, se aumenta el tamaño, y si se elimina, se
+reduce.</p>
+<p>De forma general un ArrayList en Java se puede crear de cualquiera de las siguientes formas:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="n">List</span><span class="w"> </span><span class="n">nombreArrayList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">();</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="n">ArrayList</span><span class="w"> </span><span class="n">nombreArrayList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">();</span>
+</span></code></pre></div>
+<p>Esta instrucción crea el <code>ArrayList</code> <em>nombreArrayList</em> vacío. Un <code>ArrayList</code> declarado así puede contener objetos de cualquier tipo. Por ejemplo:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="n">ArrayList</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">();</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span><span class="n">a</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Lenguaje&quot;</span><span class="p">);</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span><span class="n">a</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos="4 "></span><span class="n">a</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">);</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos="5 "></span><span class="n">a</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mf">23.5</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Los elementos del ArrayList a son: “Lenguaje”, 3, ‘a’, 23.5. Es decir, <strong>un ArrayList puede contener objetos de tipos distintos</strong>. En este ejemplo, el primer objeto que se añade es el String “Lenguaje”. El resto no son objetos. Son datos de tipos primitivos pero el compilador los convierte automáticamente en objetos de su clase envolvente (clase contenedora o <a href="092_WrappersJava.html"><code>Wrapper</code></a>) antes de añadirlos al <code>ArrayList</code>.</p>
+<p>Un array al que se le pueden asignar elementos de distinto tipo puede tener alguna complicación a la hora de trabajar con él. Por eso, una alternativa a esta declaración es indicar el tipo de objetos que contiene. En este caso, el array redimensionable solo podrá contener objetos de ese tipo. De forma general:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">tipo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nombreArrayList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">();</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">tipo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nombreArrayList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">();</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos="3 "></span><span class="n">ArrayList</span><span class="w"> </span><span class="o">&lt;</span><span class="n">tipo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nombreArrayList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span></code></pre></div>
+<p>A esta forma de definir una clase class <code>ArrayList&lt;tipo&gt;</code> se le conoce como definición con tipo parametrizado o genérico. Donde, <em>tipo</em> presenta cualquier tipo de clase de objetos en Java. Los tipos genéricos no se limitan solamente a colecciones, también podemos definir clases o tipos genéricos propios. <strong><em>tipo</em> debe ser una clase</strong>. Indica el tipo de objetos que contendrá el array y no se pueden usar tipos primitivos. Para un tipo primitivo se debe utilizar su clase envolvente. Por ejemplo:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="n">ArrayList</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numeros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span><span id="__span-3-2"><span class="linenos" data-linenos="2 "></span><span class="c1">//Crea el array redimensionable llamado números compuesto por enteros.</span>
+</span></code></pre></div>
+<p>Hay una gran cantidad de métodos que proporciona <code>ArrayList</code> implementados de la interface <code>List</code>, es recomendable acudir a la <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#method.summary">documentación oficial</a></p>
+<div class="admonition info">
+<p class="admonition-title">Recorriendo ArrayList</p>
+<p>Podemos recorrerlo de forma clásica con un bucle for:
+<div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">array</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">array</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+</span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span><span class="p">}</span>
+</span></code></pre></div>
+Con un bucle foreach, si suponemos el array de enteros llamado números:
+<div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">i</span><span class="p">:</span><span class="w"> </span><span class="n">numeros</span><span class="p">){</span>
+</span><span id="__span-5-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span><span id="__span-5-3"><span class="linenos" data-linenos="3 "></span><span class="p">}</span>
+</span></code></pre></div>
+Si el array contiene objetos de tipos distintos o desconocemos el tipo:
+<div class="language-java highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="p">:</span><span class="w"> </span><span class="n">nombreArray</span><span class="p">){</span>
+</span><span id="__span-6-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">o</span><span class="p">);</span>
+</span><span id="__span-6-3"><span class="linenos" data-linenos="3 "></span><span class="p">}</span>
+</span></code></pre></div></p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Ejemplo 1</label><label for="__tabbed_1_2">Ejemplo 2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos=" 1 "></span><span class="c1">//Eliminar elementos del ArrayList con valor menor de 10. (No se puede realizar con foreach).</span>
+</span><span id="__span-7-2"><span class="linenos" data-linenos=" 2 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+</span><span id="__span-7-3"><span class="linenos" data-linenos=" 3 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+</span><span id="__span-7-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-7-5"><span class="linenos" data-linenos=" 5 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AL1</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-7-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numeros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span><span id="__span-7-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="n">numeros</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+</span><span id="__span-7-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">numeros</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+</span><span id="__span-7-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">numeros</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</span><span id="__span-7-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">numeros</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">23</span><span class="p">);</span>
+</span><span id="__span-7-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">numeros</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span><span id="__span-7-13"><span class="linenos" data-linenos="13 "></span><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">numeros</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-14"><span class="linenos" data-linenos="14 "></span><span class="w">                </span><span class="n">numeros</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span><span id="__span-7-15"><span class="linenos" data-linenos="15 "></span><span class="w">                </span><span class="cm">/* Al borrar un elemento del ArrayList se desplazan el resto</span>
+</span><span id="__span-7-16"><span class="linenos" data-linenos="16 "></span><span class="cm">                de elementos una posición a la izquierda. */</span>
+</span><span id="__span-7-17"><span class="linenos" data-linenos="17 "></span><span class="w">                </span><span class="n">i</span><span class="o">--</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-7-18"><span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-7-19"><span class="linenos" data-linenos="19 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">numeros</span><span class="p">);</span>
+</span><span id="__span-7-20"><span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-21"><span class="linenos" data-linenos="21 "></span><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos=" 1 "></span><span class="c1">//Uso de los métodos add, remove, set, get.</span>
+</span><span id="__span-8-2"><span class="linenos" data-linenos=" 2 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+</span><span id="__span-8-3"><span class="linenos" data-linenos=" 3 "></span>
+</span><span id="__span-8-4"><span class="linenos" data-linenos=" 4 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AL2</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nombres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span><span id="__span-8-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">nombres</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Ana&quot;</span><span class="p">);</span>
+</span><span id="__span-8-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="n">nombres</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Luisa&quot;</span><span class="p">);</span>
+</span><span id="__span-8-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">nombres</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Felipe&quot;</span><span class="p">);</span>
+</span><span id="__span-8-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nombres</span><span class="p">);</span><span class="w"> </span><span class="c1">// [Ana, Luisa, Felipe]</span>
+</span><span id="__span-8-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">nombres</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Pablo&quot;</span><span class="p">);</span>
+</span><span id="__span-8-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nombres</span><span class="p">);</span><span class="w"> </span><span class="c1">// [Ana, Pablo, Luisa, Felipe]</span>
+</span><span id="__span-8-13"><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="n">nombres</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-8-14"><span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nombres</span><span class="p">);</span><span class="w"> </span><span class="c1">// [Pablo, Luisa, Felipe]</span>
+</span><span id="__span-8-15"><span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="n">nombres</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s">&quot;Alfonso&quot;</span><span class="p">);</span>
+</span><span id="__span-8-16"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nombres</span><span class="p">);</span><span class="w"> </span><span class="c1">// [Alfonso, Luisa, Felipe]</span>
+</span><span id="__span-8-17"><span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombres</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-8-18"><span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">ultimo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombres</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">nombres</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-8-19"><span class="linenos" data-linenos="19 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ultimo</span><span class="p">);</span><span class="w"> </span><span class="c1">// Luisa Felipe</span>
+</span><span id="__span-8-20"><span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-8-21"><span class="linenos" data-linenos="21 "></span><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Copia de ArrayList</p>
+<p>El nombre de un ArrayList contiene la referencia al ArrayList, es decir, la dirección de memoria donde el ArrayList se encuentra, igual que sucede con los arrays estáticos. Si disponemos de un ArrayList de enteros llamado ventas:
+<div class="language-java highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos="1 "></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ventas1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ventas</span><span class="p">;</span>
+</span></code></pre></div></p>
+<p>No copia el ArrayList ventas en el nuevo ArrayList <code>ventas1</code> sino que crea un alias. De esta forma tenemos dos maneras de acceder al mismo ArrayList, mediante la referencia ventas y mediante la referencia ventas1. </p>
+<p>La copia del ArrayList se puede realizar de forma manual elemento a elemento o se puede pasar la referencia del ArrayList original al constructor del nuevo:</p>
+<p><div class="language-java highlight"><pre><span></span><code><span id="__span-10-1"><span class="linenos" data-linenos="1 "></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ventas1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">ventas</span><span class="p">);</span>
+</span></code></pre></div>
+Es decir, ArrayList como parámetro de un método, haciendo uso del constructor copia.</p>
+</div>
+<h2 id="linkedlist">LinkedList<a class="headerlink" href="#linkedlist" title="Permanent link">&para;</a></h2>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
