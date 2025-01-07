@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#mejora-de-rendimiento" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2611,6 +2616,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    11.5. Rendimiento
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="1105_Rendimiento.html" class="md-nav__link md-nav__link--active">
         
@@ -2621,6 +2639,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ciclo-de-vida-de-una-conexion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ciclo de vida de una conexión
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sentencias-predefinidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sentencias predefinidas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#casos-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Casos de uso
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2875,9 +2939,75 @@
                   
 
 
-  <h1>11.5. Rendimiento</h1>
-
-
+<h1 id="mejora-de-rendimiento">Mejora de rendimiento<a class="headerlink" href="#mejora-de-rendimiento" title="Permanent link">&para;</a></h1>
+<p>Otro aspecto importante que mide la calidad de las aplicaciones es la eficiencia con la que se consigue comunicar con el SGBD. Para optimizar la conexión es importante reconocer qué procesos pueden actuar de cuello de botella y bajo qué circunstancias o qué otras agilizan las respuestas de los SGBD.</p>
+<ol>
+<li>
+<p>En primer lugar, analizaremos la petición de conexión a un SGBD porque se trata de un proceso costoso pero inevitable que hay que considerar.</p>
+</li>
+<li>
+<p>En segundo lugar, estudiaremos las sentencias predefinidas <code>PreparedStatement</code>, porqué su uso facilita la creación de datos clave e índices temporales de modo que sea posible anticiparse a la demanda o disponer de los datos de forma mucho más rápida.</p>
+</li>
+</ol>
+<h2 id="ciclo-de-vida-de-una-conexion">Ciclo de vida de una conexión<a class="headerlink" href="#ciclo-de-vida-de-una-conexion" title="Permanent link">&para;</a></h2>
+<p>El establecimiento de una conexión es un procedimiento bastante lento, tanto en la parte cliente como la parte servidor. En la parte cliente, DriverManager debe descubrir el controlador correcto de entre todos los que tenga que gestionar. La mayoría de veces las aplicaciones trabajarán sólo con un único controlador, pero hay que tener en cuenta que DriverManager no conoce a priori qué URL de conexión corresponde a cada controlador, y para averiguarlo envía una petición de conexión a cada controlador que tenga registrado, el controlador que no le devuelve error será el correcto.</p>
+<p>En el lado servidor, se creará un contexto específico y se habilitarán un conjunto de recursos para cada cliente conectado. Es decir, que durante la petición de conexión del SGBD debe gastar un tiempo considerable antes de no dejar operativa la comunicación cliente-servidor.</p>
+<p>Este elevado gasto de tiempo concentrado en el momento de la petición de conexión nos hace plantear si podemos considerar ineficiente abrir y cerrar la conexión cada vez que tengamos que ejecutar una sentencia SQL, como hemos hecho hasta ahora. Desafortunadamente no hay una única respuesta, sino que depende de la frecuencia de uso de la conexión y el número de conexiones contra un mismo SGBD coexistiendo al mismo tiempo.</p>
+<figure>
+  <a class="glightbox" href="../../img/ut11/11_6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Rendimiento" src="../../img/ut11/11_6.png" width="500" /></a>
+</figure>
+<p>Como en todo, se trata de encontrar el punto de equilibrio entre la cantidad de recursos empleados por conexión y la rentabilidad que se saca en mantenerlas abiertas. </p>
+<ul>
+<li>Si el número de clientes, y por tanto de conexiones, es bajo y la frecuencia de uso es alta, será preferible mantener las conexiones abiertas mucho tiempo. </li>
+<li>Por el contrario, si el número de conexiones es muy alto y el uso infrecuente, lo que será preferible será abrir y cerrar la conexión cada vez que se necesite. </li>
+</ul>
+<p>Mientras tanto, habrá una multitud de casos en que la solución consistirá en mantener las conexiones abiertas, pero no permanentemente. Se puede dar un tiempo de vida a cada conexión, o bien cerrarlas después de restar inactiva una cantidad determinada de tiempo, o se puede usar el criterio de mantener un número máximo de conexiones abiertas, cerrando las más antiguas o las más inactivas cuando se sobrepase el límite.</p>
+<h2 id="sentencias-predefinidas">Sentencias predefinidas<a class="headerlink" href="#sentencias-predefinidas" title="Permanent link">&para;</a></h2>
+<p>PreparedStatement presenta ventajas sobre su antecesor Statement cuando tengamos que trabajar con sentencias que haya que ejecutar varias veces. La razón es que cualquier sentencia SQL, cuando se envía el SGBD será compilada antes de ser ejecutada. Usando un objeto <code>Statement</code>, cada vez que hacemos una ejecución de una sentencia, ya sea vía executeUpdate o bien vía <code>executeQuery</code>, el SGBD la compilará, ya que le llegará en forma de cadena de caracteres.</p>
+<p>En cambio, al <code>PreparedStament</code> la sentencia nunca varía y por lo tanto se puede compilar y almacenar dentro del mismo objeto, por lo que las siguientes veces que se ejecute no habrá que compilarla. Esto reducirá sensiblemente el tiempo de ejecución. La parametrización, además, ayuda a crear sentencias muy genéricas que se puedan reutilizar fácilmente.</p>
+<p>En algunos sistemas gestores, además, usar <code>PreparedStatement</code> puede llegar a suponer más ventajas, ya que utilizan la secuencia de bytes de la sentencia para detectar si se trata de una sentencia nueva o ya se ha servido con anterioridad. De esta manera se propicia que el sistema almacene las respuestas en la caché, de manera que se puedan entregar de forma más rápida.</p>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>This is a fact, a rule, a law -- use prepared statements EVERYWHERE. Use STATEMENTS almost no where.</p>
+</div>
+<h2 id="casos-de-uso">Casos de uso<a class="headerlink" href="#casos-de-uso" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Ejemplo 1</label><label for="__tabbed_1_2">Ejemplo 2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Statement acepta cadenas como consultas SQL. Por lo tanto, el código se vuelve menos legible cuando concatenamos cadenas SQL:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">PersonEntity</span><span class="w"> </span><span class="n">personEntity</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;INSERT INTO persons(id, name, age, email) VALUES(&quot;</span><span class="w"> </span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">                </span><span class="o">+</span><span class="w"> </span><span class="n">personEntity</span><span class="p">.</span><span class="na">getId</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, &#39;&quot;</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">                </span><span class="o">+</span><span class="w"> </span><span class="n">personEntity</span><span class="p">.</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;&#39;, &quot;</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">                </span><span class="o">+</span><span class="w"> </span><span class="n">personEntity</span><span class="p">.</span><span class="na">getAge</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, &#39;&quot;</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">                </span><span class="o">+</span><span class="w"> </span><span class="n">personEntity</span><span class="p">.</span><span class="na">getEmail</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;&#39;)&quot;</span><span class="p">;</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="n">Statement</span><span class="w"> </span><span class="n">statement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">connection</span><span class="p">.</span><span class="na">createStatement</span><span class="p">();</span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="n">statement</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">(</span><span class="n">query</span><span class="p">);</span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Es vulnerable a la inyección de SQL.</p>
+<p><div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">check</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SELECT * FROM users WHERE name = &#39;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;&#39;&quot;</span><span class="p">;</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="n">Statement</span><span class="w"> </span><span class="n">statement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">connection</span><span class="p">.</span><span class="na">createStatement</span><span class="p">();</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="n">statement</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">(</span><span class="n">query</span><span class="p">);</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</span></code></pre></div>
+Si un usuario malintencionado escribe como nombre de usuario a consultar: 
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span>Alicia&#39;; DROP TABLE usuarios; SELECT * FROM datos WHERE nombre LIKE &#39;%
+</span></code></pre></div>
+En la base de datos se ejecutaría la consulta en el orden dado, se seleccionarían todos los registros con el nombre 'Alicia', se borraría la tabla 'usuarios' y finalmente se seleccionaría toda la tabla "datos", que no debería estar disponible para los usuarios web comunes.</p>
+</div>
+</div>
+</div>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
