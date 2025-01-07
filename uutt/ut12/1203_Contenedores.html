@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#contenedores-en-javafx" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2774,6 +2779,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    12.3. Contenedores en JavaFX
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="1203_Contenedores.html" class="md-nav__link md-nav__link--active">
         
@@ -2784,6 +2802,97 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stackpane" class="md-nav__link">
+    <span class="md-ellipsis">
+      StackPane
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gridpane" class="md-nav__link">
+    <span class="md-ellipsis">
+      GridPane
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flowpane" class="md-nav__link">
+    <span class="md-ellipsis">
+      FlowPane
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#borderpane" class="md-nav__link">
+    <span class="md-ellipsis">
+      BorderPane
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scrollpane" class="md-nav__link">
+    <span class="md-ellipsis">
+      ScrollPane
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabpane" class="md-nav__link">
+    <span class="md-ellipsis">
+      TabPane
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javafx-splitpane" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaFX SplitPane
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hbox-y-vbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      HBox y VBox
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2875,9 +2984,298 @@
                   
 
 
-  <h1>12.3. Contenedores en JavaFX</h1>
-
-
+<h1 id="contenedores-en-javafx">Contenedores en JavaFX.<a class="headerlink" href="#contenedores-en-javafx" title="Permanent link">&para;</a></h1>
+<p>Los contenedores o paneles de diseño (layout) nos permiten añadir controles de la interfaz de usuario dentro de un gráfico de escena de una aplicación JavaFX sin tener que escribir el código necesario para gestionar el posicionamiento o el cambio de tamaño de esos controles. El <code>Layout</code> gestionará todo eso por nosotros.</p>
+<h2 id="stackpane">StackPane<a class="headerlink" href="#stackpane" title="Permanent link">&para;</a></h2>
+<p>Los nodos se colocan uno encima de otro, de atrás hacia delante en el orden que se agregan los nodos, como en una pila. El nodo agregado primero se coloca en la parte inferior de la pila y el siguiente nodo se coloca encima. Está representado por la clase denominada <code>StackPane</code> del paquete <code>javafx.scene.layout</code>.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.application.Application</span><span class="p">;</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.geometry.Pos</span><span class="p">;</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.Scene</span><span class="p">;</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.layout.StackPane</span><span class="p">;</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.paint.Color</span><span class="p">;</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.shape.Rectangle</span><span class="p">;</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.stage.Stage</span><span class="p">;</span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StackPaneApplication</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Application</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="n">Stage</span><span class="w"> </span><span class="n">primaryStage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="c1">// Crea un StackPane</span>
+</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="n">StackPane</span><span class="w"> </span><span class="n">pane</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StackPane</span><span class="p">();</span>
+</span><span id="__span-0-14"><span class="linenos" data-linenos="14 "></span>
+</span><span id="__span-0-15"><span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="c1">// Crea 3 cuadrados</span>
+</span><span id="__span-0-16"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">rectBottom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span><span class="w"> </span><span class="mi">250</span><span class="p">);</span>
+</span><span id="__span-0-17"><span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="n">rectBottom</span><span class="p">.</span><span class="na">setFill</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="na">AQUA</span><span class="p">);</span>
+</span><span id="__span-0-18"><span class="linenos" data-linenos="18 "></span>
+</span><span id="__span-0-19"><span class="linenos" data-linenos="19 "></span><span class="w">        </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">rectMiddle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span>
+</span><span id="__span-0-20"><span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="n">rectMiddle</span><span class="p">.</span><span class="na">setFill</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="na">CADETBLUE</span><span class="p">);</span>
+</span><span id="__span-0-21"><span class="linenos" data-linenos="21 "></span>
+</span><span id="__span-0-22"><span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">rectUpper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">);</span>
+</span><span id="__span-0-23"><span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="n">rectUpper</span><span class="p">.</span><span class="na">setFill</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="na">CORAL</span><span class="p">);</span>
+</span><span id="__span-0-24"><span class="linenos" data-linenos="24 "></span>
+</span><span id="__span-0-25"><span class="linenos" data-linenos="25 "></span><span class="w">        </span><span class="c1">// Coloca los cuadrados uno encima del otro</span>
+</span><span id="__span-0-26"><span class="linenos" data-linenos="26 "></span><span class="w">        </span><span class="n">pane</span><span class="p">.</span><span class="na">getChildren</span><span class="p">().</span><span class="na">addAll</span><span class="p">(</span><span class="n">rectBottom</span><span class="p">,</span><span class="w"> </span><span class="n">rectMiddle</span><span class="p">,</span><span class="w"> </span><span class="n">rectUpper</span><span class="p">);</span>
+</span><span id="__span-0-27"><span class="linenos" data-linenos="27 "></span>
+</span><span id="__span-0-28"><span class="linenos" data-linenos="28 "></span><span class="w">        </span><span class="c1">// Crea una escena y la muestra en el stage</span>
+</span><span id="__span-0-29"><span class="linenos" data-linenos="29 "></span><span class="w">        </span><span class="n">Scene</span><span class="w"> </span><span class="n">scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scene</span><span class="p">(</span><span class="n">pane</span><span class="p">);</span>
+</span><span id="__span-0-30"><span class="linenos" data-linenos="30 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">setScene</span><span class="p">(</span><span class="n">scene</span><span class="p">);</span>
+</span><span id="__span-0-31"><span class="linenos" data-linenos="31 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">setTitle</span><span class="p">(</span><span class="s">&quot;StackPane Example&quot;</span><span class="p">);</span>
+</span><span id="__span-0-32"><span class="linenos" data-linenos="32 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>
+</span><span id="__span-0-33"><span class="linenos" data-linenos="33 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-34"><span class="linenos" data-linenos="34 "></span>
+</span><span id="__span-0-35"><span class="linenos" data-linenos="35 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-36"><span class="linenos" data-linenos="36 "></span><span class="w">        </span><span class="n">launch</span><span class="p">();</span>
+</span><span id="__span-0-37"><span class="linenos" data-linenos="37 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-38"><span class="linenos" data-linenos="38 "></span><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="gridpane">GridPane<a class="headerlink" href="#gridpane" title="Permanent link">&para;</a></h2>
+<p>Permite colocar nodos secundarios en una cuadrícula bidimensional de tamaño flexible. Los componentes pueden abarcar filas y / o columnas, pero el tamaño de la fila es coherente para todos los componentes de una fila determinada. De manera similar, el ancho de la columna es consistente para una columna determinada. Tiene métodos especializados que agregan nodos a una celda en particular designada por un número de columna y fila. Los argumentos opcionales le permiten especificar valores de intervalo de filas y columnas.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.application.Application</span><span class="p">;</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.Scene</span><span class="p">;</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.Button</span><span class="p">;</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.layout.GridPane</span><span class="p">;</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.stage.Stage</span><span class="p">;</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GridPaneApplication</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Application</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="n">Stage</span><span class="w"> </span><span class="n">primaryStage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="c1">// Crear un GridPane</span>
+</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">GridPane</span><span class="w"> </span><span class="n">grid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GridPane</span><span class="p">();</span>
+</span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">grid</span><span class="p">.</span><span class="na">setVgap</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"> </span><span class="c1">// Espacio vertical entre las filas</span>
+</span><span id="__span-1-13"><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="n">grid</span><span class="p">.</span><span class="na">setHgap</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"> </span><span class="c1">// Espacio horizontal entre las columnas</span>
+</span><span id="__span-1-14"><span class="linenos" data-linenos="14 "></span>
+</span><span id="__span-1-15"><span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="c1">// Agregar botones al GridPane</span>
+</span><span id="__span-1-16"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="n">grid</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">(</span><span class="s">&quot;Posicion 0, 0&quot;</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-1-17"><span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="n">grid</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">(</span><span class="s">&quot;Posicion 1, 0&quot;</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-1-18"><span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="n">grid</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">(</span><span class="s">&quot;Posicion 0, 1&quot;</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-1-19"><span class="linenos" data-linenos="19 "></span><span class="w">        </span><span class="n">grid</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">(</span><span class="s">&quot;Posicion 1, 1&quot;</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-1-20"><span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="n">grid</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">(</span><span class="s">&quot;Posicion 0, 2&quot;</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+</span><span id="__span-1-21"><span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="n">grid</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">(</span><span class="s">&quot;Posicion 1, 2&quot;</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+</span><span id="__span-1-22"><span class="linenos" data-linenos="22 "></span>
+</span><span id="__span-1-23"><span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="c1">// Crear la escena y asignarla al Stage</span>
+</span><span id="__span-1-24"><span class="linenos" data-linenos="24 "></span><span class="w">        </span><span class="n">Scene</span><span class="w"> </span><span class="n">scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scene</span><span class="p">(</span><span class="n">grid</span><span class="p">);</span>
+</span><span id="__span-1-25"><span class="linenos" data-linenos="25 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">setScene</span><span class="p">(</span><span class="n">scene</span><span class="p">);</span>
+</span><span id="__span-1-26"><span class="linenos" data-linenos="26 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">setTitle</span><span class="p">(</span><span class="s">&quot;GridPane Example&quot;</span><span class="p">);</span>
+</span><span id="__span-1-27"><span class="linenos" data-linenos="27 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>
+</span><span id="__span-1-28"><span class="linenos" data-linenos="28 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-29"><span class="linenos" data-linenos="29 "></span>
+</span><span id="__span-1-30"><span class="linenos" data-linenos="30 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-31"><span class="linenos" data-linenos="31 "></span><span class="w">        </span><span class="n">launch</span><span class="p">();</span>
+</span><span id="__span-1-32"><span class="linenos" data-linenos="32 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-33"><span class="linenos" data-linenos="33 "></span><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="flowpane">FlowPane<a class="headerlink" href="#flowpane" title="Permanent link">&para;</a></h2>
+<p><code>FlowPane</code> administra a sus hijos en un flujo horizontal o vertical. La orientación predeterminada es horizontal.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.application.Application</span><span class="p">;</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.Scene</span><span class="p">;</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.Button</span><span class="p">;</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.layout.FlowPane</span><span class="p">;</span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.stage.Stage</span><span class="p">;</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FlowPaneApplication</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Application</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="n">Stage</span><span class="w"> </span><span class="n">primaryStage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="c1">// Crear un FlowPane (disposición de flujo horizontal)</span>
+</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">FlowPane</span><span class="w"> </span><span class="n">tile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FlowPane</span><span class="p">();</span>
+</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span>
+</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="c1">// Configurar el número de columnas y filas</span>
+</span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="n">tile</span><span class="p">.</span><span class="na">setPrefColumns</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span><span class="w"> </span><span class="c1">// Declaramos 6 columnas</span>
+</span><span id="__span-2-15"><span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="n">tile</span><span class="p">.</span><span class="na">setPrefRows</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span><span class="w">    </span><span class="c1">// Y 4 filas</span>
+</span><span id="__span-2-16"><span class="linenos" data-linenos="16 "></span>
+</span><span id="__span-2-17"><span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="c1">// Agregar botones al FlowPane</span>
+</span><span id="__span-2-18"><span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-19"><span class="linenos" data-linenos="19 "></span><span class="w">            </span><span class="n">tile</span><span class="p">.</span><span class="na">getChildren</span><span class="p">().</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">(</span><span class="s">&quot;Botón &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)));</span>
+</span><span id="__span-2-20"><span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-21"><span class="linenos" data-linenos="21 "></span>
+</span><span id="__span-2-22"><span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="c1">// Crear la escena y asignarla al Stage</span>
+</span><span id="__span-2-23"><span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="n">Scene</span><span class="w"> </span><span class="n">scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scene</span><span class="p">(</span><span class="n">tile</span><span class="p">);</span>
+</span><span id="__span-2-24"><span class="linenos" data-linenos="24 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">setScene</span><span class="p">(</span><span class="n">scene</span><span class="p">);</span>
+</span><span id="__span-2-25"><span class="linenos" data-linenos="25 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">setTitle</span><span class="p">(</span><span class="s">&quot;FlowPane Example&quot;</span><span class="p">);</span>
+</span><span id="__span-2-26"><span class="linenos" data-linenos="26 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>
+</span><span id="__span-2-27"><span class="linenos" data-linenos="27 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-28"><span class="linenos" data-linenos="28 "></span>
+</span><span id="__span-2-29"><span class="linenos" data-linenos="29 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-30"><span class="linenos" data-linenos="30 "></span><span class="w">        </span><span class="n">launch</span><span class="p">();</span>
+</span><span id="__span-2-31"><span class="linenos" data-linenos="31 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-32"><span class="linenos" data-linenos="32 "></span><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="borderpane">BorderPane<a class="headerlink" href="#borderpane" title="Permanent link">&para;</a></h2>
+<p><code>BorderPane</code> es conveniente para aplicaciones de escritorio con secciones discretas, que incluyen una barra de herramientas superior (superior), una barra de estado inferior (inferior), un área de trabajo central (centro) y dos áreas laterales (derecha e izquierda). Cualquiera de las cinco secciones puede estar vacía. Los nodos se organizan por tanto en las posiciones Superior, Izquierda, Derecha, Inferior y Central.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.application.Application</span><span class="p">;</span>
+</span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.Scene</span><span class="p">;</span>
+</span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.Button</span><span class="p">;</span>
+</span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.layout.BorderPane</span><span class="p">;</span>
+</span><span id="__span-3-5"><span class="linenos" data-linenos=" 5 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.stage.Stage</span><span class="p">;</span>
+</span><span id="__span-3-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-3-7"><span class="linenos" data-linenos=" 7 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BorderPaneApplication</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Application</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-3-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="n">Stage</span><span class="w"> </span><span class="n">primaryStage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="c1">// Crear un BorderPane</span>
+</span><span id="__span-3-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">BorderPane</span><span class="w"> </span><span class="n">raiz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BorderPane</span><span class="p">();</span>
+</span><span id="__span-3-12"><span class="linenos" data-linenos="12 "></span>
+</span><span id="__span-3-13"><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="c1">// Agregar botones en las diferentes regiones del BorderPane</span>
+</span><span id="__span-3-14"><span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="n">raiz</span><span class="p">.</span><span class="na">setTop</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">(</span><span class="s">&quot;TOP&quot;</span><span class="p">));</span>
+</span><span id="__span-3-15"><span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="n">raiz</span><span class="p">.</span><span class="na">setBottom</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">(</span><span class="s">&quot;BOTTOM&quot;</span><span class="p">));</span>
+</span><span id="__span-3-16"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="n">raiz</span><span class="p">.</span><span class="na">setLeft</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">(</span><span class="s">&quot;LEFT&quot;</span><span class="p">));</span>
+</span><span id="__span-3-17"><span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="n">raiz</span><span class="p">.</span><span class="na">setRight</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">(</span><span class="s">&quot;RIGHT&quot;</span><span class="p">));</span>
+</span><span id="__span-3-18"><span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="n">raiz</span><span class="p">.</span><span class="na">setCenter</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">(</span><span class="s">&quot;CENTER&quot;</span><span class="p">));</span>
+</span><span id="__span-3-19"><span class="linenos" data-linenos="19 "></span>
+</span><span id="__span-3-20"><span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="c1">// Crear la escena y asignarla al Stage</span>
+</span><span id="__span-3-21"><span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="n">Scene</span><span class="w"> </span><span class="n">scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scene</span><span class="p">(</span><span class="n">raiz</span><span class="p">);</span>
+</span><span id="__span-3-22"><span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">setScene</span><span class="p">(</span><span class="n">scene</span><span class="p">);</span>
+</span><span id="__span-3-23"><span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">setTitle</span><span class="p">(</span><span class="s">&quot;BorderPane Example&quot;</span><span class="p">);</span>
+</span><span id="__span-3-24"><span class="linenos" data-linenos="24 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>
+</span><span id="__span-3-25"><span class="linenos" data-linenos="25 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-26"><span class="linenos" data-linenos="26 "></span>
+</span><span id="__span-3-27"><span class="linenos" data-linenos="27 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-28"><span class="linenos" data-linenos="28 "></span><span class="w">        </span><span class="n">launch</span><span class="p">();</span>
+</span><span id="__span-3-29"><span class="linenos" data-linenos="29 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-30"><span class="linenos" data-linenos="30 "></span><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="scrollpane">ScrollPane<a class="headerlink" href="#scrollpane" title="Permanent link">&para;</a></h2>
+<p>Es un contenedor que tiene 2 barras de desplazamiento para mostrar componentes que son más grandes que el área visible del contenedor</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.application.Application</span><span class="p">;</span>
+</span><span id="__span-4-2"><span class="linenos" data-linenos=" 2 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.Scene</span><span class="p">;</span>
+</span><span id="__span-4-3"><span class="linenos" data-linenos=" 3 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.ScrollPane</span><span class="p">;</span>
+</span><span id="__span-4-4"><span class="linenos" data-linenos=" 4 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.TextArea</span><span class="p">;</span>
+</span><span id="__span-4-5"><span class="linenos" data-linenos=" 5 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.stage.Stage</span><span class="p">;</span>
+</span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-4-7"><span class="linenos" data-linenos=" 7 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ScrollPaneApplication</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Application</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="n">Stage</span><span class="w"> </span><span class="n">primaryStage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">setTitle</span><span class="p">(</span><span class="s">&quot;ScrollPane Application&quot;</span><span class="p">);</span>
+</span><span id="__span-4-11"><span class="linenos" data-linenos="11 "></span>
+</span><span id="__span-4-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="c1">// Crear un TextArea con texto de ejemplo</span>
+</span><span id="__span-4-13"><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="n">TextArea</span><span class="w"> </span><span class="n">textArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TextArea</span><span class="p">(</span><span class="s">&quot;Escribe aquí\nen múltiples\nlíneas\n&quot;</span>
+</span><span id="__span-4-14"><span class="linenos" data-linenos="14 "></span><span class="w">                </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;y líneas muy largas que superan el tamaño visible...\n&quot;</span>
+</span><span id="__span-4-15"><span class="linenos" data-linenos="15 "></span><span class="w">                </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;y otra línea\notra línea\notra línea\notra línea&quot;</span><span class="p">);</span>
+</span><span id="__span-4-16"><span class="linenos" data-linenos="16 "></span>
+</span><span id="__span-4-17"><span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="c1">// Agregar el TextArea a un ScrollPane</span>
+</span><span id="__span-4-18"><span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="n">ScrollPane</span><span class="w"> </span><span class="n">scrollPane</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ScrollPane</span><span class="p">(</span><span class="n">textArea</span><span class="p">);</span>
+</span><span id="__span-4-19"><span class="linenos" data-linenos="19 "></span>
+</span><span id="__span-4-20"><span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="c1">// Crear la escena y asignarla al Stage</span>
+</span><span id="__span-4-21"><span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="n">Scene</span><span class="w"> </span><span class="n">scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scene</span><span class="p">(</span><span class="n">scrollPane</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+</span><span id="__span-4-22"><span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">setScene</span><span class="p">(</span><span class="n">scene</span><span class="p">);</span>
+</span><span id="__span-4-23"><span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>
+</span><span id="__span-4-24"><span class="linenos" data-linenos="24 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-25"><span class="linenos" data-linenos="25 "></span>
+</span><span id="__span-4-26"><span class="linenos" data-linenos="26 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-27"><span class="linenos" data-linenos="27 "></span><span class="w">        </span><span class="n">launch</span><span class="p">();</span>
+</span><span id="__span-4-28"><span class="linenos" data-linenos="28 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-29"><span class="linenos" data-linenos="29 "></span><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="tabpane">TabPane<a class="headerlink" href="#tabpane" title="Permanent link">&para;</a></h2>
+<p>Es un contenedor que puede contener múltiples pestañas internamente, las cuales pueden visualizarse haciendo clic en ellas. Sólo puede visualizarse una pestaña a la vez. </p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.application.Application</span><span class="p">;</span>
+</span><span id="__span-5-2"><span class="linenos" data-linenos=" 2 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.Scene</span><span class="p">;</span>
+</span><span id="__span-5-3"><span class="linenos" data-linenos=" 3 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.Tab</span><span class="p">;</span>
+</span><span id="__span-5-4"><span class="linenos" data-linenos=" 4 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.TabPane</span><span class="p">;</span>
+</span><span id="__span-5-5"><span class="linenos" data-linenos=" 5 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.Label</span><span class="p">;</span>
+</span><span id="__span-5-6"><span class="linenos" data-linenos=" 6 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.stage.Stage</span><span class="p">;</span>
+</span><span id="__span-5-7"><span class="linenos" data-linenos=" 7 "></span>
+</span><span id="__span-5-8"><span class="linenos" data-linenos=" 8 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TabPaneApplication</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Application</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-5-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="n">Stage</span><span class="w"> </span><span class="n">primaryStage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">setTitle</span><span class="p">(</span><span class="s">&quot;TabPane Application&quot;</span><span class="p">);</span>
+</span><span id="__span-5-12"><span class="linenos" data-linenos="12 "></span>
+</span><span id="__span-5-13"><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="c1">// Crear pestañas</span>
+</span><span id="__span-5-14"><span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="n">Tab</span><span class="w"> </span><span class="n">tab1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Tab</span><span class="p">(</span><span class="s">&quot;Pestaña 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Label</span><span class="p">(</span><span class="s">&quot;Comprar&quot;</span><span class="p">));</span>
+</span><span id="__span-5-15"><span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="n">Tab</span><span class="w"> </span><span class="n">tab2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Tab</span><span class="p">(</span><span class="s">&quot;Pestaña 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Label</span><span class="p">(</span><span class="s">&quot;Vender&quot;</span><span class="p">));</span>
+</span><span id="__span-5-16"><span class="linenos" data-linenos="16 "></span>
+</span><span id="__span-5-17"><span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="c1">// Crear TabPane y agregar las pestañas</span>
+</span><span id="__span-5-18"><span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="n">TabPane</span><span class="w"> </span><span class="n">tabPane</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TabPane</span><span class="p">(</span><span class="n">tab1</span><span class="p">,</span><span class="w"> </span><span class="n">tab2</span><span class="p">);</span>
+</span><span id="__span-5-19"><span class="linenos" data-linenos="19 "></span>
+</span><span id="__span-5-20"><span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="c1">// Crear la escena y asignarla al Stage</span>
+</span><span id="__span-5-21"><span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="n">Scene</span><span class="w"> </span><span class="n">scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scene</span><span class="p">(</span><span class="n">tabPane</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span>
+</span><span id="__span-5-22"><span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">setScene</span><span class="p">(</span><span class="n">scene</span><span class="p">);</span>
+</span><span id="__span-5-23"><span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>
+</span><span id="__span-5-24"><span class="linenos" data-linenos="24 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-25"><span class="linenos" data-linenos="25 "></span>
+</span><span id="__span-5-26"><span class="linenos" data-linenos="26 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-27"><span class="linenos" data-linenos="27 "></span><span class="w">        </span><span class="n">launch</span><span class="p">();</span>
+</span><span id="__span-5-28"><span class="linenos" data-linenos="28 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-29"><span class="linenos" data-linenos="29 "></span><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="javafx-splitpane">JavaFX SplitPane<a class="headerlink" href="#javafx-splitpane" title="Permanent link">&para;</a></h2>
+<p>Es un contenedor que divide los controles que contiene.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.application.Application</span><span class="p">;</span>
+</span><span id="__span-6-2"><span class="linenos" data-linenos=" 2 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.Scene</span><span class="p">;</span>
+</span><span id="__span-6-3"><span class="linenos" data-linenos=" 3 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.Label</span><span class="p">;</span>
+</span><span id="__span-6-4"><span class="linenos" data-linenos=" 4 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.SplitPane</span><span class="p">;</span>
+</span><span id="__span-6-5"><span class="linenos" data-linenos=" 5 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.layout.VBox</span><span class="p">;</span>
+</span><span id="__span-6-6"><span class="linenos" data-linenos=" 6 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.stage.Stage</span><span class="p">;</span>
+</span><span id="__span-6-7"><span class="linenos" data-linenos=" 7 "></span>
+</span><span id="__span-6-8"><span class="linenos" data-linenos=" 8 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SplitPaneApplication</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Application</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-6-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="n">Stage</span><span class="w"> </span><span class="n">primaryStage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">setTitle</span><span class="p">(</span><span class="s">&quot;SplitPane Application&quot;</span><span class="p">);</span>
+</span><span id="__span-6-12"><span class="linenos" data-linenos="12 "></span>
+</span><span id="__span-6-13"><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="c1">// Crear un SplitPane</span>
+</span><span id="__span-6-14"><span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="n">SplitPane</span><span class="w"> </span><span class="n">splitPane</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SplitPane</span><span class="p">();</span>
+</span><span id="__span-6-15"><span class="linenos" data-linenos="15 "></span>
+</span><span id="__span-6-16"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="c1">// Crear los controles para el lado izquierdo y derecho</span>
+</span><span id="__span-6-17"><span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="n">VBox</span><span class="w"> </span><span class="n">leftControl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">VBox</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Label</span><span class="p">(</span><span class="s">&quot;Izquierda&quot;</span><span class="p">));</span>
+</span><span id="__span-6-18"><span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="n">VBox</span><span class="w"> </span><span class="n">rightControl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">VBox</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Label</span><span class="p">(</span><span class="s">&quot;Derecha&quot;</span><span class="p">));</span>
+</span><span id="__span-6-19"><span class="linenos" data-linenos="19 "></span>
+</span><span id="__span-6-20"><span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="c1">// Agregar los controles al SplitPane</span>
+</span><span id="__span-6-21"><span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="n">splitPane</span><span class="p">.</span><span class="na">getItems</span><span class="p">().</span><span class="na">addAll</span><span class="p">(</span><span class="n">leftControl</span><span class="p">,</span><span class="w"> </span><span class="n">rightControl</span><span class="p">);</span>
+</span><span id="__span-6-22"><span class="linenos" data-linenos="22 "></span>
+</span><span id="__span-6-23"><span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="c1">// Crear la escena y asignarla al Stage</span>
+</span><span id="__span-6-24"><span class="linenos" data-linenos="24 "></span><span class="w">        </span><span class="n">Scene</span><span class="w"> </span><span class="n">scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scene</span><span class="p">(</span><span class="n">splitPane</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+</span><span id="__span-6-25"><span class="linenos" data-linenos="25 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">setScene</span><span class="p">(</span><span class="n">scene</span><span class="p">);</span>
+</span><span id="__span-6-26"><span class="linenos" data-linenos="26 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>
+</span><span id="__span-6-27"><span class="linenos" data-linenos="27 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-28"><span class="linenos" data-linenos="28 "></span>
+</span><span id="__span-6-29"><span class="linenos" data-linenos="29 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-30"><span class="linenos" data-linenos="30 "></span><span class="w">        </span><span class="n">launch</span><span class="p">();</span>
+</span><span id="__span-6-31"><span class="linenos" data-linenos="31 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-32"><span class="linenos" data-linenos="32 "></span><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="hbox-y-vbox">HBox y VBox<a class="headerlink" href="#hbox-y-vbox" title="Permanent link">&para;</a></h2>
+<p>Los controles de diseño de HBox y VBox proporcionan ubicaciones únicas horizontales o verticales para los nodos secundarios. Se puede anidar nodos HBox dentro de un VBox para obtener un efecto similar a una cuadrícula o anidar nodos VBox dentro de un componente HBox. Es conveniente utilizar un panel de tipo ButtonBar para colocar una fila de botones del mismo tamaño en un contenedor horizontal. </p>
+<p>Si usamos HBox en el diseño de nuestra aplicación, todos los nodos se establecen en una sola fila horizontal. La clase denominada HBox del paquete javafx.scene.layout representa el panel HBox. </p>
+<p>Si usamos VBox todos los nodos se establecen en una sola columna vertical. La clase denominada VBox del paquete javafx.scene.layout representa el panel VBox.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.application.Application</span><span class="p">;</span>
+</span><span id="__span-7-2"><span class="linenos" data-linenos=" 2 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.geometry.Insets</span><span class="p">;</span>
+</span><span id="__span-7-3"><span class="linenos" data-linenos=" 3 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.Scene</span><span class="p">;</span>
+</span><span id="__span-7-4"><span class="linenos" data-linenos=" 4 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.Button</span><span class="p">;</span>
+</span><span id="__span-7-5"><span class="linenos" data-linenos=" 5 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.layout.VBox</span><span class="p">;</span>
+</span><span id="__span-7-6"><span class="linenos" data-linenos=" 6 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.stage.Stage</span><span class="p">;</span>
+</span><span id="__span-7-7"><span class="linenos" data-linenos=" 7 "></span>
+</span><span id="__span-7-8"><span class="linenos" data-linenos=" 8 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">VBoxTest</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Application</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">VBox</span><span class="w"> </span><span class="n">cajaVertical</span><span class="p">;</span>
+</span><span id="__span-7-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-7-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-7-12"><span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="n">Stage</span><span class="w"> </span><span class="n">stage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-13"><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="c1">// Asignamos 10 píxeles de separación entre los nodos</span>
+</span><span id="__span-7-14"><span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="n">cajaVertical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">VBox</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</span><span id="__span-7-15"><span class="linenos" data-linenos="15 "></span>
+</span><span id="__span-7-16"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="c1">// Agregamos un relleno de 15 píxeles para separarlo del borde de la ventana</span>
+</span><span id="__span-7-17"><span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="n">cajaVertical</span><span class="p">.</span><span class="na">setPadding</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Insets</span><span class="p">(</span><span class="mi">15</span><span class="p">));</span>
+</span><span id="__span-7-18"><span class="linenos" data-linenos="18 "></span>
+</span><span id="__span-7-19"><span class="linenos" data-linenos="19 "></span><span class="w">        </span><span class="c1">// Llamando al método addAll podemos agregar nodos en una sola línea</span>
+</span><span id="__span-7-20"><span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="n">cajaVertical</span><span class="p">.</span><span class="na">getChildren</span><span class="p">().</span><span class="na">addAll</span><span class="p">(</span>
+</span><span id="__span-7-21"><span class="linenos" data-linenos="21 "></span><span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">(</span><span class="s">&quot;Botón 1&quot;</span><span class="p">),</span>
+</span><span id="__span-7-22"><span class="linenos" data-linenos="22 "></span><span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">(</span><span class="s">&quot;Botón 2&quot;</span><span class="p">),</span>
+</span><span id="__span-7-23"><span class="linenos" data-linenos="23 "></span><span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">(</span><span class="s">&quot;Botón 3&quot;</span><span class="p">)</span>
+</span><span id="__span-7-24"><span class="linenos" data-linenos="24 "></span><span class="w">        </span><span class="p">);</span>
+</span><span id="__span-7-25"><span class="linenos" data-linenos="25 "></span>
+</span><span id="__span-7-26"><span class="linenos" data-linenos="26 "></span><span class="w">        </span><span class="c1">// Crear la escena y asignarla al Stage</span>
+</span><span id="__span-7-27"><span class="linenos" data-linenos="27 "></span><span class="w">        </span><span class="n">Scene</span><span class="w"> </span><span class="n">scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scene</span><span class="p">(</span><span class="n">cajaVertical</span><span class="p">);</span>
+</span><span id="__span-7-28"><span class="linenos" data-linenos="28 "></span><span class="w">        </span><span class="n">stage</span><span class="p">.</span><span class="na">setScene</span><span class="p">(</span><span class="n">scene</span><span class="p">);</span>
+</span><span id="__span-7-29"><span class="linenos" data-linenos="29 "></span><span class="w">        </span><span class="n">stage</span><span class="p">.</span><span class="na">setTitle</span><span class="p">(</span><span class="s">&quot;VBox Example&quot;</span><span class="p">);</span>
+</span><span id="__span-7-30"><span class="linenos" data-linenos="30 "></span><span class="w">        </span><span class="n">stage</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>
+</span><span id="__span-7-31"><span class="linenos" data-linenos="31 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-32"><span class="linenos" data-linenos="32 "></span>
+</span><span id="__span-7-33"><span class="linenos" data-linenos="33 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-34"><span class="linenos" data-linenos="34 "></span><span class="w">        </span><span class="n">launch</span><span class="p">();</span>
+</span><span id="__span-7-35"><span class="linenos" data-linenos="35 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-36"><span class="linenos" data-linenos="36 "></span><span class="p">}</span>
+</span></code></pre></div>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 

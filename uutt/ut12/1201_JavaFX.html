@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#javafx" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2732,6 +2737,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="1201_JavaFX.html" class="md-nav__link md-nav__link--active">
         
@@ -2875,9 +2882,31 @@
                   
 
 
-  <h1>12.1. JavaFX</h1>
-
-
+<h1 id="javafx">JavaFX<a class="headerlink" href="#javafx" title="Permanent link">&para;</a></h1>
+<p>Las interfaces de usuario son las encargadas de la comunicación con el usuario. Muchas veces el éxito de una aplicación depende de su interfaz. De poco sirve que una aplicación funcione bien, desde el punto de vista técnico, si el usuario la encuentra complicada. Por todo ello aparecen en el mercado las interfaces gráficas haciendo más agradable al usuario su manejo. </p>
+<p>JavaFX es una tecnología de software que, combinada con Java, permite crear y desplegar aplicaciones con un aspecto vanguardista y contenidos avanzados, audio y vídeo. JavaFX es una biblioteca de Java que se utiliza para crear aplicaciones de escritorio y de Internet enriquecidas (RIA). Las aplicaciones escritas con esta biblioteca se pueden ejecutar de manera uniforme en múltiples plataformas. Las aplicaciones desarrolladas con JavaFX pueden ejecutarse en varios dispositivos como computadoras de escritorio, teléfonos móviles, televisores, tabletas, etc.</p>
+<p>Una aplicación en JavaFX está controlada por la plataforma JavaFX, un sistema en tiempo de ejecución (runtime) que construye el objeto de aplicación y construye el subproceso de aplicación JavaFX. Para construir una aplicación JavaFX, debe extender la clase JavaFX Application. El sistema de tiempo de ejecución de JavaFX (JavaFX runtime system) controla el ciclo de vida de la aplicación e invoca el método <code>start()</code> de <code>Application</code> para comenzar. Por tanto, la clase que hace posible desarrollar aplicaciones con JavaFX es la clase <code>Application</code>. Debemos tener en cuenta que ésta, es el punto de partida de toda aplicación desarrollada con esta tecnología. La clase <code>Application</code> perteneciente al paquete <code>javafx.application</code> es el punto de partida de cualquier aplicación desarrollada en JavaFX. </p>
+<p>Por lo tanto para crear una aplicación con esta tecnología la clase principal debe heredar de esta clase e implementar su método abstracto <code>start()</code>, este método es el que permitirá inicializar la interfaz gráfica. Para finalizar en el método main tenemos el método <code>launch()</code> el cual de manera interna se encargará de ejecutar todo lo que tenemos en el método <code>start()</code>. </p>
+<p>Esta clase posee tres métodos abstractos de suma importancia los cuales conforman el ciclo de vida de una aplicación JavaFX, los métodos <code>init()</code>, <code>start()</code>, y <code>stop()</code>. La estructura inicial de una aplicación desarrollada con JavaFX es:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.application.Application</span><span class="p">;</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.stage.Stage</span><span class="p">;</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MiAplicacionJavaFX</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Application</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="n">Stage</span><span class="w"> </span><span class="n">primaryStage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="c1">// Código de inicialización de la interfaz gráfica</span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">launch</span><span class="p">();</span><span class="w"> </span><span class="c1">// Ejecuta el método start()</span>
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span><span class="p">}</span>
+</span></code></pre></div>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 

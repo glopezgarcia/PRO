@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#controles-en-javafx" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2795,6 +2800,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    12.4. Controles en JavaFX
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="1204_Controles.html" class="md-nav__link md-nav__link--active">
         
@@ -2805,6 +2823,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-de-controles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumen de controles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo de uso
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2875,9 +2930,148 @@
                   
 
 
-  <h1>12.4. Controles en JavaFX</h1>
-
-
+<h1 id="controles-en-javafx">Controles en JavaFX<a class="headerlink" href="#controles-en-javafx" title="Permanent link">&para;</a></h1>
+<p><a href="https://fxdocs.github.io/docs/html5/">JavaFX</a> permite crear aplicaciones utilizando componentes GUI. Una aplicación con una GUI realiza tres tareas: </p>
+<ul>
+<li>Acepta entradas del usuario a través de dispositivos de entrada como un teclado, un ratón, pantalla táctil… </li>
+<li>Procesa las entradas (o realiza acciones basadas en la entrada). </li>
+<li>Muestra salidas.</li>
+</ul>
+<p>La GUI<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> proporciona un medio para intercambiar información en términos de entrada y salida entre una aplicación y sus usuarios. Ingresar texto usando un teclado, seleccionar un elemento de menú usando un ratón, hacer clic en un botón u otras acciones son ejemplos de cómo proporcionar entrada a una aplicación GUI. La aplicación muestra los resultados en un monitor de computadora usando texto, gráficos, cuadros de diálogo, etc. </p>
+<p>JavaFX proporciona un <a href="https://openjfx.io/javadoc/20/">amplio conjunto de controles</a> fáciles de usar. Los controles se agregan a los paneles de diseño que los colocan y dimensionan. Los paneles de diseño se discutieron en capítulos anteriores. Ahora se describirá cómo usar los controles disponibles en JavaFX. </p>
+<p>Cada control en JavaFX está representado por una instancia de una clase. Las clases de control se incluyen en el paquete <code>javafx.scene.control</code>. Una clase de control es una subclase, directa o indirecta, de la clase <code>Control</code>, que a su vez hereda de la <code>Region</code>.</p>
+<figure>
+  <a class="glightbox" href="../../img/ut12/12_4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Controles JavaFX" src="../../img/ut12/12_4.png" width="500" /></a>
+</figure>
+<h2 id="resumen-de-controles">Resumen de controles<a class="headerlink" href="#resumen-de-controles" title="Permanent link">&para;</a></h2>
+<p>Hay una gran variedad, y es recomendable <a href="https://jenkov.com/tutorials/javafx/index.html">investigarlos</a>, a continuación se muestra un resumen.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Descripción</th>
+<th>Ejemplo de Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Label</strong></td>
+<td>Muestra texto estático en la interfaz.</td>
+<td><code>Label label = new Label("Hola, Mundo!");</code></td>
+</tr>
+<tr>
+<td><strong>Button</strong></td>
+<td>Botón que puede ser presionado para realizar una acción.</td>
+<td><code>Button button = new Button("Click Me");</code></td>
+</tr>
+<tr>
+<td><strong>TextField</strong></td>
+<td>Campo de texto para ingresar una sola línea de texto.</td>
+<td><code>TextField textField = new TextField();</code></td>
+</tr>
+<tr>
+<td><strong>TextArea</strong></td>
+<td>Campo de texto para ingresar varias líneas de texto.</td>
+<td><code>TextArea textArea = new TextArea();</code></td>
+</tr>
+<tr>
+<td><strong>CheckBox</strong></td>
+<td>Casilla de verificación para seleccionar o deseleccionar una opción.</td>
+<td><code>CheckBox checkBox = new CheckBox("Aceptar términos");</code></td>
+</tr>
+<tr>
+<td><strong>RadioButton</strong></td>
+<td>Botón de opción que pertenece a un grupo de opciones mutuamente excluyentes.</td>
+<td><code>RadioButton radioButton = new RadioButton("Opción 1");</code></td>
+</tr>
+<tr>
+<td><strong>ToggleButton</strong></td>
+<td>Botón que alterna entre estados activado y desactivado.</td>
+<td><code>ToggleButton toggleButton = new ToggleButton("Activar");</code></td>
+</tr>
+<tr>
+<td><strong>ComboBox</strong></td>
+<td>Menú desplegable para seleccionar un elemento de una lista.</td>
+<td><code>ComboBox&lt;String&gt; comboBox = new ComboBox&lt;&gt;();</code></td>
+</tr>
+<tr>
+<td><strong>ListView</strong></td>
+<td>Lista de elementos que se pueden seleccionar.</td>
+<td><code>ListView&lt;String&gt; listView = new ListView&lt;&gt;();</code></td>
+</tr>
+<tr>
+<td><strong>TableView</strong></td>
+<td>Tabla para mostrar datos tabulares.</td>
+<td><code>TableView&lt;Person&gt; tableView = new TableView&lt;&gt;();</code></td>
+</tr>
+<tr>
+<td><strong>ProgressBar</strong></td>
+<td>Barra de progreso para indicar el estado de una operación.</td>
+<td><code>ProgressBar progressBar = new ProgressBar(0.5);</code></td>
+</tr>
+<tr>
+<td><strong>Slider</strong></td>
+<td>Control deslizante para seleccionar un valor numérico dentro de un rango.</td>
+<td><code>Slider slider = new Slider(0, 100, 50);</code></td>
+</tr>
+<tr>
+<td><strong>DatePicker</strong></td>
+<td>Selector de fechas que permite elegir una fecha del calendario.</td>
+<td><code>DatePicker datePicker = new DatePicker();</code></td>
+</tr>
+<tr>
+<td><strong>TreeView</strong></td>
+<td>Estructura jerárquica de elementos en forma de árbol.</td>
+<td><code>TreeView&lt;String&gt; treeView = new TreeView&lt;&gt;();</code></td>
+</tr>
+<tr>
+<td><strong>ScrollPane</strong></td>
+<td>Contenedor con barras de desplazamiento.</td>
+<td><code>ScrollPane scrollPane = new ScrollPane(new Label("Texto largo"));</code></td>
+</tr>
+<tr>
+<td><strong>TabPane</strong></td>
+<td>Contenedor con pestañas para organizar múltiples vistas.</td>
+<td><code>TabPane tabPane = new TabPane(new Tab("Pestaña 1"));</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ejemplo-de-uso">Ejemplo de uso<a class="headerlink" href="#ejemplo-de-uso" title="Permanent link">&para;</a></h2>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.application.Application</span><span class="p">;</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.Scene</span><span class="p">;</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.Button</span><span class="p">;</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.layout.VBox</span><span class="p">;</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.stage.Stage</span><span class="p">;</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">JavaFXExample</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Application</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="n">Stage</span><span class="w"> </span><span class="n">primaryStage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">Button</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">(</span><span class="s">&quot;Click Me&quot;</span><span class="p">);</span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">VBox</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">VBox</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">button</span><span class="p">);</span>
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">Scene</span><span class="w"> </span><span class="n">scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scene</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span>
+</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">setScene</span><span class="p">(</span><span class="n">scene</span><span class="p">);</span>
+</span><span id="__span-0-14"><span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">setTitle</span><span class="p">(</span><span class="s">&quot;JavaFX Controls Example&quot;</span><span class="p">);</span>
+</span><span id="__span-0-15"><span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>
+</span><span id="__span-0-16"><span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-17"><span class="linenos" data-linenos="17 "></span>
+</span><span id="__span-0-18"><span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-19"><span class="linenos" data-linenos="19 "></span><span class="w">        </span><span class="n">launch</span><span class="p">();</span>
+</span><span id="__span-0-20"><span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-21"><span class="linenos" data-linenos="21 "></span><span class="p">}</span>
+</span></code></pre></div>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Interfaz Gráfica de Usuario&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
