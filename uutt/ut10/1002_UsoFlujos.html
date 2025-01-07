@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#uso-de-flujos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2385,6 +2390,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    10.2. Uso de flujos
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="1002_UsoFlujos.html" class="md-nav__link md-nav__link--active">
         
@@ -2395,6 +2413,181 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#operaciones-intermedias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operaciones intermedias
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operaciones intermedias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#peek" class="md-nav__link">
+    <span class="md-ellipsis">
+      Peek()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sorted" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sorted()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Map()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flatmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      FlatMap
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operaciones-terminales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operaciones terminales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operaciones terminales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#foreach" class="md-nav__link">
+    <span class="md-ellipsis">
+      forEach()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collect" class="md-nav__link">
+    <span class="md-ellipsis">
+      collect()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#findfirst" class="md-nav__link">
+    <span class="md-ellipsis">
+      findFirst()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toarray" class="md-nav__link">
+    <span class="md-ellipsis">
+      toArray()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#min" class="md-nav__link">
+    <span class="md-ellipsis">
+      min()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max" class="md-nav__link">
+    <span class="md-ellipsis">
+      max()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#match" class="md-nav__link">
+    <span class="md-ellipsis">
+      Match()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduce" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reduce()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collect_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collect()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ventajas-e-inconvenientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventajas e inconvenientes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2875,9 +3068,183 @@
                   
 
 
-  <h1>10.2. Uso de flujos</h1>
-
-
+<h1 id="uso-de-flujos">Uso de flujos<a class="headerlink" href="#uso-de-flujos" title="Permanent link">&para;</a></h1>
+<p>Los Streams son una interesante incorporación a Java, ya que me aportan varias ventajas:</p>
+<ol>
+<li>Hacen que el código para procesar los datos sea uniforme, conciso y legible. Tiene una forma similar a SQL.</li>
+<li>Cuando se trabaja con grandes colecciones, los flujos paralelos proporcionan una ventaja de rendimiento.</li>
+</ol>
+<figure>
+  <a class="glightbox" href="../../img/ut10/10_2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Streams" src="../../img/ut10/10_2.png" width="600" /></a>
+</figure>
+<p>De forma genérica existen 3 partes que componen un Stream:</p>
+<ol>
+<li>Un Stream funciona a partir de una lista o colección, que también se la conoce como la fuente de donde obtienen información.</li>
+<li>Operaciones intermedias como por ejemplo el método filter, que permite hacer una selección a partir de un predicado.</li>
+<li>Operaciones terminales, como por ejemplo los métodos <code>max</code>, <code>min</code>, <code>forEach</code>, <code>findFirst</code> etc.</li>
+</ol>
+<figure>
+  <a class="glightbox" href="../../img/ut10/10_3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Streams" src="../../img/ut10/10_3.png" width="600" /></a>
+</figure>
+<p>Se pueden clasificar las funciones relacionados con Streams en dos grandes bloques: <strong>intermedias</strong> y <strong>finales</strong>.</p>
+<figure>
+  <a class="glightbox" href="../../img/ut10/10_4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Streams" src="../../img/ut10/10_4.png" width="600" /></a>
+</figure>
+<div class="admonition info">
+<p class="admonition-title">Son perezosas</p>
+<p>Las operaciones intermedias son perezosas (<em>lazy</em>). Esto significa que se invocarán solo si es necesario para la ejecución de la operación del terminal.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="err">“</span><span class="n">abc1</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="err">“</span><span class="n">abc2</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="err">“</span><span class="n">abc3</span><span class="err">”</span><span class="p">);</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lista</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">filter</span><span class="p">(</span><span class="n">valor</span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Procesando elemento: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">valor</span><span class="p">);</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">valor</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">&quot;2&quot;</span><span class="p">);</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos="5 "></span><span class="p">});</span>
+</span></code></pre></div>
+<p>Como tenemos una fuente de tres elementos, podemos suponer que el método <code>filter()</code> se llamará tres veces y se imprimirá por pantalla “Procesando elemento: ” 3 veces. Sin embargo, ejecutar este código no imprime nada por pantalla, por lo que el método <code>filter()</code> ni siquiera se llamó una vez. La razón por la que falta la operación de la terminal. Si en vez de eso llamamos al final a una operación terminal:
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="err">“</span><span class="n">abc1</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="err">“</span><span class="n">abc2</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="err">“</span><span class="n">abc3</span><span class="err">”</span><span class="p">);</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span><span class="kt">long</span><span class="w"> </span><span class="n">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lista</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">filter</span><span class="p">(</span><span class="n">valor</span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Procesando elemento: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">valor</span><span class="p">);</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">valor</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">&quot;2&quot;</span><span class="p">);</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos="5 "></span><span class="p">}).</span><span class="na">count</span><span class="p">();</span>
+</span></code></pre></div>
+El resultado muestra que llamamos al método <code>filter()</code> 3 veces y al método <code>count()</code> una vez. Esto se debe a que la canalización se ejecuta verticalmente.</p>
+</div>
+<h2 id="operaciones-intermedias">Operaciones intermedias<a class="headerlink" href="#operaciones-intermedias" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Operación</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>distinct()</td>
+<td>Elimina los valores duplicados del Stream.</td>
+</tr>
+<tr>
+<td>filter(Predicate)</td>
+<td>Los elementos que coinciden con el filtro de Predicate se mantienen en el stream de salida para las operaciones.</td>
+</tr>
+<tr>
+<td>takeWhile(Predicate)</td>
+<td>Similar a filter. Con la diferencia de que la primera vez que se evalúa a falsa la condición, deja de comprobar el resto de elementos.</td>
+</tr>
+<tr>
+<td>dropWhile(Predicate)</td>
+<td>Eliminará o filtrará cualquier elemento mientras coincida con la condición del Predicate. Cuando la condición se evalúa como falso la primera vez, la condición ya no se comprueba.</td>
+</tr>
+<tr>
+<td>limit(long maxSize)</td>
+<td>Reduce el stream al tamaño especificados en el parámetro.</td>
+</tr>
+<tr>
+<td>skip(long n)</td>
+<td>Este método omite elementos, es decir, no formarán parte del stream resultante</td>
+</tr>
+</tbody>
+</table>
+<p>Además de estas operaciones básicas, hay otras que son de gran interés:</p>
+<h3 id="peek">Peek()<a class="headerlink" href="#peek" title="Permanent link">&para;</a></h3>
+<p>Este método existe principalmente para la depuración del programa, donde se desea ver los elementos a medida que pasan por un punto determinado en el pipeline.</p>
+<p><code>peek()</code> también se utiliza cuando queremos alterar el estado interno de un elemento (aunque esto no es muy común).
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="n">Stream</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;one&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;two&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;three&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;four&quot;</span><span class="p">)</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span><span class="w">  </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos="3 "></span><span class="w">  </span><span class="p">.</span><span class="na">peek</span><span class="p">(</span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Filtered value: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">))</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos="4 "></span><span class="w">  </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">String</span><span class="p">::</span><span class="n">toUpperCase</span><span class="p">)</span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos="5 "></span><span class="w">  </span><span class="p">.</span><span class="na">peek</span><span class="p">(</span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Mapped value: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">))</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos="6 "></span><span class="w">  </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span>
+</span></code></pre></div></p>
+<h3 id="sorted">Sorted()<a class="headerlink" href="#sorted" title="Permanent link">&para;</a></h3>
+<p>Se utiliza para ordenar los elementos del stream. Recibe como parámetro una expresión lambda de tipo Comparator para que podamos indicar la lógica de la ordenación.</p>
+<h3 id="map">Map()<a class="headerlink" href="#map" title="Permanent link">&para;</a></h3>
+<p>El método map recibe como parámetro una expresión lambda de tipo Function, por lo que debemos especificar una función que recibe como parámetro de entrada cada elemento del stream, y devuelve un objeto que puede ser un tipo de dato distinto o el mismo.</p>
+<p>La función se aplica a cada uno de los elementos del stream para realizar alguna transformación sobre cada elemento y devuelve otro Stream sobre el cual puedes seguir trabajando. Se utiliza para modificar el contenido del stream. </p>
+<p><code>map()</code> devuelve un stream nuevo que consta de los resultados de aplicar la función dada a los elementos del stream.
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">);</span>
+</span><span id="__span-3-2"><span class="linenos" data-linenos="2 "></span><span class="c1">//Mostramos el nuevo stream devuelto por map</span>
+</span><span id="__span-3-3"><span class="linenos" data-linenos="3 "></span><span class="n">list</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">map</span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="p">).</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+</span><span id="__span-3-4"><span class="linenos" data-linenos="4 "></span><span class="c1">//[9 18 27 36 45]</span>
+</span></code></pre></div></p>
+<h3 id="flatmap">FlatMap<a class="headerlink" href="#flatmap" title="Permanent link">&para;</a></h3>
+<p>Cuando nos encontramos con estructuras más complejas, como por ejemplo una lista con otra lista, trabajar con <code>map()</code> no es suficiente, por ello, utilizamos <code>flatMap()</code> que lo que hace es "aplanar" listas anidadas y quedarnos con un stream plano.</p>
+<p>Es una función que recibe una entrada y devuelve varias salidas para esa entrada. Esa es la diferencia con respecto a <code>map()</code> que recibe solo un parámetro de entrada y devuelve una salida.</p>
+<p><code>flatMap()</code> es una operación intermedia y devuelve un nuevo Stream. Devuelve un Stream que consiste en los resultados de reemplazar cada elemento del stream dado con el contenido de un stream mapeado producido al aplicar la función de mapeo provista a cada elemento. La función de mapeo utilizada para la transformación en <code>flatMap()</code> es una función sin estado y solo devuelve una secuencia de nuevos valores.</p>
+<p>En el siguiente ejemplo el programa usa la operación <code>flatMap()</code> para convertir una lista de una lista <code>List&lt;List&lt;Integer&gt;&gt;</code> a una lista <code>List&lt;Integer&gt;</code>.
+<div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+</span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">);</span>
+</span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">);</span>
+</span><span id="__span-4-4"><span class="linenos" data-linenos="4 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">listOfLists</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span><span class="w"> </span><span class="n">list2</span><span class="p">,</span><span class="w"> </span><span class="n">list3</span><span class="p">);</span>
+</span><span id="__span-4-5"><span class="linenos" data-linenos="5 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">listOfAllIntegers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOfLists</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+</span><span id="__span-4-6"><span class="linenos" data-linenos="6 "></span><span class="w">          </span><span class="p">.</span><span class="na">flatMap</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="na">stream</span><span class="p">())</span>
+</span><span id="__span-4-7"><span class="linenos" data-linenos="7 "></span><span class="w">          </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span>
+</span><span id="__span-4-8"><span class="linenos" data-linenos="8 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">listOfAllIntegers</span><span class="p">);</span>
+</span><span id="__span-4-9"><span class="linenos" data-linenos="9 "></span><span class="c1">//[1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+</span></code></pre></div></p>
+<h2 id="operaciones-terminales">Operaciones terminales<a class="headerlink" href="#operaciones-terminales" title="Permanent link">&para;</a></h2>
+<p>Las operaciones terminales significan el final del ciclo de vida del steam. Lo más importante para nuestro escenario es que inician el trabajo en la tubería. </p>
+<h3 id="foreach">forEach()<a class="headerlink" href="#foreach" title="Permanent link">&para;</a></h3>
+<p>Recorremos cada elemento del stream para realizar alguna acción con él. 
+<div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span><span class="n">list</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">map</span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="p">).</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+</span></code></pre></div></p>
+<h3 id="collect">collect()<a class="headerlink" href="#collect" title="Permanent link">&para;</a></h3>
+<p>Es una operación terminal, se utiliza para indicar el tipo de colección en la que se devolverá el resultado final de todas las operaciones realizadas en el stream.
+<div class="language-java highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;Texto1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Texto2&quot;</span><span class="p">);</span>
+</span><span id="__span-6-2"><span class="linenos" data-linenos="2 "></span><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lista</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toSet</span><span class="p">());</span>
+</span></code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">Clase Optional</p>
+<p><code>Optional</code> es una clase genérica, cuyo propósito es ser un contenedor para un valor que puede o no ser nulo. Fue creado por los ingenieros de Java, para abordar el problema o excepción tan conocida la <code>NullPointerException</code>.</p>
+<p>La documentación oficial de Java dice que este tipo está pensado principalmente para un uso como tipo de retorno de método, bajo condiciones específicas.</p>
+<p><code>Optional</code> trata de resolver el problema cuando hay ausencia de resultados o datos y no queremos que esto sea un error. Por ejemplo, no todas las personas tienen 2o apellido. Esto sería válido para un <code>optional</code>, pero por ejemplo todo el mundo tenemos fecha de nacimiento, esto sí que es un error.</p>
+</div>
+<h3 id="findfirst">findFirst()<a class="headerlink" href="#findfirst" title="Permanent link">&para;</a></h3>
+<p>Se utiliza para devolver el primer elemento encontrado del stream. Se suele utilizar en combinación con otras funciones cuando hay que seleccionar un único valor del stream que cumpla determinadas condiciones.</p>
+<p><code>findFirst</code> devuelve un objeto de tipo Optional para poder indicar un valor por defecto en caso de que no se pueda devolver ningún elemento del stream.</p>
+<h3 id="toarray">toArray()<a class="headerlink" href="#toarray" title="Permanent link">&para;</a></h3>
+<p>Con este método se puede convertir cualquier tipo de Collection en un array de forma sencilla.</p>
+<h3 id="min">min()<a class="headerlink" href="#min" title="Permanent link">&para;</a></h3>
+<p>Con <code>min</code> se obtiene el elemento del stream con el valor mínimo calculado a partir de una expresión lambda de tipo Comparator que indicamos como parámetro.</p>
+<p><code>min</code> devuelve un objeto de tipo <code>Optional</code> para poder indicar un valor por defecto en caso de que no se pueda devolver ningún elemento del stream.</p>
+<h3 id="max">max()<a class="headerlink" href="#max" title="Permanent link">&para;</a></h3>
+<p>Con <code>max</code> se obtiene el elemento del stream con el valor máximo calculado a partir de una expresión lambda de tipo Comparator que indicamos como parámetro de la expresión.</p>
+<p><code>max</code> devuelve un objeto de tipo <code>Optional</code> para poder indicar un valor por defecto en caso de que no se pueda devolver ningún elemento del stream.</p>
+<h3 id="match">Match()<a class="headerlink" href="#match" title="Permanent link">&para;</a></h3>
+<p>La API Stream ofrece un práctico conjunto de instrumentos para validar elementos de una secuencia de acuerdo con algún predicado. Para hacer esto, se puede usar uno de los siguientes métodos: <code>anyMatch()</code>, <code>allMatch()</code>, <code>noneMatch()</code>. </p>
+<p>Sus nombres se explican por sí mismos. Esas son operaciones de terminal que devuelven un valor booleano:
+<div class="language-java highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span><span class="kt">boolean</span><span class="w"> </span><span class="n">alMenosUnoContieneHMinuscula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">anyMatch</span><span class="p">(</span><span class="n">element</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">&quot;h&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// verdadero</span>
+</span><span id="__span-7-2"><span class="linenos" data-linenos="2 "></span><span class="kt">boolean</span><span class="w"> </span><span class="n">todosContienenHMinuscula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">allMatch</span><span class="p">(</span><span class="n">element</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">&quot;h&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// falso</span>
+</span><span id="__span-7-3"><span class="linenos" data-linenos="3 "></span><span class="kt">boolean</span><span class="w"> </span><span class="n">ningunoContieneHMinuscula</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">noneMatch</span><span class="p">(</span><span class="n">element</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">&quot;h&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// falso</span>
+</span></code></pre></div></p>
+<h3 id="reduce">Reduce()<a class="headerlink" href="#reduce" title="Permanent link">&para;</a></h3>
+<p>La API Stream permite reducir una secuencia de elementos a algún valor de acuerdo con una función específica con la ayuda del método <code>reduce()</code> del tipo Stream. Este método toma dos parámetros: primero, valor de inicio, segundo, una función de acumulador.</p>
+<p>Imagina que tienes un List y quieres tener una suma de todos estos elementos y algún Integer inicial (en este ejemplo 23). Entonces, puede ejecutar el siguiente código y el resultado será 26 (23 + 1 + 1 + 1).
+<div class="language-java highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos="1 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">integers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-8-2"><span class="linenos" data-linenos="2 "></span><span class="n">Integer</span><span class="w"> </span><span class="n">reducido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">integers</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">reduce</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+</span></code></pre></div></p>
+<h3 id="collect_1">Collect()<a class="headerlink" href="#collect_1" title="Permanent link">&para;</a></h3>
+<p>La reducción también puede proporcionarse mediante el método <code>collect()</code> de tipo Stream. Esta operación es muy útil en el caso de convertir un stream en una colección o un mapa y representar un stream en forma de una sola cadena. Hay una clase de utilidad Collectors que proporciona una solución para casi todas las operaciones de recolección típicas. Para algunas tareas no triviales, se puede crear un recopilador personalizado.
+<div class="language-java highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos="1 "></span><span class="n">Lista</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">resultados</span><span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;=</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">map</span><span class="p">(</span><span class="n">element</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">()).</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span>
+</span></code></pre></div>
+Este código usa la operación de terminal <code>collect()</code> para reducir un Stream a List.</p>
+<h2 id="ventajas-e-inconvenientes">Ventajas e inconvenientes<a class="headerlink" href="#ventajas-e-inconvenientes" title="Permanent link">&para;</a></h2>
+<p>Ventajas de Streams</p>
+<ul>
+<li>Código conciso y más limpio.</li>
+<li>Programación funcional: se programa escribiendo el "qué" en lugar del "cómo" para que sea comprensible de un vistazo.</li>
+<li>Puede leer y comprender fácilmente el código que tiene una serie de operaciones complejas.</li>
+<li>Ejecutar tan rápido como bucles for (o más rápido con operaciones paralelas)</li>
+<li>Ideal para listas grandes.</li>
+</ul>
+<p>Desventajas</p>
+<ul>
+<li>Excesivo para pequeñas colecciones.</li>
+<li>Difícil de aprender si está acostumbrado a la codificación de estilo imperativo tradicional</li>
+</ul>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
