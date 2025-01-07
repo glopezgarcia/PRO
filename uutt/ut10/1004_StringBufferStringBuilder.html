@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#la-clase-stringbuffer-y-stringbuilder" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2427,6 +2432,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    10.4. StringBuffer y StringBuilder
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="1004_StringBufferStringBuilder.html" class="md-nav__link md-nav__link--active">
         
@@ -2437,6 +2455,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stringbuilder" class="md-nav__link">
+    <span class="md-ellipsis">
+      StringBuilder
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stringbuffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      StringBuffer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diferencias-entre-string-stringbuilder-y-stringbuffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diferencias entre string, stringbuilder y stringbuffer
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2875,9 +2939,167 @@
                   
 
 
-  <h1>10.4. StringBuffer y StringBuilder</h1>
-
-
+<h1 id="la-clase-stringbuffer-y-stringbuilder">La clase StringBuffer y StringBuilder<a class="headerlink" href="#la-clase-stringbuffer-y-stringbuilder" title="Permanent link">&para;</a></h1>
+<p>Java provee distintas clases para el trabajo con cadenas de texto. La más básica, la clase String. Sin embargo existen otras clases como <code>StringBuffer</code> y <code>StringBuilder</code> que resultan de interés porque facilitan cierto tipo de trabajos y aportan mayor eficiencia en determinados contextos.</p>
+<h2 id="stringbuilder">StringBuilder<a class="headerlink" href="#stringbuilder" title="Permanent link">&para;</a></h2>
+<p>La clase <code>StringBuilder</code> es similar a la clase <code>String</code> en el sentido de que sirve para almacenar cadenas de caracteres. No obstante, presenta algunas diferencias relevantes. Señalaremos como características de <code>StringBuilder</code> a tener en cuenta:</p>
+<ul>
+<li>Su tamaño y contenido pueden modificarse. Los objetos de éste tipo son mutables. Esto es una diferencia con los String.</li>
+<li>Debe crearse con alguno de sus constructores asociados. No se permite instanciar directamente a una cadena como sí permiten los String.</li>
+<li>Un <code>StringBuilder</code> está indexado. Cada uno de sus caracteres tiene un índice: 0 para el primero,1 para el segundo, etc.</li>
+<li>Los métodos de <code>StringBuilder</code> no están sincronizados. Esto implica que es más eficiente que StringBuffer siempre que no se requiera trabajar con múltiples hilos (threads), que es lo más habitual.</li>
+</ul>
+<p>Los constructores de <code>StringBuilder</code> se resumen en la siguiente tabla:</p>
+<table>
+<thead>
+<tr>
+<th>Constructor</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>StringBuilder()</code></td>
+<td>Construye un <code>StringBuilder</code> vacío y con una capacidad por defecto de 16 caracteres.</td>
+<td><code>StringBuilder s = new StringBuilder();</code></td>
+</tr>
+<tr>
+<td><code>StringBuilder(int capacidad)</code></td>
+<td>Se le pasa la capacidad (número de caracteres) como argumento.</td>
+<td><code>StringBuilder s = new StringBuilder(55);</code></td>
+</tr>
+<tr>
+<td><code>StringBuilder(String str)</code></td>
+<td>Construye un <code>StringBuilder</code> en base al <code>String</code> que se le pasa como argumento.</td>
+<td><code>StringBuilder s = new StringBuilder("hola");</code></td>
+</tr>
+</tbody>
+</table>
+<p>Los métodos principales de <code>StringBuilder</code> se resumen en la siguiente tabla:</p>
+<table>
+<thead>
+<tr>
+<th>Retorno</th>
+<th>Método</th>
+<th>Explicación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>StringBuilder</code></td>
+<td><code>append(...)</code></td>
+<td>Añade al final del <code>StringBuilder</code> un <code>String</code> o la representación en forma de <code>String</code> de un dato asociado a una variable primitiva.</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td><code>capacity()</code></td>
+<td>Devuelve la capacidad del <code>StringBuilder</code>.</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td><code>length()</code></td>
+<td>Devuelve el número de caracteres del <code>StringBuilder</code>.</td>
+</tr>
+<tr>
+<td><code>StringBuilder</code></td>
+<td><code>reverse()</code></td>
+<td>Invierte el orden de los caracteres del <code>StringBuilder</code>.</td>
+</tr>
+<tr>
+<td><code>void</code></td>
+<td><code>setCharAt(int indice, char ch)</code></td>
+<td>Cambia el carácter indicado en el primer argumento por el carácter que se le pasa en el segundo.</td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td><code>charAt(int indice)</code></td>
+<td>Devuelve el carácter asociado a la posición que se le indica en el argumento.</td>
+</tr>
+<tr>
+<td><code>void</code></td>
+<td><code>setLength(int nuevaLongitud)</code></td>
+<td>Modifica la longitud. La nueva longitud no puede ser menor que la longitud actual.</td>
+</tr>
+<tr>
+<td><code>String</code></td>
+<td><code>toString()</code></td>
+<td>Convierte un <code>StringBuilder</code> en un <code>String</code>.</td>
+</tr>
+<tr>
+<td><code>StringBuilder</code></td>
+<td><code>insert(int indiceIni, String cadena)</code></td>
+<td>Añade la cadena del segundo argumento a partir de la posición indicada en el primero.</td>
+</tr>
+<tr>
+<td><code>StringBuilder</code></td>
+<td><code>delete(int indiceIni, int indiceFin)</code></td>
+<td>Borra la cadena de caracteres incluidos entre los dos índices indicados en los argumentos.</td>
+</tr>
+<tr>
+<td><code>StringBuilder</code></td>
+<td><code>deleteCharAt(int indice)</code></td>
+<td>Borra el carácter indicado en el índice.</td>
+</tr>
+<tr>
+<td><code>StringBuilder</code></td>
+<td><code>replace(int indiceIni, int indiceFin, String str)</code></td>
+<td>Reemplaza los caracteres comprendidos entre los dos índices por la cadena que se le pasa en el argumento.</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td><code>indexOf(String str)</code></td>
+<td>Analiza los caracteres de la cadena y encuentra el primer índice que coincide con el valor deseado.</td>
+</tr>
+<tr>
+<td><code>String</code></td>
+<td><code>substring(int indiceIni, int indiceFin)</code></td>
+<td>Devuelve una cadena comprendida entre los dos índices.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stringbuffer">StringBuffer<a class="headerlink" href="#stringbuffer" title="Permanent link">&para;</a></h2>
+<p>La clase StringBuffer es similar a la clase <code>StringBuilder</code>, siendo la principal diferencia que sus métodos están sincronizados, lo cual permite trabajar con múltiples hilos de ejecución (<code>threads</code>).</p>
+<p>Los constructores y métodos de <code>StringBuffer</code> son los mismos que los de <code>StringBuilder</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Constructor</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>StringBuffer()</code></td>
+<td>Construye un <code>StringBuffer</code> vacío y con una capacidad por defecto de 16 caracteres.</td>
+<td><code>StringBuffer s = new StringBuffer();</code></td>
+</tr>
+<tr>
+<td><code>StringBuffer(int capacidad)</code></td>
+<td>Se le pasa la capacidad (número de caracteres) como argumento.</td>
+<td><code>StringBuffer s = new StringBuffer(55);</code></td>
+</tr>
+<tr>
+<td><code>StringBuffer(String str)</code></td>
+<td>Construye un <code>StringBuffer</code> en base al <code>String</code> que se le pasa como argumento.</td>
+<td><code>StringBuffer s = new StringBuffer("hola");</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="diferencias-entre-string-stringbuilder-y-stringbuffer">Diferencias entre string, stringbuilder y stringbuffer<a class="headerlink" href="#diferencias-entre-string-stringbuilder-y-stringbuffer" title="Permanent link">&para;</a></h2>
+<p>Vamos a enumerar las principales diferencias entre estas tres clases:</p>
+<ul>
+<li><code>StringBuffer</code> y <code>StringBuilder</code> son mutables, mientras que <code>String</code> es inmutable. Cada vez que modificamos un <code>String</code> se crea un objeto nuevo. Esto no ocurre con <code>StringBuffer</code> y <code>StringBuilder</code>.</li>
+<li>Los objetos <code>String</code> se almacenan en el <code>Constant String Pool</code> que es un repositorio o almacén de cadenas, de valores de Strings. Esto se hace  con el fin de que si creamos otro <code>String</code>, con el mismo valor, no se cree un nuevo objeto sino que se use el mismo y se asigne una referencia al objeto ya creado. Los objetos <code>StringBuffer</code> y <code>StringBuilder</code> se almacenan en el heap que es otro espacio de memoria usado en tiempo de ejecución para almacenar las instancias de clases, objetos y arrays. Realmente no nos interesa entrar a nivel de detalle en estas diferencias: simplemente, recordar que los objetos <code>String</code> tienen diferente tratamiento que los <code>StringBuffer</code> y <code>StringBuilder</code>.</li>
+<li>La  implementación de la clase <code>StringBuffer</code> es sincronizada, la de <code>StringBuilder</code> no. </li>
+<li>El operador de concatenación "+" es implementado internamente por Java usando <code>StringBuilder</code>.</li>
+</ul>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
