@@ -3133,6 +3133,42 @@ coste en 0. Añade el siguiente método:</p>
 </div>
 <p>Genera un método main donde pruebes todos los métodos. Recuerda que siempre que se puedan pedir datos por teclado, se han de pedir.</p>
 </li>
+<li>
+<p><strong><abbr title="Actividades de profundización.">AP</abbr> 621</strong> (<abbr title="Desarrolla programas organizados en clases analizando y aplicando los principios de la programación orientada a objetos.">RA4</abbr>/ <abbr title="Se ha reconocido la sintaxis, estructura y componentes típicos de una clase.">CE4a</abbr> <abbr title="Se han definido clases.">CE4b</abbr> <abbr title="Se han creado constructores.">CE4d</abbr> <abbr title="Se han desarrollado programas que instancien y utilicen objetos de las clases creadas anteriormente.">CE4e</abbr> <abbr title="Se han utilizado mecanismos para controlar la visibilidad de las clases y de sus miembros.">CE4f</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p). En un restaurante se requiere de un sistema de clasificación de pedidos de comida en
+función de la dieta a la que pertenezcan. Para ello se deberán desarrollar las dos clases que se proponen a continuación:</p>
+<ul>
+<li><code>PedidosComida</code>: con atributos tipoDieta, <code>tiempoCoccion</code> y calorías y métodos <code>caloriasHora</code>, que recibe dos enteros (tiempo y calorías de la receta) y devuelve las calorías en una hora, <code>rebajarCalorias</code>, que recibe las calorías que se le rebajan a la receta, y <code>aumentarCalorias</code>, que recibe las calorías que se aumentan.</li>
+<li><code>MainComida</code>: tiene dos métodos, main y menu.</li>
+</ul>
+<p>El menú dará las siguientes opciones:</p>
+<ul>
+<li>Solicitar número de pedidos a llenar.</li>
+<li>Llenar todos los pedidos</li>
+<li>Seleccionar el pedido que se quiere modificar.</li>
+<li>Contar los pedidos de más de 500 calorías.</li>
+<li>Borrar todos los pedidos.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Cálculos</p>
+<p>En los cálculos, una comida, por ejemplo, tiene 100 calorías y se tarda en hacer 100 minutos, si aumento en 10 calorías aumentaré en 10 minutos. Por lo que pasará a tener 110 calorías y un tiempo de cocción de 110 minutos. Si tras esto, decido bajarle 20 calorías, que sería un 18% de las 110, el tiempo bajaría también un 18%, quedándose en 90,2 minutos de cocción. </p>
+</div>
+</li>
+<li>
+<p><strong><abbr title="Actividades de profundización.">AP</abbr> 622</strong> (<abbr title="Desarrolla programas organizados en clases analizando y aplicando los principios de la programación orientada a objetos.">RA4</abbr>/ <abbr title="Se ha reconocido la sintaxis, estructura y componentes típicos de una clase.">CE4a</abbr> <abbr title="Se han definido clases.">CE4b</abbr> <abbr title="Se han creado constructores.">CE4d</abbr> <abbr title="Se han desarrollado programas que instancien y utilicen objetos de las clases creadas anteriormente.">CE4e</abbr> <abbr title="Se han utilizado mecanismos para controlar la visibilidad de las clases y de sus miembros.">CE4f</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p). Escribe una clase con el nombre Calculadora. La clase debe tener dos Atributos con los nombres <code>primerNumero</code> y <code>segundoNumero</code>, ambos de tipo double y privados. Codifica los siguientes métodos:</p>
+<ul>
+<li>Método llamado <code>getResultadoSuma</code> sin ningún parámetro, debe devolver el resultado de sumar los valores de campo de <code>primerNumero</code> y <code>segundoNumero</code>.</li>
+<li>Método llamado <code>getResultadoResta</code> sin ningún parámetro, debe devolver el resultado de restar los valores de campo de <code>segundoNumero</code> del <code>primerNumero</code>.</li>
+<li>Método llamado <code>getMultiplicationResult</code> sin ningún parámetro, debe devolver el resultado de multiplicar los valores de campo de <code>primerNumero</code> y <code>segundoNumero</code>.</li>
+<li>Método llamado <code>getDivisionResult</code> sin ningún parámetro, debe devolver el resultado de dividir los valores de campo de <code>primerNumero</code> por <code>segundoNumero</code>. En caso de  que el valor de <code>segundoNumero</code> sea 0, devuelve 0.</li>
+</ul>
+<p>Escribe este código en una clase <code>MainCalculadora</code> en la que tengas al menos dos métodos: el propio main y dos métodos menú. El menú principal:</p>
+<ul>
+<li>Indique cuantas calculadoras vas a crear</li>
+<li>Seleccionas y rellenes una calculadora en concreto.</li>
+<li>Operar con una calculadora en concreto. Se lanzará el segundo menú que permitirá escoger las operaciones a realizar. Si el objeto no está inicializado por el usuario, se deberá inicializar.</li>
+<li>Salir del programa</li>
+</ul>
+</li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
