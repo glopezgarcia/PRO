@@ -1627,6 +1627,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    7.1. Creación de paquetes
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="071_CreacionPaquetes.html" class="md-nav__link md-nav__link--active">
         
   
@@ -1636,6 +1647,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2898,6 +2937,80 @@
 <li>Es común usar la primera letra en mayúscula cuando se declara una clase, pues bien, cuando se declaran paquetes es común que todas la letras estén en minúscula y en caso de ser varias palabras separarlas por un guion bajo <code>_</code> por ejemplo "mi_paquete" es adecuado mientras que "MiPaquete" aunque no es incorrecto, no es una buena práctica.</li>
 </ul>
 </div>
+<h2 id="ejemplo">Ejemplo<a class="headerlink" href="#ejemplo" title="Permanent link">&para;</a></h2>
+<p>Nos basaremos en la siguiente estructura:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="n">src</span><span class="o">/</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span><span class="err">├──</span><span class="w"> </span><span class="n">com</span><span class="o">/</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">gestion</span><span class="o">/</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos="4 "></span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">Estudiante</span><span class="p">.</span><span class="na">java</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos="5 "></span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">Profesor</span><span class="p">.</span><span class="na">java</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos="6 "></span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">util</span><span class="o">/</span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos="7 "></span><span class="err">│</span><span class="w">       </span><span class="err">└──</span><span class="w"> </span><span class="n">Utilidades</span><span class="p">.</span><span class="na">java</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos="8 "></span><span class="err">└──</span><span class="w"> </span><span class="n">Main</span><span class="p">.</span><span class="na">java</span>
+</span></code></pre></div>
+<p>Código de cada clase:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Estudiante</label><label for="__tabbed_1_2">Profesor</label><label for="__tabbed_1_3">Utilidades</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="kn">package</span><span class="w"> </span><span class="nn">com.gestion</span><span class="p">;</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Estudiante</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Estudiante</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mostrarNombre</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Estudiante: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="p">);</span>
+</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="kn">package</span><span class="w"> </span><span class="nn">com.gestion</span><span class="p">;</span>
+</span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Profesor</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+</span><span id="__span-3-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-3-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Profesor</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+</span><span id="__span-3-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-3-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mostrarNombre</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Profesor: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="p">);</span>
+</span><span id="__span-3-12"><span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-13"><span class="linenos" data-linenos="13 "></span><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="kn">package</span><span class="w"> </span><span class="nn">com.util</span><span class="p">;</span>
+</span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span>
+</span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Utilidades</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-4"><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">imprimirSeparador</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-5"><span class="linenos" data-linenos="5 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;---------------------&quot;</span><span class="p">);</span>
+</span><span id="__span-4-6"><span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-7"><span class="linenos" data-linenos="7 "></span><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>Y si ahora escribimos el main:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.gestion.Estudiante</span><span class="p">;</span>
+</span><span id="__span-5-2"><span class="linenos" data-linenos=" 2 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.gestion.Profesor</span><span class="p">;</span>
+</span><span id="__span-5-3"><span class="linenos" data-linenos=" 3 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.util.Utilidades</span><span class="p">;</span>
+</span><span id="__span-5-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-5-5"><span class="linenos" data-linenos=" 5 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">Estudiante</span><span class="w"> </span><span class="n">estudiante</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Estudiante</span><span class="p">(</span><span class="s">&quot;Ana&quot;</span><span class="p">);</span>
+</span><span id="__span-5-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="n">Profesor</span><span class="w"> </span><span class="n">profesor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Profesor</span><span class="p">(</span><span class="s">&quot;Sr. López&quot;</span><span class="p">);</span>
+</span><span id="__span-5-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-5-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">estudiante</span><span class="p">.</span><span class="na">mostrarNombre</span><span class="p">();</span>
+</span><span id="__span-5-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">Utilidades</span><span class="p">.</span><span class="na">imprimirSeparador</span><span class="p">();</span>
+</span><span id="__span-5-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">profesor</span><span class="p">.</span><span class="na">mostrarNombre</span><span class="p">();</span>
+</span><span id="__span-5-13"><span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-14"><span class="linenos" data-linenos="14 "></span><span class="p">}</span>
+</span></code></pre></div>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
