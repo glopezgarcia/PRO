@@ -3041,17 +3041,18 @@ Al imprimir vemos que las claves no aparecen en ningún orden, ni en el que las 
 <p>Tenemos dos formas de eliminar:</p>
 <ul>
 <li>Eliminar desde una clave existente.</li>
-<li>Eliminar un par clave-valor existente.
-<div class="language-java highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span><span class="c1">//Forma 1</span>
-</span><span id="__span-7-2"><span class="linenos" data-linenos="2 "></span><span class="kt">boolean</span><span class="w"> </span><span class="n">eliminado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idiomas</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">&quot;fr&quot;</span><span class="p">);</span>
-</span><span id="__span-7-3"><span class="linenos" data-linenos="3 "></span><span class="c1">//Forma 2</span>
-</span><span id="__span-7-4"><span class="linenos" data-linenos="4 "></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">idiomas</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">&quot;de&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ingles&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-7-5"><span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;de ha sido eliminado&quot;</span><span class="p">);</span>
-</span><span id="__span-7-6"><span class="linenos" data-linenos="6 "></span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-7-7"><span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;No existe un par clave-valor con de-Ingles&quot;</span><span class="p">);</span>
-</span><span id="__span-7-8"><span class="linenos" data-linenos="8 "></span><span class="p">}</span>
-</span></code></pre></div></li>
+<li>Eliminar un par clave-valor existente.</li>
 </ul>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span><span class="c1">//Forma 1</span>
+</span><span id="__span-7-2"><span class="linenos" data-linenos="2 "></span><span class="n">String</span><span class="w"> </span><span class="n">eliminado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idiomas</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">&quot;fr&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// nos devuelve el elemento asociado al índice eliminado, </span>
+</span><span id="__span-7-3"><span class="linenos" data-linenos="3 "></span><span class="w">                                        </span><span class="c1">// hay que tener cuidad con el tipo de la variable si lo almacenamos</span>
+</span><span id="__span-7-4"><span class="linenos" data-linenos="4 "></span><span class="c1">//Forma 2</span>
+</span><span id="__span-7-5"><span class="linenos" data-linenos="5 "></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">idiomas</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">&quot;de&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ingles&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-6"><span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;de ha sido eliminado&quot;</span><span class="p">);</span>
+</span><span id="__span-7-7"><span class="linenos" data-linenos="7 "></span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-8"><span class="linenos" data-linenos="8 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;No existe un par clave-valor con de-Ingles&quot;</span><span class="p">);</span>
+</span><span id="__span-7-9"><span class="linenos" data-linenos="9 "></span><span class="p">}</span>
+</span></code></pre></div>
 <h2 id="reemplazar-el-valor-de-una-clave">Reemplazar el valor de una clave<a class="headerlink" href="#reemplazar-el-valor-de-una-clave" title="Permanent link">&para;</a></h2>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos="1 "></span><span class="n">idiomas</span><span class="p">.</span><span class="na">replace</span><span class="p">(</span><span class="s">&quot;es&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Spain&quot;</span><span class="p">);</span>
 </span><span id="__span-8-2"><span class="linenos" data-linenos="2 "></span><span class="cm">/* Reemplazo el antiguo valor por el nuevo, pero antes me aseguro de que el</span>
