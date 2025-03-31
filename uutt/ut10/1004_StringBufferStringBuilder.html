@@ -2498,6 +2498,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividades
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3094,6 +3103,49 @@
 <li>Los objetos <code>String</code> se almacenan en el <code>Constant String Pool</code> que es un repositorio o almacén de cadenas, de valores de Strings. Esto se hace  con el fin de que si creamos otro <code>String</code>, con el mismo valor, no se cree un nuevo objeto sino que se use el mismo y se asigne una referencia al objeto ya creado. Los objetos <code>StringBuffer</code> y <code>StringBuilder</code> se almacenan en el heap que es otro espacio de memoria usado en tiempo de ejecución para almacenar las instancias de clases, objetos y arrays. Realmente no nos interesa entrar a nivel de detalle en estas diferencias: simplemente, recordar que los objetos <code>String</code> tienen diferente tratamiento que los <code>StringBuffer</code> y <code>StringBuilder</code>.</li>
 <li>La  implementación de la clase <code>StringBuffer</code> es sincronizada, la de <code>StringBuilder</code> no. </li>
 <li>El operador de concatenación "+" es implementado internamente por Java usando <code>StringBuilder</code>.</li>
+</ul>
+<!-- Tere-->
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong><abbr title="Prácticas">PR</abbr> 1017</strong> (<abbr title="Escribe programas que manipulen información seleccionando y utilizando tipos avanzados de datos.">RA6</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 5p). Crea un programa que reciba una frase de entrada del usuario y realice las siguientes operaciones utilizando las clases StringBuffer y StringBuilder:</p>
+<ol>
+<li>
+<p>Uso de StringBuilder:</p>
+<ol>
+<li>Crear un objeto de la clase StringBuilder con la frase ingresada.</li>
+<li>
+<p>Realizar las siguientes operaciones sobre la cadena usando StringBuilder:</p>
+<ul>
+<li>Añadir al final de la frase la palabra "¡Bienvenido!".</li>
+<li>Invertir la cadena resultante.</li>
+<li>Reemplazar todas las vocales de la cadena por el símbolo '*'.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>Uso de StringBuffer:</p>
+<ol>
+<li>Crear un objeto de la clase StringBuffer con la frase original.</li>
+<li>
+<p>Realizar las siguientes operaciones sobre la cadena usando StringBuffer:</p>
+<ul>
+<li>Insertar al principio de la frase la palabra "Saludo: ".</li>
+<li>Eliminar las primeras 5 letras de la cadena.</li>
+<li>Convertir todos los caracteres a mayúsculas.</li>
+</ul>
+</li>
+</ol>
+<p>Requisitos:</p>
+<ul>
+<li>Asegúrate de que el programa maneje excepciones si el usuario introduce datos incorrectos o vacíos.</li>
+<li>El programa debe mostrar la cadena resultante después de cada operación realizada con StringBuilder y StringBuffer.</li>
+<li>Comenta el código explicando las funciones de cada parte del programa.</li>
+</ul>
+</li>
+</ol>
+</li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
